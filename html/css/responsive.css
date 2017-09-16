@@ -1,0 +1,402 @@
+@media screen and (max-width: 1359px) {
+  .banner-text h1 {
+      font-size: 6rem;
+    }
+    .banner-text p {
+      font-size: 1.8rem;
+      line-height: 1.5;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .section {
+      padding: 100px 40px;
+  }
+  #home {
+      padding: 0 40px;
+  }
+  #header .header-content {
+    width: 100%; 
+    padding: 20px 40px;
+  }
+  #header.fixed .header-content {
+    border-bottom: 0 none;
+    padding: 10px 40px 5px;
+  }
+  .banner-caption {
+      width: 70%;
+  }
+  .banner-text {
+      padding: 40% 0 0 40px;
+  }
+
+  .banner-text h1 {
+      font-size: 46px;
+    }
+    .banner-text p {
+      font-size: 1.8rem;
+      line-height: 1.5;
+  }
+
+  .about {
+      padding: 180px 40px;
+  }
+  .about h2 {
+      font-size: 4.5rem;
+      font-weight: 400;
+  }
+
+  .product {
+      padding: 100px 40px;
+  }
+
+  .vision h3{
+     font-size: 4.5rem;
+  }
+  
+  .news .section{
+    padding: 100px 40px 20px;
+  }
+  
+  .news h4{
+    font-size: 4.5rem;
+  }
+  .news .content {
+      height: 240px;
+  }
+
+  .footer-top {
+      background-color: #333;
+      padding: 50px 40px 20px;
+  }
+
+  .footer-bottom {
+      background-color: #282828;
+      padding: 30px 40px 15px;
+  }
+
+  .nav-toggle {
+    display: block; }
+
+  .navigation {
+    position: fixed;
+    background-color: #000;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 99999;
+    visibility: hidden;
+    opacity: 0;
+    -webkit-transition: opacity 0.5s, visibility 0s 0.5s;
+    transition: opacity 0.5s, visibility 0s 0.5s; }
+    .navigation .primary-nav {
+      position: relative;
+      top: 45%;
+      -moz-transform: translateY(-45%);
+      -ms-transform: translateY(-45%);
+      -webkit-transform: translateY(-45%);
+      transform: translateY(-45%); }
+    .navigation li {
+      display: block;
+      margin-bottom: 20px; }
+    .navigation a {
+      display: block;
+      font-size: 25px;
+      margin: 0;
+      text-align: center; }
+
+  .person {
+    margin: 0 auto 50px; }
+    .person-content {
+      text-align: center; }
+    .person .social-icons li {
+      display: inline-block;
+      float: none;
+      margin-bottom: 5px; }
+
+  .testimonials blockquote {
+    padding: 20px 5% 0; }
+  .testimonials p {
+    font-size: 26px; }
+
+  .flex-control-nav {
+    bottom: 20px; 
+  }
+
+
+  #wrapper{
+    padding: 50px 0 0;
+  }
+  .title_page {
+    height: 350px;
+    padding: 180px 40px 0;
+}
+.side_block {
+  margin-left: 40px;
+}
+
+.about_detail  {
+  padding: 0 40px 100px 100px;
+}
+.vision_detail, .role_detail{
+  padding: 50px 40px 100px 100px;
+  margin-top: -366px;
+}
+.about_detail p, .vision_detail p{
+  font-size: 14px;
+}
+
+.role_detail h4{
+  font-size: 24px;
+}
+
+.role_detail ol {
+  color: #fff;
+  font-family: Tahoma;
+  font-size: 14px;
+  line-height: 28px;
+}
+
+
+
+
+
+
+
+  
+  }
+@media screen and (max-width: 768px) {
+  .banner-text {
+    /* padding-bottom: 50%; */
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-top: 50%;
+}
+    /* .banner-text h1 {
+      font-size: 42px; 
+    }
+    .banner-text p {
+      font-size: 18px; 
+    } */
+    .product .produect_cate > p {
+        height: 200px;
+    }
+
+  .flexslider {
+    padding-bottom: 20px; 
+  }
+
+  .flex-control-nav {
+    width: 100%; }
+
+  .footer .footer-col {
+    margin-bottom: 50px; 
+  } 
+  .footer-bottom {
+      background-color: #282828;
+      padding: 20px 40px;
+  }
+
+  .footer-bottom .menu, .footer-bottom .copyright{
+    text-align: center
+  }
+  
+
+  .about_detail h2, .vision_detail h2, .role_detail h2{
+    font-size: 40px;
+  }
+
+  .about_detail h3{
+    font-size: 20px;
+  }
+  
+  .role_detail h4{
+    font-size: 20px;
+  }
+
+  .role_detail h4 br{
+    display: none;
+  }
+
+  .role_detail h3{
+    font-size: 30px;
+  }
+
+  .role_detail {
+    background-position: left bottom;
+  }
+
+  .about_detail {
+    background-position: center bottom;
+  }
+  
+
+
+}
+@media screen and (max-width: 736px) {
+
+    #header .header-content {
+        padding: 10px 20px;
+        width: 100%;
+    }
+
+    .nav-toggle {
+      top: 25px;
+    }
+    #header.fixed .header-content {
+        padding: 5px 20px;
+    }
+      
+    #header .logo{
+      width: 80px;
+    }
+    .banner-text {
+        padding-top: 20%;
+    }
+
+     .banner-text h1 {
+      font-size: 40px; 
+    }
+    .banner-text p {
+      font-size: 1.5rem; 
+    }
+
+    #header.fixed .logo{
+      width: 70px;
+    }
+
+    #home, .bg_overlay{
+      min-height: 100vh;
+      padding: 0 10px;
+    }
+
+    .about{
+      padding:180px 10px;
+    }
+    .product {
+        padding: 100px 10px;
+    }
+
+    .news.section {
+        padding: 50px 10px;
+    }
+
+    .vision {
+        color: #fff;
+        padding: 100px 10px;
+    }
+
+    .title_page {
+      height: 300px;
+      padding: 150px 10px 0;
+  }
+
+    .side_block {
+        margin-left: 0;
+    }
+
+    .about_detail {
+        margin: -50px 0 0;
+        padding: 0 10px 250px;
+    }
+
+    .about_detail h2, .vision_detail h2, .role_detail h2 {
+        font-size: 34px;
+    }
+
+    .vision_detail, .role_detail {
+      margin-top: -366px;
+      padding: 300px 10px 50px;
+  }
+
+  .vision_block p {
+      margin: 10px 0 30px;
+      padding: 0;
+      text-align: left;
+  }
+
+  .role_detail {
+        background-position: -250px bottom;
+  }
+    
+    
+}
+
+@media screen and (max-width: 670px) {
+  .banner-text {
+    padding: 100px 0 0;
+}
+.banner-text h1 {
+  font-size: 30px;
+}
+.banner-text p {
+  font-size: 13px;
+  margin-bottom: 15px;  
+}
+   #home, .bg_overlay{
+    min-height: 700px;
+  }
+
+  .title_page h1 {
+    color: #fff;
+    font-size: 40px;
+    font-weight: 300;
+}
+  
+}
+@media screen and (max-width: 480px) {
+
+  #home, .bg_overlay{
+    min-height: 700px;
+  }
+  .banner-caption{
+    width: auto;
+  }
+  .banner-text {
+    padding-top: 20%;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.banner-text h1 {
+  font-size: 40px;
+}
+
+.footer-top {
+  background-color: #333;
+  padding: 50px 20px 20px;
+}
+
+.footer-bottom {
+    background-color: #282828;
+    padding: 20px 10px;
+}
+  .footer-bottom ul li {
+      font-size: 13px;
+      margin: 0 8px;
+  }
+  .footer-bottom .copyright p{
+    font-size: 13px;
+  }
+}
+@media (max-width: 320px) and (max-width:640px) {
+  .banner-text {
+    padding-top: 50px;
+}
+   .banner-text h1 {
+    font-size: 30px;
+}
+   .banner-text p {
+    font-size: 12px;
+    margin-bottom: 10px;
+}
+.banner-text p {
+    font-size: 13px;
+}
+
+  .testimonials blockquote {
+    padding: 20px 5% 0; }
+  .testimonials p {
+    font-size: 26px; } 
+  
+  }

@@ -1,0 +1,68 @@
+<IfModule mod_rewrite.c>
+RewriteEngine on 
+RewriteBase /vanlop/projcets/mktru/herbalshopthailand.com/main/production/
+#RewriteBase /2017/
+RewriteRule ^(back)/(.*)/(.*)/(.*)/(.*)$ index.php?onpage=$1&url=$2&a=$3&status=$4&id=$5 [L,QSA]
+RewriteRule ^(front|back)/(.*)/(.*)/(.*)$ index.php?onpage=$1&url=$2&a=$3&id=$4 [L,QSA]
+RewriteRule ^(front|back)/(.*)/(.*)$ index.php?onpage=$1&url=$2&a=$3 [L,QSA]
+RewriteRule ^(front|back)/(.*)$ index.php?onpage=$1&url=$2&a=index [L,QSA]
+RewriteRule ^(front|back)$ index.php?onpage=$1&url=$home&a=index [L,QSA]
+
+#admin
+RewriteRule ^cms$ index.php?onpage=back&url=home&a=index [L,QSA]
+
+#front
+
+#front
+RewriteRule ^(about)$ index.php?onpage=front&url=$1&a=index [L]
+RewriteRule ^(about)/$ index.php?onpage=front&url=$1&a=index [L]
+RewriteRule ^(about)/(.*)$ index.php?onpage=front&url=$1&a=info&artist_id=$2 [L]
+
+RewriteRule ^(artist)$ index.php?onpage=front&url=$1&a=index [L]
+RewriteRule ^(artist)/$ index.php?onpage=front&url=$1&a=index [L]
+RewriteRule ^(artist)/(.*)$ index.php?onpage=front&url=$1&a=info&artist_id=$2 [L]
+
+RewriteRule ^(event)$ index.php?onpage=front&url=$1&a=index [L]
+RewriteRule ^(event)/$ index.php?onpage=front&url=$1&a=index [L]
+RewriteRule ^(event)/(.*)$ index.php?onpage=front&url=$1&a=info&event_id=$2 [L]
+
+RewriteRule ^(media)$ index.php?onpage=front&url=$1&a=index [L]
+RewriteRule ^(media)/(.*)$ index.php?onpage=front&url=$1&a=$2 [L]
+
+#RewriteRule ^(underconstruction)$ index.php?onpage=front&url=$1&a=index [L]
+
+#RewriteRule ^(news)$ index.php?onpage=front&url=$1&a=index [L]
+#RewriteRule ^(news)/(.*)$ index.php?onpage=front&url=$1&a=info&news_id=$2 [L]
+
+#RewriteRule ^(event)$ index.php?onpage=front&url=$1&a=index [L]
+#RewriteRule ^(event)/(.*)$ index.php?onpage=front&url=$1&a=info&news_id=$2 [L]
+
+
+#RewriteRule ^(promotion)$ index.php?onpage=front&url=$1&a=index [L]
+#RewriteRule ^(promotion)/(.*)$ index.php?onpage=front&url=$1&a=info&news_id=$2 [L]
+
+#RewriteRule ^(page)/(.*)$ index.php?onpage=front&url=$1&a=index&page_id=$2 [L]
+
+#RewriteRule ^(register)$ index.php?onpage=front&url=$1&a=index [L]
+#RewriteRule ^(register)/(.*)$ index.php?onpage=front&url=$1&a=$2 [L]
+
+#RewriteRule ^(course)$ index.php?onpage=front&url=$1&a=index [L]
+#RewriteRule ^(course)/(.*)$ index.php?onpage=front&url=$1&a=info&course_id=$2 [L]
+
+
+#RewriteRule ^(career)/(.*)/(.*)$ index.php?onpage=front&url=$1&a=$2&job_id=$3 [L]
+#RewriteRule ^(career)$ index.php?onpage=front&url=$1&a=index [L]
+#RewriteRule ^(career)/(.*)$ index.php?onpage=front&url=$1&a=$2 [L]
+
+
+#RewriteRule ^(contact)$ index.php?onpage=front&url=$1&a=index [L]
+#RewriteRule ^(contact)/(.*)$ index.php?onpage=front&url=$1&a=$2 [L]
+
+#RewriteRule ^(media)$ index.php?onpage=front&url=$1&a=index [L]
+#RewriteRule ^(media)/(.*)$ index.php?onpage=front&url=$1&a=$2 [L]
+
+#RewriteRule ^(english_tip)$ index.php?onpage=front&url=$1&a=index [L]
+#RewriteRule ^(english_tip)/(.*)$ index.php?onpage=front&url=$1&a=info&news_id=$2 [L]
+
+
+</IfModule>
