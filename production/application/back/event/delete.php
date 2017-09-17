@@ -12,8 +12,8 @@ $option_im = array(
 $query_im = $db->select($option_im);
 $rs_im = $db->get($query_im);
 $fullname = $rs_im['firstnameTH']." ".$rs_im['lastnameTH'];
-$path = "../upload/event/";
-if($rs_im['news_photoslide'] != "event_cms.jpg") {
+$path = "./upload/event/";
+if($rs_im['news_photoslide'] != "news_cms.jpg") {
 	// @unlink($path . $rs_im['news_photo']);
 	@unlink($path . $rs_im['news_photoslide']);
 	// @unlink($path . "thumb_".$rs_im['news_photoslide']);
@@ -25,9 +25,9 @@ $query = $db->delete("bt_news", "news_id='{$_GET['id']}'");
 if($query == TRUE){
 		/*Log file*/
 		$value_log = array(
-			"log_type" => 'News',
+			"log_type" => 'Event',
 			"log_typeID" => $_GET['id'],
-			"log_detail" => 'ลบข่าว',
+			"log_detail" => 'ลบกิจกรรม',
 			"log_date" => date('Y-m-d H:i:s'),
 			"log_ip" => $_SERVER["REMOTE_ADDR"],
 			"log_user" => $_SESSION[_ss . 'username'] ,

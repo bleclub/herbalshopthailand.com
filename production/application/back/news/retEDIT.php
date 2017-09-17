@@ -42,6 +42,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 		"news_content_en" => trim($_POST['news_content_en']),
 		"news_photoslide" => $image,
 		"news_slide" => trim($_POST['news_slide']),
+		"news_date" => trim($_POST['news_date']),
 		"news_lastupdate" => date('Y-m-d H:i:s'),
 		"news_link" => trim($_POST['news_link']),
 		"news_order" => '0',

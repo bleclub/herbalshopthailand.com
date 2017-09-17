@@ -522,6 +522,34 @@ ul li {
   color: #47c9af;
 }
 
+.load_more, .load_more_event {
+  margin: 20px 0 0;
+  border: 0;
+  width: 120px;
+  height: 40px;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 none;
+  border: 0 none;
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  transition: 0.3s;
+}
+.load_more:hover, .load_more_event:hover {
+  background-color: #47c9af;
+  color: #fff;
+}
+
+button.load_more[disabled], button.load_more_event[disabled] {
+  opacity: 0.5;
+}
+
+button.load_more[disabled]:hover, button.load_more_event[disabled]:hover{
+  background-color: #eeeeee;
+  color: #6c7279;
+}
+
+
 /* ==========================================================================
 	$title_page
 ========================================================================== */

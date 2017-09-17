@@ -27,9 +27,15 @@
 	$row_user = $db->rows($query_user);
 	
 	//News number
-	$sql_news = "SELECT * FROM `bt_news` where officeID='".$_SESSION[_ss . 'officeID']."'";
+	$sql_news = "SELECT * FROM `bt_news` where officeID='".$_SESSION[_ss . 'officeID']."' and news_categories = 'news'";
 	$query_news= $db->query($sql_news);
 	$row_news = $db->rows($query_news);
+
+	//Event number
+	$sql_event = "SELECT * FROM `bt_news` where officeID='".$_SESSION[_ss . 'officeID']."' and news_categories = 'event'";
+	$query_event= $db->query($sql_event);
+	$row_event = $db->rows($query_event);
+	
 	
 	//Office name
 	$sql_office = "SELECT * FROM `bt_office` where officeID='".$_SESSION[_ss . 'officeID']."'";
@@ -86,8 +92,8 @@
               <div class="info-box">
                 <span class="info-box-icon bg-yellow"><i class="ion ion-document-text"></i></span>
                 <div class="info-box-content">
-                  <span class="info-box-text">Number of Article</span><br />
-                  <span class="info-box-number" style="font-size:14px;"><?php echo number_format($row_user); ?> <small>articles</small></span>
+                  <span class="info-box-text">Number of Event</span><br />
+                  <span class="info-box-number" style="font-size:14px;"><?php echo number_format($row_event); ?> <small>events</small></span>
                 </div><!-- /.info-box-content -->
               </div><!-- /.info-box -->
 						</div><!-- /.col -->

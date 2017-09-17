@@ -40,6 +40,12 @@
                     </div>
                          <!--News section  -->
                          <div id="snav-content1">
+                            <div id="result_news"></div>
+                            <div class="col-sm-12 text-center">
+                                <button class="load_more bt" id="load_more_button" class="text-center">เพิ่มเติม</button>
+                                <div class="animation_image" style="display:none;"><img src="<?php echo $baseUrl."/assets/front_end/images/fancybox_loading.gif";?>"> Loading...</div>
+                            </div>
+                         <?php /*
                                 <div class="col-lg-3 col-md-6 col-sm-6">
                                     <img src="<?php echo $baseUrl; ?>/assets/front_end/images/news/news_img01.jpg" class="img-responsive" alt="">
                                     <div class="content">
@@ -113,11 +119,17 @@
                                         <p><a href="#">อ่านต่อ</a></p>
                                     </div>
                                 </div>
+                                */ ?>
                          </div>
 
                         <!-- Event section -->
                          <div id="snav-content2">
-
+                         <div id="result_event"></div>
+                            <div class="col-sm-12 text-center">
+                                <button class="load_more_event bt" id="load_more_button" class="text-center">เพิ่มเติม</button>
+                                <div class="animation_image" style="display:none;"><img src="<?php echo $baseUrl."/assets/front_end/images/fancybox_loading.gif";?>"> Loading...</div>
+                            </div>
+                         <?php /*
                                  <div class="col-lg-3 col-md-6 col-sm-6">
                                         <img src="<?php echo $baseUrl; ?>/assets/front_end/images/news/news_img05.jpg" class="img-responsive" alt="">
                                         <div class="content">
@@ -191,6 +203,7 @@
                                         <p><a href="#">อ่านต่อ</a></p>
                                     </div>
                                 </div>
+                                */ ?>
                          </div>
             </div>
         
@@ -217,11 +230,105 @@
 
     <script type="text/javascript" src="<?php echo $baseUrl; ?>/assets/front_end/js/plugins.js"></script> 
     <script>
-          
           $(function() {
               $( "#side-navigation" ).tabs({ show: { effect: "fade", duration: 400 } });
           });
      </script> 
+     <script type="text/javascript">
+            $(document).ready(function() {
+                var track_click = 0; //track user click on "load more" button, righ now it is 0 click
+                var pagetitle = 'news';
+                var baseUrl = '<?php echo $baseUrl; ?>';
+                var total_pages = 8;
+                $('#result_news').load("<?php echo $baseUrl; ?>/ajax/fetch_news.php", {'page':track_click, 'pagetitle':pagetitle, 'baseUrl':baseUrl}, function() {track_click++;}); //initial data to load
+
+                $(".load_more").click(function (e) { //user clicks on button
+                
+                    $(this).hide(); //hide load more button on click
+                    $('.animation_image').show(); //show loading image
+
+                    if(track_click <= total_pages) //make sure user clicks are still less than total pages
+                    {
+                        //post page number and load returned data into result element
+                        $.post('<?php echo $baseUrl; ?>/ajax/fetch_news.php',{'page':track_click, 'pagetitle':pagetitle, 'baseUrl':baseUrl}, function(data) {
+                        
+                            $(".load_more").show(); //bring back load more button
+                            
+                            $("#result_news").append(data); //append data received from server
+                            
+                            //scroll page to button element
+                            $("html, body").animate({scrollTop: $(".load_more").offset().top-500}, 1000);
+                            
+                            //hide loading image
+                            $('.animation_image').hide(); //hide loading image once data is received
+                
+                            track_click++; //user click increment on load button
+                        
+                        }).fail(function(xhr, ajaxOptions, thrownError) { 
+                            alert(thrownError); //alert any HTTP error
+                            $(".load_more").show(); //bring back load more button
+                            $('.animation_image').hide(); //hide loading image once data is received
+                        });
+                        
+                        
+                        if(track_click >= total_pages-1)
+                        {
+                            //reached end of the page yet? disable load button
+                            $(".load_more").attr("disabled", "disabled");
+                        }
+                    }
+                    
+                    });
+
+                
+                
+                var track_click_event = 0; //track user click on "load more" button, righ now it is 0 click
+                var pagetitle_event = 'event';
+                var baseUrl_event = '<?php echo $baseUrl; ?>';
+                var total_pages_event = 8;
+                $('#result_event').load("<?php echo $baseUrl; ?>/ajax/fetch_event.php", {'page':track_click_event, 'pagetitle':pagetitle_event, 'baseUrl':baseUrl_event}, function() {track_click_event++;}); //initial data to load
+
+                $(".load_more_event").click(function (e) { //user clicks on button
+                
+                    $(this).hide(); //hide load more button on click
+                    $('.animation_image').show(); //show loading image
+
+                    if(track_click_event <= total_pages_event) //make sure user clicks are still less than total pages
+                    {
+                        //post page number and load returned data into result element
+                        $.post('<?php echo $baseUrl; ?>/ajax/fetch_event.php',{'page':track_click_event, 'pagetitle':pagetitle_event, 'baseUrl':baseUrl_event}, function(data) {
+                        
+                            $(".load_more_event").show(); //bring back load more button
+                            
+                            $("#result_event").append(data); //append data received from server
+                            
+                            //scroll page to button element
+                            $("html, body").animate({scrollTop: $(".load_more_event").offset().top-500}, 1000);
+                            
+                            //hide loading image
+                            $('.animation_image').hide(); //hide loading image once data is received
+                
+                            track_click_event++; //user click increment on load button
+                        
+                        }).fail(function(xhr, ajaxOptions, thrownError) { 
+                            alert(thrownError); //alert any HTTP error
+                            $(".load_more_event").show(); //bring back load more button
+                            $('.animation_image').hide(); //hide loading image once data is received
+                        });
+                        
+                        
+                        if(track_click >= total_pages-1)
+                        {
+                            //reached end of the page yet? disable load button
+                            $(".load_more_event").attr("disabled", "disabled");
+                        }
+                    }
+                    
+                    });
+
+
+            });
+    </script>
 
 </body>
 </html>

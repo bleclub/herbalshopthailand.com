@@ -4,7 +4,7 @@
  */
  
 $news_type = $_GET['url'];
-$title = "Add new event - เพิ่มกิจกรรม";
+$title = "Add event - เพิ่มกิจกรรม";
 $menu_event = "active";
 
 
@@ -70,7 +70,7 @@ label.error {
               <div class="nav-tabs-custom">
                 <ul class="nav nav-tabs">
                   <li class="active"><a href="#tab_1" data-toggle="tab">Thai</a></li>
-                  <li><a href="#tab_2" data-toggle="tab">English</a></li>
+                  <!-- <li><a href="#tab_2" data-toggle="tab">English</a></li> -->
                   <li class="pull-right"><a href="#" class="text-muted"><i class="fa fa-gear"></i></a></li>
                 </ul>
                
@@ -118,10 +118,18 @@ label.error {
               		  <div class="form-group" style="float:left; border:1px solid #CACACA; padding:10px;">
                               <label for="exampleInputFile">Picture</label>
                               <input type="file" name="image" id="exampleInputFile">
-                              <p class="help-block">Browse your photo and sizing: 416 x 256px</p>
+                              <p class="help-block">Browse your photo and recommended sizing: 529 x 295px</p>
                       </div> 
                     
                          <input type="hidden" name="officeID" value="<?php echo $_SESSION[_ss . 'officeID']; ?>" />
+                    </div>
+                    <div class="form-group col-md-3" style="flex:left" required="" aria-required="true"> 
+                          <div class="input-group">
+                            <div class="input-group-addon">
+                              <i class="fa fa-calendar"></i>
+                            </div>
+                            <input name="news_date" placeholder="วันที่" class="form-control pull-right" id="createdate" required="" aria-required="true" type="text">
+                          </div><!-- /.input group -->
                     </div>
                      <!-- /.col -->
                  	<!-- <div class="form-group col-md-3">
@@ -186,14 +194,14 @@ label.error {
    
     <script src="<?php echo $baseUrl; ?>/assets/admin/plugins/datepicker/bootstrap-datepicker.js"></script>
      <!-- AdminLTE App -->
-	<script src="<?php echo $baseUrl; ?>/assets/admin/dist/js/app.min.js"></script>
+	  <script src="<?php echo $baseUrl; ?>/assets/admin/dist/js/app.min.js"></script>
     
     <script type="text/javascript" src="<?php echo $baseUrl; ?>/assets/admin/js/jquery.form.min.js"></script>
  
     <script type="text/javascript">
 		//customize values to suit your needs.
 		var max_file_size 		= 8048576; //maximum allowed file size
-		var allowed_file_types 	= ['image/png', 'image/gif', 'image/jpeg', 'image/pjpeg']; //allowed file types
+		var allowed_file_types 	= ['image/png', 'image/gif', 'image/jpeg', 'image/pjpeg', 'image/JPG']; //allowed file types
 		var message_output_el 	= 'output'; //ID of an element for response output
 		var loadin_image_el 	= 'loading-img'; //ID of an loading Image element
 		
@@ -293,7 +301,7 @@ label.error {
 		
         $('#createdate').datepicker({format: 'yyyy-mm-dd'});
         CKEDITOR.replace('contentTH');
-		CKEDITOR.replace('contentEN');
+		    CKEDITOR.replace('contentEN');
       });
     </script>
 

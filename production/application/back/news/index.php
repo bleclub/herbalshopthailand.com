@@ -85,7 +85,7 @@ require 'template/back/header.php';
                   <table id="example1" class="table table-bordered table-striped">
                     <thead>
                       <tr>
-                        <th>Date create</th>
+                        <th>Date</th>
                         <th>Subject</th>
                         <th>User</th>
                         <th>View</th>
@@ -97,7 +97,7 @@ require 'template/back/header.php';
                         while ($rs_news = $db->get($query_news)) {
                     ?>
                       <tr>
-                        <td><?php echo thaidate($rs_news['news_createdate']); ?></td>
+                        <td><?php echo dateFormat($rs_news['news_date']); ?></td>
                         <td><?php if($rs_news['news_subject_th'] <> "") { echo mb_substr($rs_news['news_subject_th'], 0,60, "UTF-8")."..."; } else { echo mb_substr($rs_news['news_subject_en'], 0,60, "UTF-8")."...";  } ?></td>
                         <td><?php echo $rs_news['title_nameTH'].' '.$rs_news['firstnameTH'].' '.$rs_news['lastnameTH']; ?></td>
                         <td><?php echo $rs_news['news_view']; ?></td>

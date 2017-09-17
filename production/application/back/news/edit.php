@@ -129,10 +129,18 @@ label.error {
                               <img src="<?php echo $baseUrl; ?>/upload/news/<?php echo $rs_pw['news_photoslide']; ?>" width="375"><br>
                               <label for="exampleInputFile">Picture</label>
                               <input type="file" name="image" id="exampleInputFile">
-                              <p class="help-block">Browse your photo and sizing: 416 x 256px</p>
+                              <p class="help-block">Browse your photo and recommended sizing: 529 x 295px</p>
                       </div> 
                          <input type="hidden" name="news_id" value="<?php echo $_GET['id']; ?>">
                          <input type="hidden" name="officeID" value="<?php echo $_SESSION[_ss . 'officeID']; ?>" />
+                    </div>
+                    <div class="form-group col-md-3" style="flex:left" required="" aria-required="true"> 
+                          <div class="input-group">
+                            <div class="input-group-addon">
+                              <i class="fa fa-calendar"></i>
+                            </div>
+                            <input name="news_date" placeholder="วันที่" value="<?php echo $rs_pw['news_date'];?>" class="form-control pull-right" id="createdate" required="" aria-required="true" type="text">
+                          </div><!-- /.input group -->
                     </div>
                      <!-- /.col -->
                  	<!-- <div class="form-group col-md-3">

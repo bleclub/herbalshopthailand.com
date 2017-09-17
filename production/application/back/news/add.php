@@ -113,8 +113,8 @@ label.error {
                 </div><!-- /.tab-content --> 
               </div><!-- nav-tabs-custom -->
 			
-             
-             	
+                    
+
               		  <div class="form-group" style="float:left; border:1px solid #CACACA; padding:10px;">
                               <label for="exampleInputFile">Picture</label>
                               <input type="file" name="image" id="exampleInputFile">
@@ -122,6 +122,14 @@ label.error {
                       </div> 
                     
                          <input type="hidden" name="officeID" value="<?php echo $_SESSION[_ss . 'officeID']; ?>" />
+                    </div>
+                    <div class="form-group col-md-3" style="flex:left" required="" aria-required="true"> 
+                          <div class="input-group">
+                            <div class="input-group-addon">
+                              <i class="fa fa-calendar"></i>
+                            </div>
+                            <input name="news_date" placeholder="วันที่" class="form-control pull-right" id="createdate" required="" aria-required="true" type="text">
+                          </div><!-- /.input group -->
                     </div>
                      <!-- /.col -->
                  	<!-- <div class="form-group col-md-3">

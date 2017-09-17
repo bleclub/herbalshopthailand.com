@@ -12,7 +12,7 @@
 
 $news_type = $_GET['url'];
 if($news_type == "event"){
-	$title = 'Event - กิจกรรม';
+	$title = 'Event update - กิจกรรม';
 	$menu_event = "active";
 } else { 
 	header("Location: ".$baseUrl."/cms");
@@ -24,9 +24,9 @@ if($news_type == "event"){
 
 $db = new database();
 if($_SESSION[_ss . 'levelaccess'] == 'superadmin'){
-	$sql_news = "select * from btview_news where news_categories = '$news_type'";
+	$sql_news = "select * from btview_news where news_categories = '$news_type' order by news_createdate desc";
 } else {
-	$sql_news = "select * from btview_news where news_categories = '$news_type' and officeID = '".$_SESSION[_ss . 'officeID']."'";
+	$sql_news = "select * from btview_news where news_categories = '$news_type' and officeID = '".$_SESSION[_ss . 'officeID']."' order by news_createdate desc";
 }
 
 
@@ -76,7 +76,7 @@ require 'template/back/header.php';
                 <div class="box-header">
                   <!-- <h3 class="box-title">Data Table With Full Features</h3> -->
                   <div class="box-tools pull-right">
-                	<a href="<?php echo $baseUrl;?>/back/event/add" class="btn btn-box-tool"><i class="fa fa-plus"></i> Add new event</a>
+                	<a href="<?php echo $baseUrl;?>/back/event/add" class="btn btn-box-tool"><i class="fa fa-plus"></i> เพิ่มกิจกรรม</a>
                 	<!--<button class="btn btn-box-tool" data-widget="remove"><i class="fa fa-remove"></i></button>-->
               	</div>
                 </div><!-- /.box-header -->
@@ -97,7 +97,7 @@ require 'template/back/header.php';
                         while ($rs_news = $db->get($query_news)) {
                     ?>
                       <tr>
-                        <td><?php echo thaidate($rs_news['news_createdate']); ?></td>
+                        <td><?php echo dateFormat($rs_news['news_date']); ?></td>
                         <td><?php if($rs_news['news_subject_th'] <> "") { echo mb_substr($rs_news['news_subject_th'], 0,60, "UTF-8")."..."; } else { echo mb_substr($rs_news['news_subject_en'], 0,60, "UTF-8")."...";  } ?></td>
                         <td><?php echo $rs_news['title_nameTH'].' '.$rs_news['firstnameTH'].' '.$rs_news['lastnameTH']; ?></td>
                         <td><?php echo $rs_news['news_view']; ?></td>
@@ -160,7 +160,11 @@ require 'template/back/footer.php';
     
  	<script>
       $(function () {
-        $("#example1").DataTable();
+        // $("#example1").DataTable();
+
+        $('#example1').DataTable({
+            "order": [[ 1, "desc" ]]
+        });
       });
     </script>
 

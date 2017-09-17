@@ -12,7 +12,7 @@ $option_im = array(
 $query_im = $db->select($option_im);
 $rs_im = $db->get($query_im);
 $fullname = $rs_im['firstnameTH']." ".$rs_im['lastnameTH'];
-$path = "../upload/news/";
+$path = "./upload/news/";
 if($rs_im['news_photoslide'] != "news_cms.jpg") {
 	// @unlink($path . $rs_im['news_photo']);
 	@unlink($path . $rs_im['news_photoslide']);

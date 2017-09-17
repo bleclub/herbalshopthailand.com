@@ -17,10 +17,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $type = end(explode(".", $_FILES["image"]["name"]));
         $image = $filename . "." . $type;
 
-		$path = '../upload/event/';
+		$path = './upload/event/';
 		uploadfullimg( $filename , $path);
 		
-		 if ($rs_im['news_photoslide'] != "event_cms.jpg") {
+		 if ($rs_im['news_photoslide'] != "news_cms.jpg") {
             @unlink($path . $rs_im['news_photoslide']);
             // @unlink($path . "thumb_" . $rs_im['news_photoslide']);
 			// @unlink($path . $rs_im['news_photo']);
@@ -42,6 +42,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 		"news_content_en" => trim($_POST['news_content_en']),
 		"news_photoslide" => $image,
 		"news_slide" => trim($_POST['news_slide']),
+		"news_date" => trim($_POST['news_date']),		
 		"news_lastupdate" => date('Y-m-d H:i:s'),
 		"news_link" => trim($_POST['news_link']),
 		"news_order" => '0',

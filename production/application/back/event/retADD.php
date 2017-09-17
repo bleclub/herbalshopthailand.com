@@ -9,7 +9,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $type = end(explode(".", $_FILES["image"]["name"]));
         $image = $filename . "." . $type;
 
-		$path = "../upload/event/";
+		$path = "./upload/event/";
 		uploadfullimg($filename,$path);
 
     } else {
@@ -28,6 +28,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 		"news_content_en" => trim($_POST['news_content_en']),
 		"news_photoslide" => $image,
 		"news_slide" => trim($_POST['news_slide']),
+        "news_date" => trim($_POST['news_date']),
         "news_createdate" => date('Y-m-d H:i:s'),
 		"news_lastupdate" => date('Y-m-d H:i:s'),
 		"news_link" => trim($_POST['news_link']),
@@ -43,7 +44,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 			$value_log = array(
 				"log_type" => 'News',
 				"log_typeID" => $db->insert_id(),
-				"log_detail" => 'เพิ่มข่าว'.$_POST['news_categories'],
+				"log_detail" => 'เพิ่ม '.$_POST['news_categories'],
 				"log_date" => date('Y-m-d H:i:s'),
 				"log_ip" => $_SERVER["REMOTE_ADDR"],
 				"log_user" => $_SESSION[_ss . 'username'] ,
