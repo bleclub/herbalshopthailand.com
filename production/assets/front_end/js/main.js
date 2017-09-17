@@ -40,10 +40,10 @@ $(document).ready(function() {
 	$('.work-box').fancybox();
 
 	// Flexslider
-	$('.flexslider').flexslider({
-		animation: "fade",
-		directionNav: false,
-	});
+	// $('.flexslider').flexslider({
+	// 	animation: "slide",
+	// 	directionNav: false,
+	// });
 
 	// Page Scroll
 	var sections = $('section')

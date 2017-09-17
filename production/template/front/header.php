@@ -49,7 +49,9 @@ if($row_log > 0 ){
     <meta charset="utf-8">
     <meta name="description" content="">
 	<meta name="viewport" content="width=device-width, user-scalable=no">
-	<title><?php echo $title; ?></title>
+    <title><?php echo $title; ?></title>
+    <meta name="description" content="<?php echo $description; ?>">
+    <meta name="keywords" content="<?php echo $keywords; ?>">
 
     <link rel="stylesheet" href="<?php echo $baseUrl; ?>/assets/front_end/css/bootstrap.min.css">
     <link rel="stylesheet" href="<?php echo $baseUrl; ?>/assets/front_end/css/flexslider.css">
@@ -77,57 +79,5 @@ if($row_log > 0 ){
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="msapplication-TileImage" content="<?php echo $baseUrl; ?>/assets/favicon/ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
-
-
-    <!-- SLIDER REVOLUTION 4.x CSS SETTINGS -->
-    <link rel="stylesheet" type="text/css" href="<?php echo $baseUrl; ?>/assets/front_end/include/rs-plugin/css/settings.css" media="screen" />
-    <style>
-        .revo-slider-emphasis-text {
-            font-size: 64px;
-            font-weight: 700;
-            letter-spacing: -1px;
-            font-family: 'Raleway', sans-serif;
-            padding: 15px 20px;
-            /* border-top: 2px solid #FFF;
-            border-bottom: 2px solid #FFF; */
-        }
-
-        .revo-slider-desc-text {
-            font-size: 20px;
-            font-family: 'Lato', sans-serif;
-            width: 650px;
-            text-align: center;
-            line-height: 1.5;
-        }
-
-        .revo-slider-caps-text {
-            font-size: 16px;
-            font-weight: 400;
-            letter-spacing: 3px;
-            font-family: 'Raleway', sans-serif;
-        }
-    </style>
-</head>
-
-<body>
-    <header id="header">
-        <div class="header-content clearfix">
-            <a class="logo" href="#"><img src="<?php echo $baseUrl; ?>/assets/front_end/images/ThaiHerbal-logo-white.png" alt="Thai Herbal Logo" class="img-responsive"></a>
-            <nav class="navigation" role="navigation">
-                <ul class="primary-nav">
-                    <li><a href="#slider">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#product">Products</a></li>
-                    <li><a href="#news">News & Event</a></li>
-                    <li><a href="#article">Article</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </nav>
-            <a href="#" class="nav-toggle">Menu<span></span></a>
-        </div>
-        <!-- header content -->
-    </header>
-	<!-- header -->
-	
 
 	

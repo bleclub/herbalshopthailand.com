@@ -1,11 +1,47 @@
 <!-- Header -->
 
 <?php
-	$title = 'Herbalshop Thailand';
+    $title = 'Herbalshop Thailand';
+    $description = 'Herbalshop Thailand';
+    $keywords = 'Herbalshop Thailand';
+
 	$home_selected = "selected"; // Menu selected
     require 'template/front/header.php';
 	// require 'controllers/front/home.php';
 ?>
+
+    <META name="robots" content="index,follow">
+
+    <!-- SLIDER REVOLUTION 4.x CSS SETTINGS -->
+    <link rel="stylesheet" type="text/css" href="<?php echo $baseUrl; ?>/assets/front_end/include/rs-plugin/css/settings.css" media="screen" />
+    <style>
+        .revo-slider-emphasis-text {
+            font-size: 64px;
+            font-weight: 700;
+            letter-spacing: -1px;
+            font-family: 'Raleway', sans-serif;
+            padding: 15px 20px;
+            /* border-top: 2px solid #FFF;
+            border-bottom: 2px solid #FFF; */
+        }
+
+        .revo-slider-desc-text {
+            font-size: 20px;
+            font-family: 'Lato', sans-serif;
+            width: 650px;
+            text-align: center;
+            line-height: 1.5;
+        }
+
+        .revo-slider-caps-text {
+            font-size: 16px;
+            font-weight: 400;
+            letter-spacing: 3px;
+            font-family: 'Raleway', sans-serif;
+        }
+    </style>
+
+<?php require 'template/front/menu.php'; ?>
 
 <!-- Content -->
 
