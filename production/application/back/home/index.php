@@ -39,9 +39,6 @@
 	}
 
 
-
-
-
     require('template/back/header.php');
 
 ?>
@@ -63,15 +60,7 @@
         <!-- Main content -->
         <section class="content">
           <div class="row">
-            <div class="col-md-3 col-sm-6 col-xs-12">
-              <div class="info-box">
-                <span class="info-box-icon bg-aqua"><i class="ion ion-document-text"></i></span>
-                <div class="info-box-content">
-                  <span class="info-box-text">Number of event</span><br />
-                  <span class="info-box-number" style="font-size:14px;"><?php echo number_format($row_news); ?> <small>Event</small></span>
-                </div><!-- /.info-box-content -->
-              </div><!-- /.info-box -->
-            </div><!-- /.col -->
+           
             <div class="col-md-3 col-sm-6 col-xs-12">
               <div class="info-box">
                 <span class="info-box-icon bg-red"><i class="ion ion-eye"></i></span>
@@ -80,26 +69,34 @@
                   <span class="info-box-number" style="font-size:14px;"><?php echo number_format($total_view); ?> <small>Pageviews</small></span>
                 </div><!-- /.info-box-content -->
               </div><!-- /.info-box -->
+						</div><!-- /.col -->
+						<div class="col-md-3 col-sm-6 col-xs-12">
+              <div class="info-box">
+                <span class="info-box-icon bg-aqua"><i class="ion ion-document-text"></i></span>
+                <div class="info-box-content">
+                  <span class="info-box-text">News and Event</span><br />
+                  <span class="info-box-number" style="font-size:14px;"><?php echo number_format($row_news); ?> <small>issues</small></span>
+                </div><!-- /.info-box-content -->
+              </div><!-- /.info-box -->
             </div><!-- /.col -->
 
             <!-- fix for small devices only -->
             <div class="clearfix visible-sm-block"></div>
-
             <div class="col-md-3 col-sm-6 col-xs-12">
+              <div class="info-box">
+                <span class="info-box-icon bg-yellow"><i class="ion ion-document-text"></i></span>
+                <div class="info-box-content">
+                  <span class="info-box-text">Number of Article</span><br />
+                  <span class="info-box-number" style="font-size:14px;"><?php echo number_format($row_user); ?> <small>articles</small></span>
+                </div><!-- /.info-box-content -->
+              </div><!-- /.info-box -->
+						</div><!-- /.col -->
+						<div class="col-md-3 col-sm-6 col-xs-12">
               <div class="info-box">
                 <span class="info-box-icon bg-green"><i class="ion ion-email-unread"></i></span>
                 <div class="info-box-content">
                   <span class="info-box-text">Number of enquiry</span><br />
-                  <span class="info-box-number" style="font-size:14px;"><?php echo number_format($row_complaint); ?></span>
-                </div><!-- /.info-box-content -->
-              </div><!-- /.info-box -->
-            </div><!-- /.col -->
-            <div class="col-md-3 col-sm-6 col-xs-12">
-              <div class="info-box">
-                <span class="info-box-icon bg-yellow"><i class="ion ion-ios-people-outline"></i></span>
-                <div class="info-box-content">
-                  <span class="info-box-text">Number of artist</span><br />
-                  <span class="info-box-number" style="font-size:14px;"><?php echo number_format($row_user); ?> People</span>
+                  <span class="info-box-number" style="font-size:14px;"><?php echo number_format($row_complaint); ?> <small>enquire</small></span>
                 </div><!-- /.info-box-content -->
               </div><!-- /.info-box -->
             </div><!-- /.col -->
@@ -128,19 +125,19 @@
 								$query_stat = $db->query($sql_stat);
 								$rows_pw = $db->rows($query_stat);
 							?>
-							<select name="year" id="formyear" class="form-control">
-                            	<option value="">-Please select year-</option>
-                                <?php
-									while ($rs_stat = $db->get($query_stat)) {
-										echo '<option value="'.$rs_stat['stat_year'].'">'.$rs_stat['stat_year'].'</option>';
-									}
-								?>
-                            </select>
+											<select name="year" id="formyear" class="form-control">
+												<option value="">-Please select year-</option>
+													<?php
+														while ($rs_stat = $db->get($query_stat)) {
+															echo '<option value="'.$rs_stat['stat_year'].'">'.$rs_stat['stat_year'].'</option>';
+														}
+													?>
+											</select>
                 			<input type="submit" value="View" class="btn btn-success">
                     
                 		</form>
                         <hr />
-                        
+
                     </div>
                     <div class="col-md-12">
                       <p class="text-center">

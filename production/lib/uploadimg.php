@@ -8,7 +8,7 @@ function uploadfullimg($filename, $path) {
 		
 		 
 		  
-		  if ($_FILES['image']['type'] == 'image/jpeg' OR $_FILES['image']['type'] == 'image/jpg' OR $_FILES['image']['type'] == 'image/pjpeg') {
+		  if ($_FILES['image']['type'] == 'image/jpeg' OR $_FILES['image']['type'] == 'image/jpg' OR $_FILES['image']['type'] == 'image/JPG' OR $_FILES['image']['type'] == 'image/pjpeg') {
 		  	 $images = $filename.".jpg";
 		   } elseif ($_FILES['image']['type'] == 'image/x-png' OR $_FILES['image']['type'] == 'image/png') {
 			 $images = $filename.".png";   
@@ -33,7 +33,7 @@ function uploadimg($filename, $width, $get_height, $path) {
     if (trim($_FILES["image"]["tmp_name"]) != "") {
         $tmp_images = $_FILES["image"]["tmp_name"];
         // type select
-        if ($_FILES['image']['type'] == 'image/jpeg' OR $_FILES['image']['type'] == 'image/jpg' OR $_FILES['image']['type'] == 'image/pjpeg') {
+        if ($_FILES['image']['type'] == 'image/jpeg' OR $_FILES['image']['type'] == 'image/jpg' OR $_FILES['image']['type'] == 'image/JPG' OR $_FILES['image']['type'] == 'image/jpg' OR $_FILES['image']['type'] == 'image/pjpeg') {
             $images = $filename . ".jpg";
             //upload source image
             $size = getimagesize($tmp_images);
@@ -95,7 +95,7 @@ function uploadimg($filename, $width, $get_height, $path) {
 }
 
 function checkimg() {
-    if ($_FILES['image']['type'] == 'image/jpeg' OR $_FILES['image']['type'] == 'image/jpg' OR $_FILES['image']['type'] == 'image/pjpeg' OR $_FILES['image']['type'] == 'image/x-png' OR $_FILES['image']['type'] == 'image/png' OR $_FILES['image']['type'] == 'image/gif') {
+    if ($_FILES['image']['type'] == 'image/jpeg' OR $_FILES['image']['type'] == 'image/jpg' OR $_FILES['image']['type'] == 'image/JPG' OR $_FILES['image']['type'] == 'image/pjpeg' OR $_FILES['image']['type'] == 'image/x-png' OR $_FILES['image']['type'] == 'image/png' OR $_FILES['image']['type'] == 'image/gif') {
         return TRUE;
     } else {
         return FALSE;

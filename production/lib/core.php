@@ -1,8 +1,8 @@
 <?php
 
 function base_url() {
-    return "http://localhost/ProjectWeb/MKTRU/herbalshopthailand.com/production";
-    // return "http://localhost/vanlop/projcets/mktru/herbalshopthailand.com/main/production";
+    // return "http://localhost/ProjectWeb/MKTRU/herbalshopthailand.com/production";
+    return "http://localhost/vanlop/projcets/mktru/herbalshopthailand.com/main/production";
 }
 
 function base_path() {

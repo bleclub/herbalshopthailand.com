@@ -7,8 +7,8 @@
             <ul class="primary-nav">
                 <li><a href="<?php echo $baseUrl; ?>">Home</a></li>
                 <li><a href="<?php echo $baseUrl; ?>/about">About</a></li>
-                <li><a href="#product">Products</a></li>
-                <li><a href="<?php echo $baseUrl; ?>/news">News & Event</a></li>
+                <li><a href="http://www.herbalshopthailand.com/index.php?route=common/home">Products</a></li>
+                <li><a href="<?php echo $baseUrl; ?>/news_event">News & Event</a></li>
                 <li><a href="#article">Article</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>

@@ -198,22 +198,25 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <li class="header">Main Menu</li>
             <!-- Optionally, you can add icons to the links -->
             <li class="<?php echo @$menu_home; ?>"><a href="<?php echo $baseUrl; ?>/back/home">
-              <i class="fa fa-link"></i> <span>Home</span></a>
+              <i class="fa fa-link"></i> <span>หน้าหลัก</span></a>
             </li>
-             <li class="<?php echo @$menu_about; ?>"><a href="<?php echo $baseUrl; ?>/back/content/index/aboutus">
-              <i class="fa fa-link"></i> <span>About Us</span></a>
+             <li class="<?php echo @$menu_about; ?>"><a href="<?php echo $baseUrl; ?>/back/content/index/about">
+              <i class="fa fa-link"></i> <span>ประวัติความเป็นมา</span></a>
             </li>
-            <li class="<?php echo @$menu_support; ?>"><a href="<?php echo $baseUrl; ?>/back/content/index/supportus">
-              <i class="fa fa-link"></i> <span>Support Us</span></a>
+            <li class="<?php echo @$menu_news; ?>"><a href="<?php echo $baseUrl; ?>/back/news">
+              <i class="fa fa-link"></i> <span>ข่าวอัพเดท</span></a>
             </li>
-             <li class="<?php echo @$menu_artist; ?>"><a href="<?php echo $baseUrl; ?>/back/artist">
-              <i class="fa fa-link"></i> <span>Our Artist</span></a>
+            <li class="<?php echo @$menu_event; ?>"><a href="<?php echo $baseUrl; ?>/back/event">
+              <i class="fa fa-link"></i> <span>กิจกรรม</span></a>
             </li>
-             <li class="<?php echo @$menu_event; ?>"><a href="<?php echo $baseUrl; ?>/back/event">
+             <li class="<?php echo @$menu_article; ?>"><a href="<?php echo $baseUrl; ?>/back/article">
+              <i class="fa fa-link"></i> <span>บทความ</span></a>
+            </li>
+            <?php /* <li class="<?php echo @$menu_event; ?>"><a href="<?php echo $baseUrl; ?>/back/event">
               <i class="fa fa-link"></i> <span>Event</span></a>
-            </li>
+            </li>  */ ?>
             <li class="<?php echo @$menu_media; ?>"><a href="<?php echo $baseUrl; ?>/back/media">
-              <i class="fa fa-link"></i> <span>Media</span></a>
+              <i class="fa fa-link"></i> <span>จัดการรูปภาพ</span></a>
             </li>
             <!-- <li class="<?php echo @$menu_enquiry; ?>"><a href="<?php echo $baseUrl; ?>/back/home">
               <i class="fa fa-link"></i> <span>Enquiry</span></a>

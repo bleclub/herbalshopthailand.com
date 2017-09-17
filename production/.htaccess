@@ -1,7 +1,7 @@
 <IfModule mod_rewrite.c>
 RewriteEngine on 
-RewriteBase /ProjectWeb/MKTRU/herbalshopthailand.com/production/
-#RewriteBase /vanlop/projcets/mktru/herbalshopthailand.com/main/production/
+#RewriteBase /ProjectWeb/MKTRU/herbalshopthailand.com/production/
+RewriteBase /vanlop/projcets/mktru/herbalshopthailand.com/main/production/
 #RewriteBase /2017/
 RewriteRule ^(back)/(.*)/(.*)/(.*)/(.*)$ index.php?onpage=$1&url=$2&a=$3&status=$4&id=$5 [L,QSA]
 RewriteRule ^(front|back)/(.*)/(.*)/(.*)$ index.php?onpage=$1&url=$2&a=$3&id=$4 [L,QSA]
@@ -18,9 +18,9 @@ RewriteRule ^cms$ index.php?onpage=back&url=home&a=index [L,QSA]
 RewriteRule ^(about)$ index.php?onpage=front&url=$1&a=index [L]
 RewriteRule ^(about)/$ index.php?onpage=front&url=$1&a=index [L]
 
-RewriteRule ^(news)$ index.php?onpage=front&url=$1&a=index [L]
-RewriteRule ^(news)/$ index.php?onpage=front&url=$1&a=index [L]
-RewriteRule ^(news)/(.*)$ index.php?onpage=front&url=$1&a=news_info&news_id=$2 [L]
+RewriteRule ^(news_event)$ index.php?onpage=front&url=$1&a=index [L]
+RewriteRule ^(news_event)/$ index.php?onpage=front&url=$1&a=index [L]
+RewriteRule ^(news_event)/(.*)$ index.php?onpage=front&url=$1&a=news_info&news_id=$2 [L]
 
 RewriteRule ^(artist)$ index.php?onpage=front&url=$1&a=index [L]
 RewriteRule ^(artist)/$ index.php?onpage=front&url=$1&a=index [L]
