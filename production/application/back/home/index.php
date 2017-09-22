@@ -36,7 +36,11 @@
 	$query_event= $db->query($sql_event);
 	$row_event = $db->rows($query_event);
 	
-	
+	//Article number
+	$sql_article = "SELECT * FROM `bt_pages` where pages_categories = 'article'";
+	$query_article = $db->query($sql_article);
+	$row_article = $db->rows($query_article);
+
 	//Office name
 	$sql_office = "SELECT * FROM `bt_office` where officeID='".$_SESSION[_ss . 'officeID']."'";
 	$query_office = $db->query($sql_office);
@@ -66,34 +70,33 @@
         <!-- Main content -->
         <section class="content">
           <div class="row">
-           
-            <div class="col-md-3 col-sm-6 col-xs-12">
+						<div class="col-md-3 col-sm-6 col-xs-12">
               <div class="info-box">
-                <span class="info-box-icon bg-red"><i class="ion ion-eye"></i></span>
+                <span class="info-box-icon bg-aqua"><i class="ion ion-document-text"></i></span>
                 <div class="info-box-content">
-                  <span class="info-box-text">Statistics of pageview</span><br />
-                  <span class="info-box-number" style="font-size:14px;"><?php echo number_format($total_view); ?> <small>Pageviews</small></span>
+                  <span class="info-box-text">News</span><br />
+                  <span class="info-box-number" style="font-size:14px;"><?php echo number_format($row_news); ?> <small>issues</small></span>
                 </div><!-- /.info-box-content -->
               </div><!-- /.info-box -->
 						</div><!-- /.col -->
 						<div class="col-md-3 col-sm-6 col-xs-12">
               <div class="info-box">
-                <span class="info-box-icon bg-aqua"><i class="ion ion-document-text"></i></span>
+                <span class="info-box-icon bg-yellow"><i class="ion ion-document-text"></i></span>
                 <div class="info-box-content">
-                  <span class="info-box-text">News and Event</span><br />
-                  <span class="info-box-number" style="font-size:14px;"><?php echo number_format($row_news); ?> <small>issues</small></span>
+                  <span class="info-box-text">Event</span><br />
+                  <span class="info-box-number" style="font-size:14px;"><?php echo number_format($row_event); ?> <small>events</small></span>
                 </div><!-- /.info-box-content -->
               </div><!-- /.info-box -->
-            </div><!-- /.col -->
+						</div><!-- /.col -->
 
             <!-- fix for small devices only -->
             <div class="clearfix visible-sm-block"></div>
-            <div class="col-md-3 col-sm-6 col-xs-12">
+						<div class="col-md-3 col-sm-6 col-xs-12">
               <div class="info-box">
-                <span class="info-box-icon bg-yellow"><i class="ion ion-document-text"></i></span>
+                <span class="info-box-icon bg-red"><i class="ion ion-document-text"></i></span>
                 <div class="info-box-content">
-                  <span class="info-box-text">Number of Event</span><br />
-                  <span class="info-box-number" style="font-size:14px;"><?php echo number_format($row_event); ?> <small>events</small></span>
+                  <span class="info-box-text">Article</span><br />
+                  <span class="info-box-number" style="font-size:14px;"><?php echo number_format($row_article); ?> <small>articles</small></span>
                 </div><!-- /.info-box-content -->
               </div><!-- /.info-box -->
 						</div><!-- /.col -->
@@ -101,7 +104,7 @@
               <div class="info-box">
                 <span class="info-box-icon bg-green"><i class="ion ion-email-unread"></i></span>
                 <div class="info-box-content">
-                  <span class="info-box-text">Number of enquiry</span><br />
+                  <span class="info-box-text">Enquiry</span><br />
                   <span class="info-box-number" style="font-size:14px;"><?php echo number_format($row_complaint); ?> <small>enquire</small></span>
                 </div><!-- /.info-box-content -->
               </div><!-- /.info-box -->
