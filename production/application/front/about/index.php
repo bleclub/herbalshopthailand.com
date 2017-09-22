@@ -193,7 +193,7 @@
 
 
                  <!-- Shareholder -->
-                <section id="snav-content4" class="role_detail">
+                <section id="snav-content4" class="role_detail invester">
                     <div class="col-sm-8 col-sm-offset-4">
                         <h2>ผู้ถือหุ้น</h2>
                         <hr>
@@ -225,7 +225,7 @@
                     </div>
                 </section>
                 
-                <section id="snav-content5" class="role_detail">
+                <section id="snav-content5" class="role_detail invester">
                     <div class="col-sm-8 col-sm-offset-4">
                         <h2>รายชื่อคณะกรรมการ</h2>
                         <hr>

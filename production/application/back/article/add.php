@@ -3,9 +3,9 @@
  * php code///////////**********************************************************
  */
  
-$news_type = $_GET['url'];
-$title = "Add event - เพิ่มกิจกรรม";
-$menu_event = "active";
+$pages_type = $_GET['url'];
+$title = "Add aticle - เพิ่มบทความ";
+$menu_article = "active";
 
 
 /*
@@ -45,8 +45,8 @@ label.error {
           </h1>
           <ol class="breadcrumb">
             <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-            <li class="active">Event</li>
-            <li class="active">Add Event</li>
+            <li class="active">Article</li>
+            <li class="active">Add article</li>
           </ol>
         </section>
 
@@ -61,7 +61,7 @@ label.error {
               </div>
             </div><!-- /.box-header -->
             <!-- form start -->
-           <form role="form" id="registration-form" action="<?php echo $baseUrl; ?>/back/event/retADD" method="post" enctype="multipart/form-data">
+           <form role="form" id="registration-form" action="<?php echo $baseUrl; ?>/back/article/retADD" method="post" enctype="multipart/form-data">
             <div class="box-body">
               <div class="row">
                 <div class="col-md-12">
@@ -79,16 +79,16 @@ label.error {
                   <div class="row">
                   	<div class="col-md-10">
                             <div class="form-group">
-                              <input type="text" class="form-control"  placeholder="ชื่อกิจกรรม" name="news_subject_th" required>
-                              <input type="hidden" name="news_categories" value="<?php echo $news_type; ?>">
+                              <input type="text" class="form-control"  placeholder="ชื่อบทความ" name="pages_subject_th" required>
+                              <input type="hidden" name="pages_categories" value="<?php echo $pages_type; ?>">
                             </div>
                             <div class="form-group">
-                              <textarea placeholder="หัวข้อกิจกรรม" rows="3" class="form-control" name="news_title_th" required></textarea>
+                              <textarea placeholder="หัวข้อบทความ" rows="3" class="form-control" name="pages_title_th" required></textarea>
                             </div>
                             
                             <div class="form-group">
-                                <p>เนื้อหากิจกรรม</p>
-                                <textarea id="contentTH" name="news_content_th" rows="15" cols="80"></textarea>
+                                <p>เนื้อหาบทความ</p>
+                                <textarea id="contentTH" name="pages_content_th" rows="15" cols="80"></textarea>
                             </div>
                      
                     </div>
@@ -98,14 +98,14 @@ label.error {
                   <div class="row">
                   	<div class="col-md-10">
                         <div class="form-group">
-                           <input type="text" class="form-control"  placeholder="Subject" name="news_subject_en" required>
+                           <input type="text" class="form-control"  placeholder="Subject" name="pages_subject_en" required>
                         </div>
                         <div class="form-group">
-                          	<textarea placeholder="Headline" rows="3" class="form-control" name="news_title_en" required></textarea>
+                          	<textarea placeholder="Headline" rows="3" class="form-control" name="pages_title_en" required></textarea>
                         </div>
                         <div class="form-group">
                         	<p>Content</p>
-                        	<textarea id="contentEN" name="news_content_en" rows="15" cols="80"></textarea>
+                        	<textarea id="contentEN" name="pages_content_en" rows="15" cols="80"></textarea>
                         </div>
                     </div>
                  </div>
@@ -113,8 +113,8 @@ label.error {
                 </div><!-- /.tab-content --> 
               </div><!-- nav-tabs-custom -->
 			
-             
-             	
+                    
+
               		  <div class="form-group" style="float:left; border:1px solid #CACACA; padding:10px;">
                               <label for="exampleInputFile">Picture</label>
                               <input type="file" name="image" id="exampleInputFile">
@@ -128,7 +128,7 @@ label.error {
                             <div class="input-group-addon">
                               <i class="fa fa-calendar"></i>
                             </div>
-                            <input name="news_date" placeholder="วันที่" class="form-control pull-right" id="createdate" required="" aria-required="true" type="text">
+                            <input name="pages_date" placeholder="วันที่" class="form-control pull-right" id="createdate" required="" aria-required="true" type="text">
                           </div><!-- /.input group -->
                     </div>
                      <!-- /.col -->
@@ -301,7 +301,7 @@ label.error {
 		
         $('#createdate').datepicker({format: 'yyyy-mm-dd'});
         CKEDITOR.replace('contentTH');
-		    CKEDITOR.replace('contentEN');
+		CKEDITOR.replace('contentEN');
       });
     </script>
 

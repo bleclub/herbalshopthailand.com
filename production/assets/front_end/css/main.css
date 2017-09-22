@@ -858,12 +858,26 @@ button.load_more[disabled]:hover, button.load_more_event[disabled]:hover{
   width: 100%;
 }
 
+.role_detail.invester{
+  background-image: url('../images/bg_share_invester.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  padding:100px;
+  margin-top: -416px;
+  color: #000;
+  float: left;
+  position: relative;
+  z-index: 1;
+  width: 100%;
+}
+
 .role_detail h2 {
   font-size: 5rem;
   font-weight: 300;
   margin: 0;
   color: #fff;
 }
+
 
 .role_detail h3{
   color: #fff;
@@ -907,7 +921,6 @@ button.load_more[disabled]:hover, button.load_more_event[disabled]:hover{
     line-height: 30px;
     padding: 0 0 0 20px;
 }
-
 
 /* ----------------------------------------------------------------
 	Flex Slider

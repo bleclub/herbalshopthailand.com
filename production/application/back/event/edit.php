@@ -90,15 +90,15 @@ label.error {
                   <div class="row">
                   	<div class="col-md-10">
                             <div class="form-group">
-                              <input type="text" class="form-control"  placeholder="ชื่อข่าว" name="news_subject_th" value="<?php echo $rs_pw['news_subject_th'];?>" required>
+                              <input type="text" class="form-control"  placeholder="ชื่อกิจกรรม" name="news_subject_th" value="<?php echo $rs_pw['news_subject_th'];?>" required>
                               <input type="hidden" name="news_categories" value="<?php echo $news_type; ?>">
                             </div>
                             <div class="form-group">
-                              <textarea placeholder="หัวข้อข่าว" rows="3" class="form-control" name="news_title_th" required><?php echo $rs_pw['news_title_th']; ?></textarea>
+                              <textarea placeholder="หัวข้อกิจกรรม" rows="3" class="form-control" name="news_title_th" required><?php echo $rs_pw['news_title_th']; ?></textarea>
                             </div>
                             
                             <div class="form-group">
-                                <p>เนื้อหาข่าว</p>
+                                <p>เนื้อหากิจกรรม</p>
                                 <textarea id="contentTH" name="news_content_th" rows="15" cols="80"><?php echo $rs_pw['news_content_th']; ?></textarea>
                             </div>
                      
