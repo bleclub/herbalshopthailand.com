@@ -59,7 +59,8 @@ if($row_log > 0 ){
     <link rel="stylesheet" href="<?php echo $baseUrl; ?>/assets/front_end/css/main.css">
     <link rel="stylesheet" href="<?php echo $baseUrl; ?>/assets/front_end/css/responsive.css">
     <link rel="stylesheet" href="<?php echo $baseUrl; ?>/assets/front_end/css/animate.min.css">
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="<?php echo $baseUrl; ?>/assets/front_end/css/font-icons.css" type="text/css" />
     
     <!-- Favicon -->
     <link rel="apple-touch-icon" sizes="57x57" href="<?php echo $baseUrl; ?>/assets/favicon/apple-icon-57x57.png">

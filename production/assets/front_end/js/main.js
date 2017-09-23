@@ -21,6 +21,12 @@ $(document).ready(function() {
 
 	});
 
+	$("li.sub_menu").mouseover(function(){
+        $(".primary-nav li.sub_menu ul").css({ "opacity": "1"});
+    }).mouseleave(function() {
+		$(".primary-nav li.sub_menu ul").css({ "opacity": "0"});
+	});
+
 
 	$('.parallax').parallax();
 

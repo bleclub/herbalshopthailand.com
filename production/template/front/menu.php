@@ -7,7 +7,14 @@
             <ul class="primary-nav">
                 <li><a href="<?php echo $baseUrl; ?>">Home</a></li>
                 <li><a href="<?php echo $baseUrl; ?>/about">About</a></li>
-                <li><a href="http://www.herbalshopthailand.com/index.php?route=common/home">Products</a></li>
+                <li class="sub_menu">
+                    <a href="#">Products</a>
+                    <ul>
+                        <li><a href="#"><i class="icon-list"></i>&nbsp;&nbsp;Product list</a></li>
+                        <li><a href="#"><i class="icon-list"></i>&nbsp;&nbsp;Production</a></li>
+                        <li><a href="#"><i class="icon-list"></i>&nbsp;&nbsp;Research</a></li>
+                    </ul>
+                </li>
                 <li><a href="http://www.herbalshopthailand.com/index.php">Herbal Shop</a></li>
                 <li><a href="<?php echo $baseUrl; ?>/news_event">News & Event</a></li>
                 <li><a href="<?php echo $baseUrl; ?>/article">Article</a></li>
