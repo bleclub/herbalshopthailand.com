@@ -18,7 +18,7 @@
                 <li><a href="http://www.herbalshopthailand.com/index.php">Herbal Shop</a></li>
                 <li <?php echo $news_selected; ?>><a href="<?php echo $baseUrl; ?>/news_event">News & Event</a></li>
                 <li <?php echo $article_selected; ?>><a href="<?php echo $baseUrl; ?>/article">Article</a></li>
-                <li <?php echo $contact_selected; ?>><a href="#contact">Contact</a></li>
+                <li <?php echo $contact_selected; ?>><a href="<?php echo $baseUrl; ?>/contact">Contact</a></li>
             </ul>
         </nav>
         <a href="#" class="nav-toggle">Menu<span></span></a>

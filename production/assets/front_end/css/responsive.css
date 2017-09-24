@@ -353,6 +353,9 @@
   .role_detail {
         background-position: -250px bottom;
   }
+  #contact .bottommargin{
+    padding: 0;
+  }
     
     
 }

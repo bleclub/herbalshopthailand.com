@@ -53,11 +53,12 @@
 	</div>
 	<div class="col-md-6 text-right menu">
 		<ul>
-			<li><a href="#">Home</a></li>
-			<li><a href="#">About</a></li>
-			<li><a href="#">News & Event</a></li>
-			<li><a href="#">Article</a></li>
-			<li><a href="#">Contact</a></li>
+			<li><a href="<?php echo $baseUrl; ?>">Home</a></li>
+			<li><a href="<?php echo $baseUrl; ?>/about">About</a></li>
+			<li><a href="<?php echo $baseUrl; ?>/news_event">News & Event</a></li>
+			<li><a href="<?php echo $baseUrl; ?>/article">Article</a></li>
+			<li><a href="<?php echo $baseUrl; ?>/career">Careers</a></li>
+			<li><a href="<?php echo $baseUrl; ?>/contact">Contact</a></li>
 	</div>
 </div>
 </footer>

@@ -7,7 +7,7 @@
 
 	$article_selected = "class='selected'"; // Menu selected
     require 'template/front/header.php';
-	require 'controllers/front/article.php';
+	require 'controllers/front/article_page.php';
 ?>
 
 <!-- <style>

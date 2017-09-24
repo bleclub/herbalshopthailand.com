@@ -642,7 +642,7 @@ button.load_more[disabled]:hover, button.load_more_event[disabled]:hover{
 }
 
 .breadcrumb > .active {
-  color: #47c9af;
+  color: #32a467;
   text-transform: capitalize;
   /* text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4); */
 }
@@ -1398,6 +1398,155 @@ html[xmlns] .slider-wrap {display: block;}
   text-transform: uppercase; }
 .download .btn {
   margin-top: 30px; }
+
+
+  /* ==========================================================================
+	$Career
+========================================================================== */
+#career{
+  background-color: #fff;
+  position: relative;
+  padding: 80px 0;
+}
+
+#career h3 {
+  font-size: 24px;
+  letter-spacing: 0;
+  margin: 0 0 30px;
+  padding: 0;
+  text-transform: uppercase;
+}
+
+#career .panel-heading {
+  background-color: #47c9af;
+  border-color: #222;
+  border-radius: 0;
+  color: #fff;
+}
+#career .panel-group .panel{
+  border-radius: 0;
+}
+
+#career .panel-body, #career p {
+  color: #282828;
+}
+
+
+#career .panel-body li {
+  line-height: 28px;
+  list-style: inside none disc;
+  margin: 0;
+}
+#career .panel-body > ul {
+  margin: 0 0 20px;
+}
+
+#career .btn.btn-lg.btn-default {
+  background-color: #282828;
+  color: #fff;
+}
+
+#career .btn.btn-lg.btn-default:hover, #career .btn.btn-lg.btn-default:focus  {
+  opacity: 0.8;
+  outline: none;
+}
+
+
+
+
+
+
+
+/* ==========================================================================
+	$Contact Us
+========================================================================== */
+
+  #contact{
+    background-color: #fff;
+    position: relative;
+  }
+  #contact h3 {
+    font-size: 24px;
+    letter-spacing: 0;
+    margin: 0 0 30px;
+    padding: 0 15px;
+    text-transform: uppercase;
+}
+
+  #contact .content-wrap {
+      padding: 80px 0;
+      position: relative;
+  }
+  .nobottommargin {
+      margin-bottom: 0;
+  }
+
+  #contact label {
+    color: #555;
+    cursor: pointer;
+    display: inline-block;
+    font-family: "Raleway",sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+
+#contact .sm-form-control {
+    background-color: #ffffff;
+    background-image: none;
+    border: 2px solid #ddd;
+    border-radius: 0;
+    color: #555555;
+    display: block;
+    font-size: 15px;
+    height: 38px;
+    line-height: 1.42857;
+    padding: 8px 14px;
+    transition: border-color 0.15s ease-in-out 0s;
+    width: 100%;
+}
+
+#contact .sm-form-control {
+  height: auto;
+}
+
+#contact .button {
+  background-color: #1abc9c;
+  border: medium none;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 14px;
+  font-weight: 300;
+  height: 40px;
+  letter-spacing: 1px;
+  line-height: 40px;
+  margin: 0;
+  outline: medium none;
+  padding: 0 22px;
+  position: relative;
+  text-transform: uppercase;
+  white-space: nowrap;
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  transition: 0.5s;
+}
+
+#contact .button:hover{
+  opacity: 0.8;
+}
+
+#contact .bottommargin{
+  margin-bottom: 20px;
+}
+
+abbr[data-original-title], abbr[title]{
+  border: 0 none;
+}
+ 
 
 /* ==========================================================================
 	$Footer
