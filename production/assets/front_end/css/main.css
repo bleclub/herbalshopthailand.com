@@ -320,6 +320,9 @@ ul li {
         -moz-transition: opacity 0.5s;
         transition: opacity 0.5s;
     }
+    .primary-nav ul.open{
+      opacity: 1;
+    }
     .primary-nav ul li {
         display: block;
         margin: 20px 30px;
@@ -1402,6 +1405,7 @@ html[xmlns] .slider-wrap {display: block;}
 .footer {
   text-align: center; 
   float: left;
+  width: 100%;
 }
   .footer-top {
     background-color: #333;

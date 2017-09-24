@@ -23,6 +23,36 @@
     border-bottom: 0 none;
     padding: 10px 40px 5px;
   }
+
+
+  .primary-nav ul {
+    margin-left: 50%;
+    margin-top: 30px;
+    opacity: 1;
+    position: relative;
+    width: 200px;
+    display: none;
+}
+
+.primary-nav ul.open {
+  display: inline-block;
+  width: 200px;
+}
+
+
+.primary-nav ul.open > li {
+  margin: 10px 0;
+  padding: 0;
+}
+.primary-nav ul.open li a {
+  text-align: left;
+}
+
+
+  .breadcrumb{
+    text-align: left;
+    margin-top: 0;
+  }
   .banner-caption {
       width: 70%;
   }
@@ -37,6 +67,8 @@
       font-size: 1.8rem;
       line-height: 1.5;
   }
+
+
 
   .about {
       padding: 180px 40px;
@@ -102,7 +134,7 @@
       margin-bottom: 20px; }
     .navigation a {
       display: block;
-      font-size: 25px;
+      font-size: 18px;
       margin: 0;
       text-align: center;
       padding: 0;
@@ -349,6 +381,9 @@
 }
 @media screen and (max-width: 480px) {
 
+  .breadcrumb{
+    font-size: 10px;
+  }
   #home, .bg_overlay{
     min-height: 700px;
   }
