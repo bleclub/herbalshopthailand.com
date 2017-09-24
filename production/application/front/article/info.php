@@ -1,13 +1,13 @@
 <!-- Header -->
 
 <?php
-    $title = 'ข่าวสารและกิจกรรม - Herbalshop Thailand';
+    $title = 'บทความสมุนไพรน่ารู้ - Herbalshop Thailand';
     $description = 'Herbalshop Thailand';
     $keywords = 'Herbalshop Thailand';
 
-	$news_selected = "class='selected'"; // Menu selected
+	$article_selected = "class='selected'"; // Menu selected
     require 'template/front/header.php';
-	require 'controllers/front/news.php';
+	require 'controllers/front/article.php';
 ?>
 
 <!-- <style>
@@ -24,32 +24,20 @@
 ============================================= -->
 
 <section id="title_page" class="title_page parallax-container">
-        <div class="parallax"><img src="<?php echo $baseUrl; ?>/assets/front_end/images/bg_title_news.jpg"></div>
+        <div class="parallax"><img src="<?php echo $baseUrl; ?>/assets/front_end/images/bg_info_article.jpg"></div>
         <div class="container">
                 <div class="text-left">
-                    <h1>News & Events</h1>
-                    <p>ข่าวสารและกิจกรรม</p>
+					<h1>Article</h1>
+					<p>บทความสมุนไพรน่ารู้</p>
                     <!-- <a href="#" class="btn btn-large">อ่านเพิ่มเติม &nbsp;&nbsp; ></a> -->
                     <ol class="breadcrumb">
                         <li><a href="<?php echo $baseUrl; ?>">Home</a></li>
-                        <li><a href="<?php echo $baseUrl; ?>/news_event">News and Event</a></li>
-                        <li class="active"><?php echo $rs_news['news_subject_th']; ?></li>
+                        <li><a href="<?php echo $baseUrl; ?>/article">Article</a></li>
+                        <li class="active"><?php echo $rs_pages['pages_subject_th']; ?></li>
                     </ol>
                 </div>
         </div>
 </section>
-<!-- <section id="page-title">
-
-    <div class="container clearfix">
-        <h1>News and Event</h1>
-        <ol class="breadcrumb">
-            <li><a href="<?php //echo $baseUrl; ?>">Home</a></li>
-            <li><a href="<?php //echo $baseUrl; ?>/news_envent">News and Event</a></li>
-            <li class="active">News info</li>
-        </ol>
-    </div>
-
-</section>#page-title end -->
 
 <section id="content">
 
@@ -66,14 +54,14 @@
 							<!-- Entry Title
 							============================================= -->
 							<div class="entry-title">
-								<h2><?php echo $rs_news['news_subject_th']; ?></h2>
+								<h2><?php echo $rs_pages['pages_subject_th']; ?></h2>
 							</div><!-- .entry-title end -->
 
 							<!-- Entry Meta
 							============================================= -->
 							<ul class="entry-meta clearfix">
-								<li><i class="icon-calendar3"></i> <?php echo dateFormat($rs_news['news_date']); ?></li>
-								<li><i class="icon-user"></i> <?php echo $rs_news['firstnameTH']." ".$rs_news['lastnameTH']; ?></li>
+								<li><i class="icon-calendar3"></i> <?php echo dateFormat($rs_pages['pages_date']); ?></li>
+								<li><i class="icon-user"></i> <?php echo $rs_pages['firstnameTH']." ".$rs_pages['lastnameTH']; ?></li>
 								<!-- <li><i class="icon-folder-open"></i> <a href="#">General</a>, <a href="#">Media</a></li>
 								<li><a href="#"><i class="icon-comments"></i> 43 Comments</a></li>
 								<li><a href="#"><i class="icon-camera-retro"></i></a></li> -->
@@ -82,14 +70,14 @@
 							<!-- Entry Image
 							============================================= -->
 							<div class="entry-image bottommargin">
-								<img src="<?php echo $baseUrl; ?>/upload/<?php echo $rs_news['news_categories']."/".$rs_news['news_photoslide']; ?>" class="img-responsive" alt="">
+								<img src="<?php echo $baseUrl; ?>/upload/<?php echo $rs_pages['pages_categories']."/".$rs_pages['pages_photoslide']; ?>" class="img-responsive" alt="">
 							</div><!-- .entry-image end -->
 
 							<!-- Entry Content
 							============================================= -->
 							<div class="entry-content notopmargin">
 
-								<?php echo $rs_news['news_content_th']; ?>
+								<?php echo $rs_pages['pages_content_th']; ?>
 								<!-- Post Single - Content End -->
 
 								<!-- Tag Cloud

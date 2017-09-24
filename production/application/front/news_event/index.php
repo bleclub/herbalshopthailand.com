@@ -5,7 +5,7 @@
     $description = 'Herbalshop Thailand';
     $keywords = 'Herbalshop Thailand';
 
-	$news_selected = "selected"; // Menu selected
+	$news_selected = "class='selected'"; // Menu selected
     require 'template/front/header.php';
 	// require 'controllers/front/home.php';
 ?>
@@ -15,14 +15,18 @@
 <!-- Content -->
 
 <!--Title Section  -->
-<section id="title_page" class="title_page parallax-container">
+ <section id="title_page" class="title_page parallax-container">
         <div class="parallax"><img src="<?php echo $baseUrl; ?>/assets/front_end/images/bg_title_news.jpg"></div>
-        <div class="col-md-12 text-left">
-            <h1>News & Events</h1>
-            <p>ข่าวสารและกิจกรรม</p>
-            <!-- <a href="#" class="btn btn-large">อ่านเพิ่มเติม &nbsp;&nbsp; ></a> -->
-        </div>
-    </section>
+                <div class="col-sm-12 text-left">
+                    <h1>News & Events</h1>
+                    <p>ข่าวสารและกิจกรรม</p>
+                    <!-- <a href="#" class="btn btn-large">อ่านเพิ่มเติม &nbsp;&nbsp; ></a> -->
+                    <ol class="breadcrumb">
+                        <li><a href="<?php echo $baseUrl; ?>">Home</a></li>
+                        <li class="active">News and Event</a></li>
+                    </ol>
+                </div>
+</section>
 
     <!-- News Section  -->
     <section id="news" class="news section clearfix">

@@ -67,24 +67,10 @@ while($rs_pagesloop = $db->get($results)) {
 							<h5>'.mb_substr($rs_pagesloop['pages_subject_th'], 0,60, "UTF-8")."...".'</h5>
 							<p><b>กิจกรรม</b><br>'.ckdate($rs_pagesloop['pages_date']).'</p>
 							<p>'.mb_substr($rs_pagesloop['pages_title_th'], 0,100, "UTF-8")."...".'</p>
-							<p><a href="#">อ่านต่อ</a></p>
+							<p><a href="'.$baseUrl.'/article/'.$rs_pagesloop['pages_id'].'">อ่านต่อ</a></p>							
 						</div>
 					</div>';
-
-
-
-			// echo '<div class="news_category_left wow fadeInDown">';
-			// echo '<ul class="fashion_catgnav">';
-			// echo '<li>';
-			// echo '<div class="catgimg2_container">';
-			// echo '<a href="'.$dpmUrl.'/'.$lang.'/news/view/'.$title.'/'.$rs_newsloop['news_id'].'">';
-			// echo '<img alt="img" src="'.$baseUrl.'/upload/news/'.$title.'/'.$rs_newsloop['news_photo'].'"></a></div>';
-			// echo '<h2 class="catg_titile"><a href="'.$dpmUrl.'/'.$lang.'/news/view/'.$title.'/'.$rs_newsloop['news_id'].'">'.mb_substr($rs_newsloop['news_subject_'.$lang], 0,120, "UTF-8")."...".'</a></h2>';
-			// echo '<div class="comments_box">';
-			// echo '<span class="meta_date">- '.ckdate($rs_newsloop['news_createdate'],$lang).' -</span>';
-			// echo '<span class="meta_more"><a  href="'.$dpmUrl.'/'.$lang.'/news/view/'.$title.'/'.$rs_newsloop['news_id'].'">'.translate("อ่านต่อ...",$lang).'</a></span>';
-			// echo '</div></li></ul></div>';
-	  }
+}
 ?>
 
 		

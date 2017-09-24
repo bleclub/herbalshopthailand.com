@@ -129,7 +129,7 @@ label.error {
                               <img src="<?php echo $baseUrl; ?>/upload/event/<?php echo $rs_pw['news_photoslide']; ?>" width="375"><br>
                               <label for="exampleInputFile">Picture</label>
                               <input type="file" name="image" id="exampleInputFile">
-                              <p class="help-block">Browse your photo and recommended sizing: 529 x 295px</p>
+                              <p class="help-block">Browse your photo and recommended sizing: 900 x 600px</p>
                       </div> 
                          <input type="hidden" name="news_id" value="<?php echo $_GET['id']; ?>">
                          <input type="hidden" name="officeID" value="<?php echo $_SESSION[_ss . 'officeID']; ?>" />

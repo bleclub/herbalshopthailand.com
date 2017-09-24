@@ -4,7 +4,8 @@
     $title = 'เกี่ยวกับ Herbalshop Thailand';
     $description = 'Herbalshop Thailand';
     $keywords = 'Herbalshop Thailand';
-    $about_selected = "selected"; // Menu selected
+    
+    $about_selected = "class='selected'"; // Menu selected
     
     require 'template/front/header.php';
     require 'controllers/front/about_page.php';
@@ -24,6 +25,10 @@
             <h1>Company Profiles</h1>
             <p>เกี่ยวกับเรา</p>
             <!-- <a href="#" class="btn btn-large">อ่านเพิ่มเติม &nbsp;&nbsp; ></a> -->
+            <ol class="breadcrumb">
+                <li><a href="<?php echo $baseUrl; ?>">Home</a></li>
+                <li class="active">About Us</a></li>
+            </ol>
         </div>
     </section>
 

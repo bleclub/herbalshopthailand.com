@@ -118,7 +118,7 @@ label.error {
               		  <div class="form-group" style="float:left; border:1px solid #CACACA; padding:10px;">
                               <label for="exampleInputFile">Picture</label>
                               <input type="file" name="image" id="exampleInputFile">
-                              <p class="help-block">Browse your photo and recommended sizing: 529 x 295px</p>
+                              <p class="help-block">Browse your photo and recommended sizing: 900 x 600px</p>
                       </div> 
                     
                          <input type="hidden" name="officeID" value="<?php echo $_SESSION[_ss . 'officeID']; ?>" />

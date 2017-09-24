@@ -5,7 +5,7 @@
     $description = 'บทความสมุนไพรน่ารู้ - Herbalshop Thailand';
     $keywords = 'Herbalshop Thailand';
 
-	$article_selected = "selected"; // Menu selected
+	$article_selected = "class='selected'"; // Menu selected
     require 'template/front/header.php';
 	// require 'controllers/front/home.php';
 ?>
@@ -16,13 +16,17 @@
 
 <!--Title Section  -->
 <section id="title_page" class="title_page parallax-container">
-        <div class="parallax"><img src="<?php echo $baseUrl; ?>/assets/front_end/images/bg_article_top.jpg"></div>
-        <div class="col-md-12 text-left">
-            <h1>Article</h1>
-            <p>บทความสมุนไพรน่ารู้</p>
-            <!-- <a href="#" class="btn btn-large">อ่านเพิ่มเติม &nbsp;&nbsp; ></a> -->
-        </div>
-    </section>
+    <div class="parallax"><img src="<?php echo $baseUrl; ?>/assets/front_end/images/bg_article_top.jpg"></div>
+    <div class="col-md-12 text-left">
+        <h1>Article</h1>
+        <p>บทความสมุนไพรน่ารู้</p>
+        <!-- <a href="#" class="btn btn-large">อ่านเพิ่มเติม &nbsp;&nbsp; ></a> -->
+        <ol class="breadcrumb">
+            <li><a href="<?php echo $baseUrl; ?>">Home</a></li>
+            <li class="active">Article</a></li>
+        </ol>
+    </div>
+</section>
 
     <!-- News Section  -->
     <section id="news" class="news section clearfix">
