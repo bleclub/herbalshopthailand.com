@@ -1,36 +1,8 @@
 <?php
 
-require "lib/uploadimg.php";
-
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $db = new database();
-	$option_im = array(
-        "table" => "bt_pages",
-        "fields" => "pages_photo, pages_photoslide",
-        "condition" => "pages_id='{$_POST['pages_id']}'"
-    );
-	$query_im = $db->select($option_im);
-    $rs_im = $db->get($query_im);
-	
-    if (checkimg() == TRUE) {
-        $filename = date('YmdHis').rand(0, 9);
-        $type = end(explode(".", $_FILES["image"]["name"]));
-        $image = $filename . "." . $type;
 
-		$path = './upload/article/';
-		uploadfullimg( $filename , $path);
-		
-		 if ($rs_im['pages_photoslide'] != "article_cms.jpg") {
-            @unlink($path . $rs_im['pages_photoslide']);
-            // @unlink($path . "thumb_" . $rs_im['pages_photoslide']);
-			// @unlink($path . $rs_im['pages_photo']);
-        }
-		
-    } else {
-        $image = $rs_im['pages_photoslide'];
-    }
-	
-	
 	//$pwd = trim(salt_pass($_POST['password']));
     $value_ns = array(
 		"pages_categories" => trim($_POST['pages_categories']),
@@ -55,9 +27,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if ($query_pd == TRUE) {
 		/*Log file*/
 			$value_log = array(
-				"log_type" => 'Article',
+				"log_type" => 'Career',
 				"log_typeID" => $db->insert_id(),
-				"log_detail" => 'แก้ไขบทความ',
+				"log_detail" => 'แก้ไขตำแหน่งงาน - '.$_POST['pages_subject_th'],
 				"log_date" => date('Y-m-d H:i:s'),
 				"log_ip" => $_SERVER["REMOTE_ADDR"],
 				"log_user" => $_SESSION[_ss . 'username'] ,
@@ -66,7 +38,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 			$query_log = $db->insert("bt_loginfo", $value_log);
 			$_SESSION[_ss . 'msg_result'] = "edit"; 
         
-			header("location:" . $baseUrl . "/back/article");	
+			header("location:" . $baseUrl . "/back/career");	
     }
     mysql_close();
 }

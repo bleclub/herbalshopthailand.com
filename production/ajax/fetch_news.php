@@ -1,5 +1,6 @@
 <?php
 include('../lib/database.php');
+include('../lib/core.php');
 
 $db = new database();
 
@@ -67,7 +68,7 @@ while($rs_newsloop = $db->get($results)) {
 							<h5>'.mb_substr($rs_newsloop['news_subject_th'], 0,60, "UTF-8")."...".'</h5>
 							<p><b>ข่าวสาร</b><br>'.ckdate($rs_newsloop['news_date']).'</p>
 							<p>'.mb_substr($rs_newsloop['news_title_th'], 0,100, "UTF-8")."...".'</p>
-							<p><a href="'.$baseUrl.'/news_event/'.$rs_newsloop['news_id'].'">อ่านต่อ</a></p>
+							<p><a href="'.$baseUrl.'/news_event/'.permalink_create($rs_newsloop['news_link']).'">อ่านต่อ</a></p>
 						</div>
 					</div>';
 			// echo '<div class="news_category_left wow fadeInDown">';

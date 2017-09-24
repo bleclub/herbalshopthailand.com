@@ -11,12 +11,12 @@ class database {
             'pass' => 'root',
             'dbname' => 'herbalshop_db'
         );
-       // $dbsql = array(
-        //     'host' => 'localhost',
-        //     'user' => 'herbalshop_usr',
-        //     'pass' => 'hZKU6.uFDv7{',
-        //     'dbname' => 'herbalshop_db'
-        // );
+    //    $dbsql = array(
+    //         'host' => 'localhost',
+    //         'user' => 'herbalshop_usr',
+    //         'pass' => 'hZKU6.uFDv7{',
+    //         'dbname' => 'herbalshop_db'
+    //     );
         $this->con = mysql_connect($dbsql['host'], $dbsql['user'], $dbsql['pass'], true) or die('Error connecting to MySQL');
         mysql_select_db($dbsql['dbname'], $this->con) or die('Database ' . $dbsql['dbname'] . ' does not exist!');
         mysql_query("SET NAMES UTF8");

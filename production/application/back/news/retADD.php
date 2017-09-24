@@ -31,7 +31,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 		"news_date" => trim($_POST['news_date']),	
         "news_createdate" => date('Y-m-d H:i:s'),
 		"news_lastupdate" => date('Y-m-d H:i:s'),
-		"news_link" => trim($_POST['news_link']),
+		"news_link" => permalink_create($_POST['news_subject_th']),
 		"news_order" => '0',
 		"officeID" => trim($_POST['officeID']),
 		"userID" => $_SESSION[_ss . 'id'],

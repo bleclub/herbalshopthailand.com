@@ -8,8 +8,7 @@
     // $contact_selected = "class='selected'"; // Menu selected
     
     require 'template/front/header.php';
-    // require 'controllers/front/career_page.php';
-	// require 'controllers/front/home.php';
+    require 'controllers/front/career_page.php';
 ?>
 
 <?php require 'template/front/menu.php'; ?>
@@ -22,9 +21,9 @@
 <section id="title_page" class="title_page parallax-container">
     <div class="container">
         <div class="parallax"><img src="<?php echo $baseUrl; ?>/assets/front_end/images/bg_title_career.jpg"></div>
-        <div class="col-md-12 text-left">
-            <h1>Career Opportunities</h1>
-            <p>ตำแหน่งงาน</p>
+        <div class="text-left">
+            <h1 style="color: #282828;">Career Opportunities</h1>
+            <p style="color: #282828;">ตำแหน่งงาน</p>
             <!-- <a href="#" class="btn btn-large">อ่านเพิ่มเติม &nbsp;&nbsp; ></a> -->
             <ol class="breadcrumb">
                 <li><a href="<?php echo $baseUrl; ?>">Home</a></li>
@@ -40,102 +39,31 @@
     <div class="container">
         <h3>Career Position</h3>
         <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
-            <div class="panel panel-default">
-                <div class="panel-heading" role="tab" id="heading02">
-                <h4 class="panel-title">
-                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse02" aria-expanded="false" aria-controls="collapse02">
-                    Part-time English teacher
-                    </a>
-                </h4>
+            <?php
+                $career_num = 1;
+                while ($rs_pages = $db->get($query_pages)) {
+            ?>
+
+                <div class="panel panel-default">
+                    <div class="panel-heading" role="tab" id="heading0<?php echo $career_num; ?>">
+                    <h4 class="panel-title">
+                        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse0<?php echo $career_num; ?>" aria-expanded="false" aria-controls="collapse0<?php echo $career_num; ?>">
+                        <?php echo $rs_pages['pages_subject_th']; ?>
+                        </a>
+                    </h4>
+                    </div>
+                    <div id="collapse0<?php echo $career_num; ?>" class="panel-collapse collapse <?php if($career_num == 1) { echo 'in'; } ?> " role="tabpanel" aria-labelledby="heading0<?php echo $career_num; ?>">
+                    <div class="panel-body">
+                        <?php echo $rs_pages['pages_content_th']; ?>
+                        <a class=" btn btn-lg btn-default" href="<?php echo $baseUrl."/career/apply/".$rs_pages['pages_link']; ?>">Apply Job</a>
+                    </div>
+                    </div>
                 </div>
-                <div id="collapse02" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="heading02">
-                <div class="panel-body">
-                    <p>Duties and Responsibilities:</p>
-                    <ul>
-                        <li>Organizing and preparing agendas and papers for board meetings, committees and annual general meeting (AGMs).</li>
-                        <li>Taking minutes, drafting resolutions and relevant documents.</li>
-                        <li>Maintaining statutory books, including registers members, directors and secretaries.</li>
-                        <li>Maintaining database and all other documents in relations to company secretary and investor relations matters.</li>
-                        <li>Liaising with external regulators and advisers, such as lawyers and auditors.</li>
-                        <li>Assist team in terms of ensuring department year plan and calendars are being followed and executed as planned.</li>
-                    </ul>
-                    <a class=" btn btn-lg btn-default" href="<?php echo $base_url."/career/Part-time English teacher"; ?>">Apply Job</a>
-                </div>
-                </div>
-            </div>
-            
-            <div class="panel panel-default">
-                <div class="panel-heading" role="tab" id="heading04">
-                <h4 class="panel-title">
-                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse04" aria-expanded="false" aria-controls="collapse04">
-                    Regional Manager
-                    </a>
-                </h4>
-                </div>
-                <div id="collapse04" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading04">
-                <div class="panel-body">
-                <p>Duties and Responsibilities:</p>
-                    <ul>
-                        <li>Organizing and preparing agendas and papers for board meetings, committees and annual general meeting (AGMs).</li>
-                        <li>Taking minutes, drafting resolutions and relevant documents.</li>
-                        <li>Maintaining statutory books, including registers members, directors and secretaries.</li>
-                        <li>Maintaining database and all other documents in relations to company secretary and investor relations matters.</li>
-                        <li>Liaising with external regulators and advisers, such as lawyers and auditors.</li>
-                        <li>Assist team in terms of ensuring department year plan and calendars are being followed and executed as planned.</li>
-                    </ul>
-                    <a class=" btn btn-lg btn-default" href="<?php echo $base_url."/career/Regional Manager"; ?>">Apply Job</a>
-                </div>
-                </div>
-            </div>
-            
-            
-            <div class="panel panel-default">
-                <div class="panel-heading" role="tab" id="heading04">
-                <h4 class="panel-title">
-                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse04" aria-expanded="false" aria-controls="collapse04">
-                    Regional Manager
-                    </a>
-                </h4>
-                </div>
-                <div id="collapse04" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading04">
-                <div class="panel-body">
-                <p>Duties and Responsibilities:</p>
-                    <ul>
-                        <li>Organizing and preparing agendas and papers for board meetings, committees and annual general meeting (AGMs).</li>
-                        <li>Taking minutes, drafting resolutions and relevant documents.</li>
-                        <li>Maintaining statutory books, including registers members, directors and secretaries.</li>
-                        <li>Maintaining database and all other documents in relations to company secretary and investor relations matters.</li>
-                        <li>Liaising with external regulators and advisers, such as lawyers and auditors.</li>
-                        <li>Assist team in terms of ensuring department year plan and calendars are being followed and executed as planned.</li>
-                    </ul>
-                    <a class=" btn btn-lg btn-default" href="<?php echo $base_url."/career/Regional Manager"; ?>">Apply Job</a>
-                </div>
-                </div>
-            </div>
-            
-            <div class="panel panel-default">
-                <div class="panel-heading" role="tab" id="heading05">
-                <h4 class="panel-title">
-                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse05" aria-expanded="false" aria-controls="collapse05">
-                    Regional Manager
-                    </a>
-                </h4>
-                </div>
-                <div id="collapse05" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading05">
-                <div class="panel-body">
-                <p>Duties and Responsibilities:</p>
-                    <ul>
-                        <li>Organizing and preparing agendas and papers for board meetings, committees and annual general meeting (AGMs).</li>
-                        <li>Taking minutes, drafting resolutions and relevant documents.</li>
-                        <li>Maintaining statutory books, including registers members, directors and secretaries.</li>
-                        <li>Maintaining database and all other documents in relations to company secretary and investor relations matters.</li>
-                        <li>Liaising with external regulators and advisers, such as lawyers and auditors.</li>
-                        <li>Assist team in terms of ensuring department year plan and calendars are being followed and executed as planned.</li>
-                    </ul>
-                    <a class=" btn btn-lg btn-default" href="<?php echo $base_url."/career/Regional Manager"; ?>">Apply Job</a>
-                </div>
-                </div>
-            </div>
+                
+            <?php 
+                 $career_num++;
+                 } 
+            ?>
         </div>
     </div>
 </section>

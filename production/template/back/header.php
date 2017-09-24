@@ -218,8 +218,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <li class="<?php echo @$menu_media; ?>"><a href="<?php echo $baseUrl; ?>/back/media">
               <i class="fa fa-link"></i> <span>จัดการรูปภาพ</span></a>
             </li>
-            <li class="<?php echo @$menu_jobs; ?>"><a href="<?php echo $baseUrl; ?>/back/jobs">
-              <i class="fa fa-link"></i> <span>Jobs</span></a>
+            <li class="<?php echo @$menu_career; ?>"><a href="<?php echo $baseUrl; ?>/back/career">
+              <i class="fa fa-link"></i> <span>ตำแหน่งงาน</span></a>
             </li>
             <li class="<?php echo @$menu_contact; ?>"><a href="<?php echo $baseUrl; ?>/back/enquiry">
               <i class="fa fa-link"></i> <span>Enquiry</span></a>

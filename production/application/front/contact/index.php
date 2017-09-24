@@ -8,8 +8,7 @@
     $contact_selected = "class='selected'"; // Menu selected
     
     require 'template/front/header.php';
-    require 'controllers/front/contact_page.php';
-	// require 'controllers/front/home.php';
+   
 ?>
 
 <?php require 'template/front/menu.php'; ?>
@@ -22,9 +21,9 @@
 <section id="title_page" class="title_page parallax-container">
     <div class="container">
         <div class="parallax"><img src="<?php echo $baseUrl; ?>/assets/front_end/images/bg_title_contact.jpg"></div>
-        <div class="col-md-12 text-left">
-            <h1>Contact Us</h1>
-            <p>ติดต่อเรา</p>
+        <div class="text-left">
+            <h1 style="color: #282828;">Contact Us</h1>
+            <p style="color: #282828;">ติดต่อเรา</p>
             <!-- <a href="#" class="btn btn-large">อ่านเพิ่มเติม &nbsp;&nbsp; ></a> -->
             <ol class="breadcrumb">
                 <li><a href="<?php echo $baseUrl; ?>">Home</a></li>
@@ -47,9 +46,8 @@
 
 						<h3>Send us an Email</h3>
 
-						<!-- <div id="contact-form-result" data-notify-type="success" data-notify-msg="<i class=icon-ok-sign></i> Message Sent Successfully!"></div> -->
-
-						<form class="nobottommargin" id="template-contactform" name="template-contactform" action="include/sendemail-file.php" method="post">
+					
+						<form class="nobottommargin" enctype="multipart/form-data" id="template-contactform" name="template-contactform" action="<?php echo $baseUrl.'/contact/sendmail/'; ?>" method="post">
 
 							<div class="form-process"></div>
 
@@ -104,24 +102,6 @@
 
 						</form>
 
-						<script type="text/javascript">
-
-							$("#template-contactform").validate({
-								submitHandler: function(form) {
-									$('.form-process').fadeIn();
-									$(form).ajaxSubmit({
-										target: '#contact-form-result',
-										success: function() {
-											$('.form-process').fadeOut();
-											$('#template-contactform').find('.sm-form-control').val('');
-											$('#contact-form-result').attr('data-notify-msg', $('#contact-form-result').html()).html('');
-											SEMICOLON.widget.notifications($('#contact-form-result'));
-										}
-									});
-								}
-							});
-
-						</script>
 
 					</div><!-- .postcontent end -->
 
@@ -135,7 +115,9 @@
 						</address>
 						<abbr title="Phone Number"><strong>เบอร์โทรศัพท์:</strong></abbr> 035-721445-7, 063-2049077-8<br>
 						<abbr title="Fax"><strong>โทรสาร:</strong></abbr> 035-721743<br>
-						<abbr title="Email Address"><strong>อีเมล์:</strong></abbr> sale@thpnetwork.com
+						<abbr title="Email Address"><strong>อีเมล์:</strong></abbr> sale@thpnetwork.com <br><br>
+
+						<section id="google-map" class="gmap" style="height: 350px;"></section>
 
 					</div><!-- .sidebar end -->
 
@@ -158,7 +140,40 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script>
         window.jQuery || document.write('<script src="<?php echo $baseUrl; ?>/assets/front_end/js/jquery.min.js"><\/script>')
-    </script>
+	</script>
+	<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBu3BLJrKvzCcxZpE2QiHiw3RknIl8oQ54&callback=initMap"></script>
+	<script type="text/javascript" src="<?php echo $baseUrl."/assets/front_end/js/jquery.gmap.js"; ?>"></script>
+	<script type="text/javascript">
+
+		jQuery('#google-map').gMap({
+
+			address: '14.2424027,100.7534794',
+			maptype: 'ROADMAP',
+			zoom: 16,
+			markers: [
+				{
+					address: "14.2424027,100.7534794",
+					html: '<div style="width: 200px;"><p>สำนักงาน: Thai Herb Shop<br>เลขที่ 130/149 หมู่ 3 ต.วังจุฬา อ.วังน้อย จ.พระนครศรีอยุธยา 13170<p></div>',
+					icon: {
+						image: "<?php echo $baseUrl; ?>/assets/front_end/images/map-icon-red.png",
+						iconsize: [32, 39],
+						iconanchor: [32,39]
+					}
+				}
+			],
+			doubleclickzoom: false,
+			controls: {
+				panControl: true,
+				zoomControl: true,
+				mapTypeControl: true,
+				scaleControl: false,
+				streetViewControl: false,
+				overviewMapControl: false
+			}
+
+		});
+
+	</script>
     <script src="<?php echo $baseUrl; ?>/assets/front_end/js/bootstrap.min.js"></script>
      <!-- <script src="js/jquery.flexslider-min.js"></script>  -->
     <script src="<?php echo $baseUrl; ?>/assets/front_end/js/jquery.fancybox.pack.js"></script>
@@ -166,9 +181,12 @@
     <!-- <script src="js/retina.min.js"></script> -->
     <script src="<?php echo $baseUrl; ?>/assets/front_end/js/modernizr.js"></script>
     <script src="<?php echo $baseUrl; ?>/assets/front_end/js/materialize.js"></script>  
-    <script src="<?php echo $baseUrl; ?>/assets/front_end/js/main.js"></script>
+	<script src="<?php echo $baseUrl; ?>/assets/front_end/js/main.js"></script>
+	<script src="<?php echo $baseUrl; ?>/assets/front_end/js/jquery.validate.min.js"></script>
 
     <script type="text/javascript" src="<?php echo $baseUrl; ?>/assets/front_end/js/plugins.js"></script>
-
+	<script type="text/javascript">
+		$("#template-contactform").validate();
+	</script>
     </body>
 </html>

@@ -1,5 +1,7 @@
 <?php
 include('../lib/database.php');
+include('../lib/core.php');
+
 
 $db = new database();
 
@@ -67,7 +69,7 @@ while($rs_pagesloop = $db->get($results)) {
 							<h5>'.mb_substr($rs_pagesloop['pages_subject_th'], 0,60, "UTF-8")."...".'</h5>
 							<p><b>กิจกรรม</b><br>'.ckdate($rs_pagesloop['pages_date']).'</p>
 							<p>'.mb_substr($rs_pagesloop['pages_title_th'], 0,100, "UTF-8")."...".'</p>
-							<p><a href="'.$baseUrl.'/article/'.$rs_pagesloop['pages_id'].'">อ่านต่อ</a></p>							
+							<p><a href="'.$baseUrl.'/article/'.permalink_create($rs_pagesloop['pages_link']).'">อ่านต่อ</a></p>							
 						</div>
 					</div>';
 }

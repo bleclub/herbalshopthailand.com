@@ -31,7 +31,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 		"pages_date" => trim($_POST['pages_date']),	
         "pages_createdate" => date('Y-m-d H:i:s'),
 		"pages_lastupdate" => date('Y-m-d H:i:s'),
-		"pages_link" => trim($_POST['pages_link']),
+		"pages_link" => permalink_create($_POST['pages_subject_th']),
 		"pages_order" => '0',
 		"officeID" => trim($_POST['officeID']),
 		"userID" => $_SESSION[_ss . 'id'],

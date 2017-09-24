@@ -1,13 +1,21 @@
-<!-- Header -->
-
 <?php
-    $title = 'บทความสมุนไพรน่ารู้ - Herbalshop Thailand';
+	require 'controllers/front/article_page.php';
+	if($row_pages <= 0 ) {
+		header("Location: ".$baseUrl);
+	}
+?>
+
+<!-- Header -->
+<?php
+	
+	$title = $rs_pages['pages_subject_th'].' | Herbalshop Thailand';
     $description = 'Herbalshop Thailand';
     $keywords = 'Herbalshop Thailand';
 
 	$article_selected = "class='selected'"; // Menu selected
     require 'template/front/header.php';
-	require 'controllers/front/article_page.php';
+
+
 ?>
 
 <!-- <style>

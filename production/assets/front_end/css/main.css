@@ -816,6 +816,12 @@ button.load_more[disabled]:hover, button.load_more_event[disabled]:hover{
   font-weight: 100;
 }
 
+.title_page.thankyou h1 {
+  font-size: 30px;
+  color: #fff;
+  font-weight: 300;
+}
+
 
 /* ----------------------------------------------------------------
 	Side Navigation
@@ -1492,6 +1498,17 @@ html[xmlns] .slider-wrap {display: block;}
     margin-bottom: 10px;
     text-transform: uppercase;
 }
+#contact label.error {
+  margin-top: 5px;
+  color: #E42C3E;
+  font-size: 12px;
+  font-weight: 400;
+  text-transform: capitalize;
+}
+
+/* #contact label.error{
+  display: none !important;
+} */
 
 
 #contact .sm-form-control {
@@ -1511,6 +1528,10 @@ html[xmlns] .slider-wrap {display: block;}
 
 #contact .sm-form-control {
   height: auto;
+}
+
+#contact .form-control.error, #contact .sm-form-control.error {
+  border-color: #E42C3E;
 }
 
 #contact .button {
@@ -1547,6 +1568,11 @@ abbr[data-original-title], abbr[title]{
   border: 0 none;
 }
  
+#google-map {
+  position: relative;
+  width: 100%;
+  height: 450px;
+}
 
 /* ==========================================================================
 	$Footer

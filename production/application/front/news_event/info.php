@@ -1,13 +1,18 @@
-<!-- Header -->
-
 <?php
-    $title = 'ข่าวสารและกิจกรรม - Herbalshop Thailand';
+	require 'controllers/front/news_page.php';
+	
+	if($row_news <= 0 ) {
+		header("Location: ".$baseUrl);
+	}
+?>
+<!-- Header -->
+<?php
+    $title = $rs_news['news_subject_th'].' | Herbalshop Thailand';
     $description = 'Herbalshop Thailand';
     $keywords = 'Herbalshop Thailand';
 
 	$news_selected = "class='selected'"; // Menu selected
     require 'template/front/header.php';
-	require 'controllers/front/news_page.php';
 ?>
 
 <!-- <style>
