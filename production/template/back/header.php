@@ -203,6 +203,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
              <li class="<?php echo @$menu_about; ?>"><a href="<?php echo $baseUrl; ?>/back/content/index/about">
               <i class="fa fa-link"></i> <span>ประวัติความเป็นมา</span></a>
             </li>
+            <li class="<?php echo @$menu_product; ?>"><a href="<?php echo $baseUrl; ?>/back/product">
+              <i class="fa fa-link"></i> <span>ผลิตภัณฑ์</span></a>
+            </li>
             <li class="<?php echo @$menu_news; ?>"><a href="<?php echo $baseUrl; ?>/back/news">
               <i class="fa fa-link"></i> <span>ข่าวอัพเดท</span></a>
             </li>

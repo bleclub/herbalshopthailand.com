@@ -573,6 +573,17 @@ ul li {
   color: #47c9af;
 }
 
+.news a.btn{
+  background-color: #eeeeee;
+  color: #282828;
+}
+
+.news a.btn:hover, .news a.btn:focus {
+  background-color: #cccccc;
+  color: #282828;
+  outline: none;
+}
+
 .load_more, .load_more_event {
   margin: 20px 0 0;
   border: 0;

@@ -7,7 +7,7 @@
 
 	$home_selected = "class='selected'"; // Menu selected
     require 'template/front/header.php';
-	// require 'controllers/front/home.php';
+	require 'controllers/front/home_page.php';
 ?>
 
     <META name="robots" content="index,follow">
@@ -74,7 +74,7 @@
                                     <h1>นวัตกรรมสมุนไพรไทย ระดับมาตรฐานสากล</h1>
                                     <p>โดยบริษัทร่วมทุนองค์การเภสัชกรรมซึ่งเป็นรัฐวิสาหกิจในการกำกับดูแลของกระทรวงสาธารณสุข
                                         โดยทำการวิจัยและพัฒนาสมุนไพรเพื่อใช้เป็นยาและผลิตภัณฑ์เสริมอาหารอย่างต่อเนื่อง</p>
-                                    <div role="navigation"><a href="#about" class="btn btn-large">อ่านเพิ่มเติม &nbsp;&nbsp; ></a></div>
+                                    <div role="navigation"><a href="<?php echo $baseUrl; ?>/about" class="btn btn-large">อ่านเพิ่มเติม &nbsp;&nbsp; ></a></div>
                                 </div>
                                 <!-- banner text -->
                             </div>
@@ -101,7 +101,7 @@
                                     <h1>นวัตกรรมสมุนไพรไทย ระดับมาตรฐานสากล</h1>
                                     <p>โดยบริษัทร่วมทุนองค์การเภสัชกรรมซึ่งเป็นรัฐวิสาหกิจในการกำกับดูแลของกระทรวงสาธารณสุข
                                         โดยทำการวิจัยและพัฒนาสมุนไพรเพื่อใช้เป็นยาและผลิตภัณฑ์เสริมอาหารอย่างต่อเนื่อง</p>
-                                    <div role="navigation"><a href="#about" class="btn btn-large">อ่านเพิ่มเติม &nbsp;&nbsp; ></a></div>
+                                    <div role="navigation"><a href="<?php echo $baseUrl; ?>/about" class="btn btn-large">อ่านเพิ่มเติม &nbsp;&nbsp; ></a></div>
                                 </div>
                                 <!-- banner text -->
                             </div>
@@ -127,7 +127,7 @@
                                     <h1>นวัตกรรมสมุนไพรไทย ระดับมาตรฐานสากล</h1>
                                     <p>โดยบริษัทร่วมทุนองค์การเภสัชกรรมซึ่งเป็นรัฐวิสาหกิจในการกำกับดูแลของกระทรวงสาธารณสุข
                                         โดยทำการวิจัยและพัฒนาสมุนไพรเพื่อใช้เป็นยาและผลิตภัณฑ์เสริมอาหารอย่างต่อเนื่อง</p>
-                                    <div role="navigation"><a href="#about" class="btn btn-large">อ่านเพิ่มเติม &nbsp;&nbsp; ></a></div>
+                                    <div role="navigation"><a href="<?php echo $baseUrl; ?>/about" class="btn btn-large">อ่านเพิ่มเติม &nbsp;&nbsp; ></a></div>
                                 </div>
                                 <!-- banner text -->
                             </div>
@@ -157,21 +157,42 @@
     <!-- Product Section  -->
 
     <section id="product" class="product clearfix">
+        <style>
+            .product p a {
+                color: #47c9af;
+                font-size: 14px;
+            }
+            .product p a:hover {
+                text-decoration: underline;
+            }
+        </style>
+        <?php 
+            while($rs_product_loop = $db->get($results)) { 
+        ?>
+
         <div class="col-md-4 col-sm-4 produect_cate">
-            <img src="<?php echo $baseUrl; ?>/assets/front_end/images/products/product_img01.jpg" class="img-responsive" alt="">
-            <p>สารสกัดฟ้าทะลายโจร แคปซูล <span>Category</span></p>
+            <img src="<?php echo $baseUrl; ?>/upload/product/<?php echo $rs_product_loop['pages_photoslide']; ?>" class="img-responsive" alt="">
+            <p>
+                <?php echo $rs_product_loop['pages_subject_th']; ?> <span>ผลิตภัณฑ์สมุนไพรไทย</span><br>
+                <a href="<?php echo $baseUrl; ?>/product/<?php echo $rs_product_loop['pages_link']; ?>">ดูรายละเอียดผลิตภัณฑ์</a>
+            </p>
+            
         </div>
-        <div class="col-md-4 col-sm-4 produect_cate">
-            <img src="<?php echo $baseUrl; ?>/assets/front_end/images/products/product_img02.jpg" class="img-responsive" alt="">
+
+        <?php } ?>
+        <div class="col-md-12 text-center">
+            <a href="<?php echo $baseUrl; ?>/product" class="btn btn-large">ดูผลิตภัณฑ์ทั้งหมด &nbsp;&nbsp; ></a>
+        </div> 
+
+        <!-- <div class="col-md-4 col-sm-4 produect_cate">
+            <img src="<?php //echo $baseUrl; ?>/assets/front_end/images/products/product_img02.jpg" class="img-responsive" alt="">
             <p>ยาอมแก้ไอมะแว้ง รสบ๊วย <span>Category</span></p>
         </div>
         <div class="col-md-4 col-sm-4 produect_cate">
-            <img src="<?php echo $baseUrl; ?>/assets/front_end/images/products/product_img03.jpg" class="img-responsive" alt="">
+            <img src="<?php //echo $baseUrl; ?>/assets/front_end/images/products/product_img03.jpg" class="img-responsive" alt="">
             <p>ขมิ้นชันแคปซูล <span>Category</span></p>
-        </div>
-        <div class="col-md-12 text-center">
-            <a href="#" class="btn btn-large">ดูผลิตภัณฑ์ทั้งหมด &nbsp;&nbsp; ></a>
-        </div>
+        </div>-->
+        
     </section>
 
     <!--Vision Section  -->
@@ -183,7 +204,7 @@
                 <p>บริษัท ผลิตภัณฑ์ สมุนไพรไทย จำกัด ตระหนักถึงหน้าที่การเป็นองค์กรที่ดี ผลิตและจำหน่ายยาสมุนไพรที่ดี มีคุณภาพ
                     พร้อมสร้างประโยชน์ต่อสังคม จึงดำเนินงานโดยยึดหลักธรรมาภิบาล ได้รับรางวัลการรันตีคุณภาพและมาตราฐานต่างๆมากมาย
                     เพื่อก้าวสู่การเป็นองค์กรระดับมาตราฐานสากล</p>
-                <a href="#" class="btn btn-large">อ่านเพิ่มเติม &nbsp;&nbsp; ></a>
+                <a href="<?php echo $baseUrl; ?>/about" class="btn btn-large">อ่านเพิ่มเติม &nbsp;&nbsp; ></a>
             </div>
         </div>
 
@@ -200,17 +221,23 @@
     <section id="news" class="news section clearfix">
         <h4 class="text-center">ข่าวสารและกิจกรรม</h4>
         <hr>
-        <div class="col-lg-3 col-md-6 col-sm-6">
-            <img src="<?php echo $baseUrl; ?>/assets/front_end/images/news/news_img01.jpg" class="img-responsive" alt="">
-            <div class="content">
-                <h5>ประวัติประธานคณะกรรมการ บริษัทผลิตภัณฑ์สมุนไพรไทย</h5>
-                <p><b>ข่าวสาร</b><br>11 July 2017</p>
-                <p>มูลนิธิพันธกิจเรือนจำคริสเตียน โดยเปิดบ้านพระพร ช่วยเหลือผู้ด้อยโอกาส เยาวชนจากสถานพินิจ และอุปกา...</p>
-                <p><a href="#">อ่านต่อ</a></p>
+
+        <?php 
+            while($rs_news_loop = $db->get($results_news)) { 
+        ?>
+            <div class="col-lg-3 col-md-6 col-sm-6">
+                <img src="<?php echo $baseUrl; ?>/upload/<?php echo $rs_news_loop['news_categories']; ?>/<?php echo $rs_news_loop['news_photoslide']; ?>" class="img-responsive" alt="">
+                <div class="content">
+                    <h5><?php echo $rs_news_loop['news_subject_th']; ?></h5>
+                    <p><b><?php echo $rs_news_loop['news_categories']; ?></b><br><?php echo dateFormat($rs_newsloop['news_date']); ?></p>
+                    <p><?php echo mb_substr($rs_news_loop['news_title_th'], 0,100, "UTF-8")."..."; ?></p>
+                    <p><a href="<?php echo $baseUrl.'/news_event/'.$rs_news_loop['news_link']; ?>">อ่านต่อ</a></p>
+                </div>
             </div>
-        </div>
-        <div class="col-lg-3 col-md-6 col-sm-6">
-            <img src="<?php echo $baseUrl; ?>/assets/front_end/images/news/news_img02.jpg" class="img-responsive" alt="">
+        <?php } ?>
+        <div class="text-center"><a href="<?php echo $baseUrl; ?>/news_event" class="btn btn-large">อ่านข่าวทั้งหมด &nbsp;&nbsp; ></a></div>        
+        <!-- <div class="col-lg-3 col-md-6 col-sm-6">
+            <img src="<?php //echo $baseUrl; ?>/assets/front_end/images/news/news_img02.jpg" class="img-responsive" alt="">
             <div class="content">
                 <h5>ยาน่ารู้</h5>
                 <p><b>ข่าวสาร</b><br>11 July 2017</p>
@@ -219,7 +246,7 @@
             </div>
         </div>
         <div class="col-lg-3 col-md-6 col-sm-6">
-            <img src="<?php echo $baseUrl; ?>/assets/front_end/images/news/news_img03.jpg" class="img-responsive" alt="">
+            <img src="<?php //echo $baseUrl; ?>/assets/front_end/images/news/news_img03.jpg" class="img-responsive" alt="">
             <div class="content">
                 <h5>กิจกรรม CSR ประจำปี 2560</h5>
                 <p><b>ข่าวสาร</b><br>11 July 2017</p>
@@ -228,14 +255,14 @@
             </div>
         </div>
         <div class="col-lg-3 col-md-6 col-sm-6">
-            <img src="<?php echo $baseUrl; ?>/assets/front_end/images/news/news_img04.jpg" class="img-responsive" alt="">
+            <img src="<?php //echo $baseUrl; ?>/assets/front_end/images/news/news_img04.jpg" class="img-responsive" alt="">
             <div class="content">
                 <h5>ออกร้าน งานตลาดน้ำอโยธยา</h5>
                 <p><b>ข่าวสาร</b><br>11 July 2017</p>
                 <p>ประชาสัมพันธ์ เรื่อง งานออกร้าน ตลาดน้ำอโธยา โดย บริษัท ผลิตภัณฑ์สมุนไพรไทย จำกัด ได้เข้าร่วมกิจก...</p>
                 <p><a href="#">อ่านต่อ</a></p>
             </div>
-        </div>
+        </div> -->
     </section>
 
 

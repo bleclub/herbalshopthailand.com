@@ -33,6 +33,12 @@ RewriteRule ^(event)$ index.php?onpage=front&url=$1&a=index [L]
 RewriteRule ^(event)/$ index.php?onpage=front&url=$1&a=index [L]
 RewriteRule ^(event)/(.*)$ index.php?onpage=front&url=$1&a=info&event_id=$2 [L]
 
+
+RewriteRule ^(product)$ index.php?onpage=front&url=$1&a=index [L]
+RewriteRule ^(product)/$ index.php?onpage=front&url=$1&a=index [L]
+RewriteRule ^(product)/(.*)$ index.php?onpage=front&url=$1&a=info&pages_id=$2 [L]
+
+
 RewriteRule ^(media)$ index.php?onpage=front&url=$1&a=index [L]
 RewriteRule ^(media)/(.*)$ index.php?onpage=front&url=$1&a=$2 [L]
 
