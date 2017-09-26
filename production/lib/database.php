@@ -17,13 +17,15 @@ class database {
     //         'pass' => 'hZKU6.uFDv7{',
     //         'dbname' => 'herbalshop_db'
     //     );
-        $this->con = mysql_connect($dbsql['host'], $dbsql['user'], $dbsql['pass'], true) or die('Error connecting to MySQL');
-        mysql_select_db($dbsql['dbname'], $this->con) or die('Database ' . $dbsql['dbname'] . ' does not exist!');
-        mysql_query("SET NAMES UTF8");
+        $this->con = mysqli_connect($dbsql['host'], $dbsql['user'], $dbsql['pass']) or die('Error connecting to MySQL');
+        mysqli_select_db($this->con, $dbsql['dbname']) or die('Database ' . $dbsql['dbname'] . ' does not exist!');
+        // mysqli_query("SET NAMES UTF8");
+        mysqli_query ($this->con,"SET CHARACTER SET utf8");
+        mysqli_query ($this->con,"SET NAMES 'utf8'");
     }
 
     function __destruct() {
-        mysql_close($this->con);
+        mysqli_close($this->con);
     }
 
     function select($options) {
@@ -36,19 +38,19 @@ class database {
         );
         $options = array_merge($default, $options);
         $sql = "SELECT {$options['fields']} FROM {$options['table']} WHERE {$options['condition']} ORDER BY {$options['order']} LIMIT {$options['limit']}";
-        return mysql_query($sql, $this->con);
+        return mysqli_query($this->con, $sql);
     }
 
     function query($sql) {
-        return mysql_query($sql,  $this->con);
+        return mysqli_query($this->con, $sql);
     }
 
     function get($query) {
-        return mysql_fetch_assoc($query);
+        return mysqli_fetch_assoc($query);
     }
 
     function rows($query) {
-        return mysql_num_rows($query);
+        return mysqli_num_rows($query);
     }
 
     function update($table = null, $array_of_values = array(), $conditions = 'FALSE') {
@@ -59,10 +61,10 @@ class database {
             if (is_array($value) && !empty($value[0]))
                 $what_to_set[] = "`$field`='{$value[0]}'";
             else
-                $what_to_set [] = "`$field`='" . mysql_real_escape_string($value, $this->con) . "'";
+                $what_to_set [] = "`$field`='" . mysqli_real_escape_string($this->con, $value) . "'";
         }
         $what_to_set_string = implode(',', $what_to_set);
-        return mysql_query("UPDATE $table SET $what_to_set_string WHERE $conditions", $this->con);
+        return mysqli_query($this->con, "UPDATE $table SET $what_to_set_string WHERE $conditions");
     }
 
     function insert($table = null, $array_of_values = array()) {
@@ -75,32 +77,32 @@ class database {
             if (is_array($value) && !empty($value[0]))
                 $values[] = $value[0];
             else
-                $values[] = "'" . mysql_real_escape_string($value, $this->con) . "'";
+                $values[] = "'" . mysqli_real_escape_string($this->con, $value) . "'";
         }
         $sql = "INSERT INTO $table (" . implode(',', $fields) . ') VALUES (' . implode(',', $values) . ')';
-        if (mysql_query($sql, $this->con))
-            return mysql_insert_id($this->con);
+        if (mysqli_query($this->con, $sql))
+            return mysqli_insert_id($this->con);
         return false;
     }
 
     function realsql($unescaped_string) {
-        return mysql_real_escape_string($unescaped_string);
+        return mysqli_real_escape_string($unescaped_string);
     }
 
     function delete($table = null, $conditions = 'FALSE') {
         if ($table === null)
             return false;
-        return mysql_query("DELETE FROM $table WHERE $conditions");
+        return mysqli_query("DELETE FROM $table WHERE $conditions");
     }
     function insert_id(){
-        return mysql_insert_id();
+        return mysqli_insert_id();
     }
 
     function free($query) {
-        mysql_free_result($query);
+        mysqli_free_result($query);
     }
 
     function close() {
-        mysql_close($this->con);
+        mysqli_close($this->con);
     }
 }

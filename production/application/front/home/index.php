@@ -229,7 +229,7 @@
                 <img src="<?php echo $baseUrl; ?>/upload/<?php echo $rs_news_loop['news_categories']; ?>/<?php echo $rs_news_loop['news_photoslide']; ?>" class="img-responsive" alt="">
                 <div class="content">
                     <h5><?php echo $rs_news_loop['news_subject_th']; ?></h5>
-                    <p><b><?php echo $rs_news_loop['news_categories']; ?></b><br><?php echo dateFormat($rs_newsloop['news_date']); ?></p>
+                    <p><b><?php echo $rs_news_loop['news_categories']; ?></b><br><?php echo dateFormat($rs_news_loop['news_date']); ?></p>
                     <p><?php echo mb_substr($rs_news_loop['news_title_th'], 0,100, "UTF-8")."..."; ?></p>
                     <p><a href="<?php echo $baseUrl.'/news_event/'.$rs_news_loop['news_link']; ?>">อ่านต่อ</a></p>
                 </div>
