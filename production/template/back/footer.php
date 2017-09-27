@@ -4,7 +4,7 @@
       <footer class="main-footer">
         <!-- To the right -->
         <div class="pull-right hidden-xs">
-          CMS V.1.0
+          CMS V.2.0
         </div>
         <!-- Default to the left -->
         <strong>Copyright &copy; <?php echo date('Y'); ?> MKTRU.COM</strong> All rights reserved.

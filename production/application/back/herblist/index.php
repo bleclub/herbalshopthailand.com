@@ -11,9 +11,9 @@
  */
 
 $pages_type = $_GET['url'];
-if($pages_type == "product"){
-	$title = 'Product List - สินค้า';
-	$menu_product = "active";
+if($pages_type == "herblist"){
+	$title = 'Herb List - สมุนไพรไทย';
+	$menu_herblist = "active";
 } else { 
 	header("Location: ".$baseUrl."/cms");
 }
@@ -54,7 +54,7 @@ require 'template/back/header.php';
         <section class="content-header">
           <h1>
 			<?php echo $title; ?>
-            <small>Product</small>
+            <small>Herblist</small>
           </h1>
           <ol class="breadcrumb">
             <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
@@ -71,7 +71,7 @@ require 'template/back/header.php';
                 <div class="box-header">
                   <!-- <h3 class="box-title">Data Table With Full Features</h3> -->
                   <div class="box-tools pull-right">
-                	<a href="<?php echo $baseUrl;?>/back/product/add" class="btn btn-box-tool"><i class="fa fa-plus"></i> เพิ่มสินค้า</a>
+                	<a href="<?php echo $baseUrl;?>/back/herblist/add" class="btn btn-box-tool"><i class="fa fa-plus"></i> เพิ่มสมุนไพร</a>
                 	<!--<button class="btn btn-box-tool" data-widget="remove"><i class="fa fa-remove"></i></button>-->
               	</div>
                 </div><!-- /.box-header -->
@@ -81,7 +81,7 @@ require 'template/back/header.php';
                     <thead>
                       <tr>
                         <th>Date</th>
-                        <th>Product Name</th>
+                        <th>Herb Name</th>
                         <th>User</th>
                         <th>Managment</th>
                       </tr>
@@ -95,7 +95,7 @@ require 'template/back/header.php';
                         <td><?php echo $rs_pages['pages_subject_th']; ?></td>
                         <td><?php echo $rs_pages['title_nameTH'].' '.$rs_pages['firstnameTH'].' '.$rs_pages['lastnameTH']; ?></td>
                         <td>
-                        	<a href="<?php echo $baseUrl; ?>/back/product/edit/<?php echo $rs_pages['pages_id']; ?>"><i class="fa fa-edit fa-1x"></i></a>
+                        	<a href="<?php echo $baseUrl; ?>/back/herblist/edit/<?php echo $rs_pages['pages_id']; ?>"><i class="fa fa-edit fa-1x"></i></a>
                             <a class="confirm" title="" href="#" data-toggle="modal" data-target="#deleteModal<?php echo $rs_pages['pages_id'];?>"><i class="fa fa-trash fa-1x"></i></a>
                             
                             
@@ -112,7 +112,7 @@ require 'template/back/header.php';
                                                 </div>
                                                 <div class="modal-footer">
                                                     <button type="button" class="btn btn-outline" data-dismiss="modal">Cancel</button>
-                                                    <a role="button" class="btn btn-outline" href="<?php echo $baseUrl."/back/product/delete/".$rs_pages['pages_id']; ?>">Confirm</a>
+                                                    <a role="button" class="btn btn-outline" href="<?php echo $baseUrl."/back/herblist/delete/".$rs_pages['pages_id']; ?>">Confirm</a>
                                                 </div>
                                             </div>
                                         </div>
@@ -124,7 +124,7 @@ require 'template/back/header.php';
                     <tfoot>
                       <tr>
                         <th>Date</th>
-                        <th>Product Name</th>
+                        <th>Herb Name</th>
                         <th>User</th>
                         <th>Managment</th>
                       </tr>

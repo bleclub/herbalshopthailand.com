@@ -17,6 +17,12 @@ RewriteRule ^cms$ index.php?onpage=back&url=home&a=index [L,QSA]
 RewriteRule ^(about)$ index.php?onpage=front&url=$1&a=index [L]
 RewriteRule ^(about)/$ index.php?onpage=front&url=$1&a=index [L]
 
+RewriteRule ^(production)$ index.php?onpage=front&url=$1&a=index [L]
+RewriteRule ^(production)/$ index.php?onpage=front&url=$1&a=index [L]
+
+RewriteRule ^(research)$ index.php?onpage=front&url=$1&a=index [L]
+RewriteRule ^(research)/$ index.php?onpage=front&url=$1&a=index [L]
+
 RewriteRule ^(news_event)$ index.php?onpage=front&url=$1&a=index [L]
 RewriteRule ^(news_event)/$ index.php?onpage=front&url=$1&a=index [L]
 RewriteRule ^(news_event)/(.*)$ index.php?onpage=front&url=$1&a=info&news_id=$2 [L]
@@ -37,6 +43,11 @@ RewriteRule ^(event)/(.*)$ index.php?onpage=front&url=$1&a=info&event_id=$2 [L]
 RewriteRule ^(product)$ index.php?onpage=front&url=$1&a=index [L]
 RewriteRule ^(product)/$ index.php?onpage=front&url=$1&a=index [L]
 RewriteRule ^(product)/(.*)$ index.php?onpage=front&url=$1&a=info&pages_id=$2 [L]
+
+
+RewriteRule ^(herblist)$ index.php?onpage=front&url=$1&a=index [L]
+RewriteRule ^(herblist)/$ index.php?onpage=front&url=$1&a=index [L]
+RewriteRule ^(herblist)/(.*)$ index.php?onpage=front&url=$1&a=info&pages_id=$2 [L]
 
 
 RewriteRule ^(media)$ index.php?onpage=front&url=$1&a=index [L]

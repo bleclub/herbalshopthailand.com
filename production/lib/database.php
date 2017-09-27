@@ -92,7 +92,7 @@ class database {
     function delete($table = null, $conditions = 'FALSE') {
         if ($table === null)
             return false;
-        return mysqli_query("DELETE FROM $table WHERE $conditions");
+        return mysqli_query($this->con, "DELETE FROM $table WHERE $conditions");
     }
     function insert_id(){
         return mysqli_insert_id();
