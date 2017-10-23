@@ -12,6 +12,7 @@ require 'lib/thaidate.php';
 
 $baseUrl = base_url();
 $basePath = base_path();
+$lang = lang_path();
 
 $onpage = isset($_GET['onpage']) ? $_GET['onpage'] : "front";
 $url = isset($_GET['url']) ? $_GET['url'] : "home";

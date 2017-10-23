@@ -13,9 +13,9 @@ class database {
         );
     //    $dbsql = array(
     //         'host' => 'localhost',
-    //         'user' => 'herbalshop_usr',
-    //         'pass' => 'hZKU6.uFDv7{',
-    //         'dbname' => 'herbalshop_db'
+    //         'user' => 'thaiherbin_info',
+    //         'pass' => 'fix80tMWb',
+    //         'dbname' => 'thaiherbin_info'
     //     );
         $this->con = mysqli_connect($dbsql['host'], $dbsql['user'], $dbsql['pass']) or die('Error connecting to MySQL');
         mysqli_select_db($this->con, $dbsql['dbname']) or die('Database ' . $dbsql['dbname'] . ' does not exist!');

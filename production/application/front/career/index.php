@@ -26,7 +26,7 @@
             <p style="color: #282828;">ตำแหน่งงาน</p>
             <!-- <a href="#" class="btn btn-large">อ่านเพิ่มเติม &nbsp;&nbsp; ></a> -->
             <ol class="breadcrumb">
-                <li><a href="<?php echo $baseUrl; ?>">Home</a></li>
+                <li><a href="<?php echo $baseUrl.'/'.$lang; ?>">Home</a></li>
                 <li class="active">Career</li>
             </ol>
         </div>
@@ -48,13 +48,13 @@
                     <div class="panel-heading" role="tab" id="heading0<?php echo $career_num; ?>">
                     <h4 class="panel-title">
                         <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse0<?php echo $career_num; ?>" aria-expanded="false" aria-controls="collapse0<?php echo $career_num; ?>">
-                        <?php echo $rs_pages['pages_subject_th']; ?>
+                        <?php echo $rs_pages['pages_subject_'.$lang]; ?>
                         </a>
                     </h4>
                     </div>
                     <div id="collapse0<?php echo $career_num; ?>" class="panel-collapse collapse <?php if($career_num == 1) { echo 'in'; } ?> " role="tabpanel" aria-labelledby="heading0<?php echo $career_num; ?>">
                     <div class="panel-body">
-                        <?php echo $rs_pages['pages_content_th']; ?>
+                        <?php echo $rs_pages['pages_content_'.$lang]; ?>
                         <a class=" btn btn-lg btn-default" href="<?php echo $baseUrl."/career/apply/".$rs_pages['pages_link']; ?>">Apply Job</a>
                     </div>
                     </div>

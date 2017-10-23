@@ -30,8 +30,8 @@ if($_GET['job_id'] <> 'success'){
             <p  style="color: #282828;">ขอบคุณสำหรับความสนใจที่จะเข้าร่วมกับเรา ทางเราได้รับข้อมูลของท่านเรียบร้อย และจะติดต่อกลับในเร็วที่สุด</p>
             <!-- <a href="#" class="btn btn-large">อ่านเพิ่มเติม &nbsp;&nbsp; ></a> -->
             <ol class="breadcrumb">
-                <li><a href="<?php echo $baseUrl; ?>">Home</a></li>
-                <li><a href="<?php echo $baseUrl; ?>/career">Career</a></li>
+                <li><a href="<?php echo $baseUrl.'/'.$lang; ?>">Home</a></li>
+                <li><a href="<?php echo $baseUrl.'/'.$lang; ?>/career">Career</a></li>
                 <li class="active">Thank you</li>
             </ol>
         </div>

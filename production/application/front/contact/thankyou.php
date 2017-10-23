@@ -30,8 +30,8 @@ if($_GET['status'] <> 'success'){
             <p  style="color: #282828;">ขอบคุณสำหรับการติดต่อของคุณ ทางเราได้รับข้อมูลของท่านเรียบร้อย และจะติดต่อกลับในเร็วที่สุด</p>
             <!-- <a href="#" class="btn btn-large">อ่านเพิ่มเติม &nbsp;&nbsp; ></a> -->
             <ol class="breadcrumb">
-                <li><a href="<?php echo $baseUrl; ?>">Home</a></li>
-                <li><a href="<?php echo $baseUrl; ?>/contact">Contact Us</a></li>
+                <li><a href="<?php echo $baseUrl.'/'.$lang; ?>">Home</a></li>
+                <li><a href="<?php echo $baseUrl.'/'.$lang; ?>/contact">Contact Us</a></li>
                 <li class="active">Thank you</li>
             </ol>
         </div>

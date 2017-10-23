@@ -8,7 +8,7 @@
 <!-- Header -->
 <?php
 	
-	$title = $rs_pages['pages_subject_th'].' | Herbalshop Thailand';
+	$title = $rs_pages['pages_subject_'.$lang].' | Herbalshop Thailand';
     $description = 'Herbalshop Thailand';
     $keywords = 'Herbalshop Thailand';
 
@@ -39,9 +39,9 @@
 					<p>ผลิตภัณฑ์สมุนไพรไทย</p>
                     <!-- <a href="#" class="btn btn-large">อ่านเพิ่มเติม &nbsp;&nbsp; ></a> -->
                     <ol class="breadcrumb">
-                        <li><a href="<?php echo $baseUrl; ?>">Home</a></li>
-                        <li><a href="<?php echo $baseUrl; ?>/product">Product</a></li>
-                        <li class="active"><?php echo $rs_pages['pages_subject_th']; ?></li>
+                        <li><a href="<?php echo $baseUrl.'/'.$lang; ?>">Home</a></li>
+                        <li><a href="<?php echo $baseUrl.'/'.$lang; ?>/product">Product</a></li>
+                        <li class="active"><?php echo $rs_pages['pages_subject_'.$lang]; ?></li>
                     </ol>
                 </div>
         </div>
@@ -62,7 +62,7 @@
 							<!-- Entry Title
 							============================================= -->
 							<div class="entry-title">
-								<h2><?php echo $rs_pages['pages_subject_th']; ?></h2>
+								<h2><?php echo $rs_pages['pages_subject_'.$lang]; ?></h2>
 							</div><!-- .entry-title end -->
 
 							<!-- Entry Meta
@@ -85,7 +85,7 @@
 							============================================= -->
 							<div class="entry-content notopmargin">
 
-								<?php echo $rs_pages['pages_content_th']; ?>
+								<?php echo $rs_pages['pages_content_'.$lang]; ?>
 								<!-- Post Single - Content End -->
 
 								<!-- Tag Cloud

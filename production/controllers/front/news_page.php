@@ -4,7 +4,7 @@
     // Query news section
     $option_news = array(
         "table" => "btview_news",
-        "condition" => "news_link='{$_GET['news_id']}' "
+        "condition" => "news_link='{$_GET['id']}' "
         );
     $query_news = $db->select($option_news);
     $rs_news = $db->get($query_news);

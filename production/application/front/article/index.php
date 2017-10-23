@@ -22,7 +22,7 @@
         <p>บทความสมุนไพรน่ารู้</p>
         <!-- <a href="#" class="btn btn-large">อ่านเพิ่มเติม &nbsp;&nbsp; ></a> -->
         <ol class="breadcrumb">
-            <li><a href="<?php echo $baseUrl; ?>">Home</a></li>
+            <li><a href="<?php echo $baseUrl.'/'.$lang; ?>">Home</a></li>
             <li class="active">Article</a></li>
         </ol>
     </div>
@@ -85,8 +85,9 @@
                 var track_click = 0; //track user click on "load more" button, righ now it is 0 click
                 var pagetitle = 'article';
                 var baseUrl = '<?php echo $baseUrl; ?>';
+                var lang = '<?php echo $lang; ?>';
                 var total_pages = 8;
-                $('#result_news').load("<?php echo $baseUrl; ?>/ajax/fetch_article.php", {'page':track_click, 'pagetitle':pagetitle, 'baseUrl':baseUrl}, function() {track_click++;}); //initial data to load
+                $('#result_news').load("<?php echo $baseUrl; ?>/ajax/fetch_article.php", {'page':track_click, 'pagetitle':pagetitle, 'baseUrl':baseUrl, 'lang':lang}, function() {track_click++;}); //initial data to load
 
                 $(".load_more").click(function (e) { //user clicks on button
                 
@@ -96,7 +97,7 @@
                     if(track_click <= total_pages) //make sure user clicks are still less than total pages
                     {
                         //post page number and load returned data into result element
-                        $.post('<?php echo $baseUrl; ?>/ajax/fetch_article.php',{'page':track_click, 'pagetitle':pagetitle, 'baseUrl':baseUrl}, function(data) {
+                        $.post('<?php echo $baseUrl; ?>/ajax/fetch_article.php',{'page':track_click, 'pagetitle':pagetitle, 'baseUrl':baseUrl, 'lang':lang}, function(data) {
                         
                             $(".load_more").show(); //bring back load more button
                             

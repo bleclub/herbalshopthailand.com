@@ -8,6 +8,7 @@ $db = new database();
 $page_number = filter_var($_POST["page"], FILTER_SANITIZE_NUMBER_INT, FILTER_FLAG_STRIP_HIGH);
 $baseUrl = $_POST['baseUrl'];
 $title = $_POST['pagetitle'];
+$lang = $_POST['lang'];
 
 //throw HTTP error if page number is not valid
 if(!is_numeric($page_number)){
@@ -69,7 +70,7 @@ while($rs_pagesloop = $db->get($results)) {
 							<h5>'.$rs_pagesloop['pages_subject_th']."...".'</h5>
 							<p><b>สมุนไพร</b><br>'.ckdate($rs_pagesloop['pages_date']).'</p>
 							
-							<p><a href="'.$baseUrl.'/'.$title.'/'.permalink_create($rs_pagesloop['pages_link']).'">รายละเอียดเพิ่มเติม</a></p>							
+							<p><a href="'.$baseUrl.'/'.$lang.'/'.$title.'/'.permalink_create($rs_pagesloop['pages_link']).'">รายละเอียดเพิ่มเติม</a></p>							
 						</div>
 					</div>';
 }

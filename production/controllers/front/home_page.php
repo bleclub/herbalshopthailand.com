@@ -1,5 +1,7 @@
 <?php
 
+
+
 // Query for product secton
 $sql_product = "select * from btview_pages where pages_categories='product' order by pages_date desc LIMIT 3";
 $results = $db->query($sql_product);

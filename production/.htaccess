@@ -2,7 +2,7 @@
 RewriteEngine on 
 #RewriteBase /ProjectWeb/mktru/herbalshopthailand.com/production/
 RewriteBase /vanlop/projcets/mktru/herbalshopthailand.com/main/production/
-#RewriteBase /
+#RewriteBase /2017/
 RewriteRule ^(back)/(.*)/(.*)/(.*)/(.*)$ index.php?onpage=$1&url=$2&a=$3&status=$4&id=$5 [L,QSA]
 RewriteRule ^(front|back)/(.*)/(.*)/(.*)$ index.php?onpage=$1&url=$2&a=$3&id=$4 [L,QSA]
 RewriteRule ^(front|back)/(.*)/(.*)$ index.php?onpage=$1&url=$2&a=$3 [L,QSA]
@@ -14,87 +14,70 @@ RewriteRule ^cms$ index.php?onpage=back&url=home&a=index [L,QSA]
 
 
 #front
+
+#RewriteRule ^(th|en)/(.*)/(.*)/(.*)/(.*)$ index.php?onpage=front&lang=$1&url=$2&a=$3&page=$4&id=$5 [L,QSA]
+RewriteRule ^(th|en)/(.*)/(.*)/(.*)$ index.php?onpage=front&lang=$1&url=$2&a=$3&status=$4 [L,QSA]
+RewriteRule ^(th|en)/(.*)/(.*)$ index.php?onpage=front&lang=$1&url=$2&a=info&id=$3 [L,QSA]
+RewriteRule ^(th|en)/(.*)$ index.php?onpage=front&url=$2&a=index&lang=$1 [L,QSA]
 RewriteRule ^(th|en)/$ index.php?onpage=front&url=home&a=index&lang=$1 [L,QSA]
 RewriteRule ^(th|en)$ index.php?onpage=front&url=home&a=index&lang=$1 [L,QSA]
-RewriteRule ^/$ index.php?onpage=front&url=home&a=index&lang=th [L,QSA]
-RewriteRule ^$ index.php?onpage=front&url=home&a=index&lang=th [L,QSA]
+RewriteRule ^/$ index.php?onpage=front&url=home&a=index [L,QSA]
+RewriteRule ^$ index.php?onpage=front&url=home&a=index [L,QSA]
 
-RewriteRule ^(about)$ index.php?onpage=front&url=$1&a=index [L]
-RewriteRule ^(about)/$ index.php?onpage=front&url=$1&a=index [L]
+#career
+RewriteRule ^(th|en)/(career)/(.*)/(.*)$ index.php?onpage=front&url=$2&a=$3&job_id=$4&lang=$1 [L]
+RewriteRule ^(th|en)/(career)/(.*)$ index.php?onpage=front&url=$2&a=$3&lang=$1 [L]
 
-RewriteRule ^(production)$ index.php?onpage=front&url=$1&a=index [L]
-RewriteRule ^(production)/$ index.php?onpage=front&url=$1&a=index [L]
-
-RewriteRule ^(research)$ index.php?onpage=front&url=$1&a=index [L]
-RewriteRule ^(research)/$ index.php?onpage=front&url=$1&a=index [L]
-
-RewriteRule ^(news_event)$ index.php?onpage=front&url=$1&a=index [L]
-RewriteRule ^(news_event)/$ index.php?onpage=front&url=$1&a=index [L]
-RewriteRule ^(news_event)/(.*)$ index.php?onpage=front&url=$1&a=info&news_id=$2 [L]
-
-RewriteRule ^(article)$ index.php?onpage=front&url=$1&a=index [L]
-RewriteRule ^(article)/$ index.php?onpage=front&url=$1&a=index [L]
-RewriteRule ^(article)/(.*)$ index.php?onpage=front&url=$1&a=info&pages_id=$2 [L]
-
-RewriteRule ^(artist)$ index.php?onpage=front&url=$1&a=index [L]
-RewriteRule ^(artist)/$ index.php?onpage=front&url=$1&a=index [L]
-RewriteRule ^(artist)/(.*)$ index.php?onpage=front&url=$1&a=info&artist_id=$2 [L]
-
-RewriteRule ^(event)$ index.php?onpage=front&url=$1&a=index [L]
-RewriteRule ^(event)/$ index.php?onpage=front&url=$1&a=index [L]
-RewriteRule ^(event)/(.*)$ index.php?onpage=front&url=$1&a=info&event_id=$2 [L]
+#contact
+RewriteRule ^(th|en)/(contact)/(.*)/(.*)$ index.php?onpage=front&url=$2&a=$3&status=$4&lang=$1 [L]
+RewriteRule ^(th|en)/(contact)/(.*)$ index.php?onpage=front&url=$2&a=$3&lang=$1 [L]
 
 
-RewriteRule ^(product)$ index.php?onpage=front&url=$1&a=index [L]
-RewriteRule ^(product)/$ index.php?onpage=front&url=$1&a=index [L]
-RewriteRule ^(product)/(.*)$ index.php?onpage=front&url=$1&a=info&pages_id=$2 [L]
+#RewriteRule ^(th|en)/(about)$ index.php?onpage=front&url=$2&a=index&lang=$1 [L]
+#RewriteRule ^(th|en)/(about)/$ index.php?onpage=front&url=$2&a=index&lang=$1 [L]
 
+#RewriteRule ^(production)$ index.php?onpage=front&url=$1&a=index [L]
+#RewriteRule ^(production)/$ index.php?onpage=front&url=$1&a=index [L]
 
-RewriteRule ^(herblist)$ index.php?onpage=front&url=$1&a=index [L]
-RewriteRule ^(herblist)/$ index.php?onpage=front&url=$1&a=index [L]
-RewriteRule ^(herblist)/(.*)$ index.php?onpage=front&url=$1&a=info&pages_id=$2 [L]
+#RewriteRule ^(research)$ index.php?onpage=front&url=$1&a=index [L]
+#RewriteRule ^(research)/$ index.php?onpage=front&url=$1&a=index [L]
 
+#RewriteRule ^(news_event)$ index.php?onpage=front&url=$1&a=index [L]
+#RewriteRule ^(news_event)/$ index.php?onpage=front&url=$1&a=index [L]
+#RewriteRule ^(news_event)/(.*)$ index.php?onpage=front&url=$1&a=info&news_id=$2 [L]
 
-RewriteRule ^(media)$ index.php?onpage=front&url=$1&a=index [L]
-RewriteRule ^(media)/(.*)$ index.php?onpage=front&url=$1&a=$2 [L]
+#RewriteRule ^(article)$ index.php?onpage=front&url=$1&a=index [L]
+#RewriteRule ^(article)/$ index.php?onpage=front&url=$1&a=index [L]
+#RewriteRule ^(article)/(.*)$ index.php?onpage=front&url=$1&a=info&pages_id=$2 [L]
 
-RewriteRule ^(career)$ index.php?onpage=front&url=$1&a=index [L]
-RewriteRule ^(career)/$ index.php?onpage=front&url=$1&a=index [L]
-RewriteRule ^(career)/(.*)/(.*)$ index.php?onpage=front&url=$1&a=$2&job_id=$3 [L]
-RewriteRule ^(career)/(.*)$ index.php?onpage=front&url=$1&a=$2[L]
-
-RewriteRule ^(contact)$ index.php?onpage=front&url=$1&a=index [L]
-RewriteRule ^(contact)/$ index.php?onpage=front&url=$1&a=index [L]
-RewriteRule ^(contact)/(.*)/(.*)$ index.php?onpage=front&url=$1&a=$2&status=$3 [L]
-RewriteRule ^(contact)/(.*)$ index.php?onpage=front&url=$1&a=$2 [L]
-
-
-############
-#RewriteRule ^(underconstruction)$ index.php?onpage=front&url=$1&a=index [L]
-
-#RewriteRule ^(news)$ index.php?onpage=front&url=$1&a=index [L]
-#RewriteRule ^(news)/(.*)$ index.php?onpage=front&url=$1&a=info&news_id=$2 [L]
+#RewriteRule ^(artist)$ index.php?onpage=front&url=$1&a=index [L]
+#RewriteRule ^(artist)/$ index.php?onpage=front&url=$1&a=index [L]
+#RewriteRule ^(artist)/(.*)$ index.php?onpage=front&url=$1&a=info&artist_id=$2 [L]
 
 #RewriteRule ^(event)$ index.php?onpage=front&url=$1&a=index [L]
-#RewriteRule ^(event)/(.*)$ index.php?onpage=front&url=$1&a=info&news_id=$2 [L]
+#RewriteRule ^(event)/$ index.php?onpage=front&url=$1&a=index [L]
+#RewriteRule ^(event)/(.*)$ index.php?onpage=front&url=$1&a=info&event_id=$2 [L]
 
 
-#RewriteRule ^(promotion)$ index.php?onpage=front&url=$1&a=index [L]
-#RewriteRule ^(promotion)/(.*)$ index.php?onpage=front&url=$1&a=info&news_id=$2 [L]
+#RewriteRule ^(product)$ index.php?onpage=front&url=$1&a=index [L]
+#RewriteRule ^(product)/$ index.php?onpage=front&url=$1&a=index [L]
+#RewriteRule ^(product)/(.*)$ index.php?onpage=front&url=$1&a=info&pages_id=$2 [L]
 
-#RewriteRule ^(page)/(.*)$ index.php?onpage=front&url=$1&a=index&page_id=$2 [L]
 
-#RewriteRule ^(register)$ index.php?onpage=front&url=$1&a=index [L]
-#RewriteRule ^(register)/(.*)$ index.php?onpage=front&url=$1&a=$2 [L]
+#RewriteRule ^(herblist)$ index.php?onpage=front&url=$1&a=index [L]
+#RewriteRule ^(herblist)/$ index.php?onpage=front&url=$1&a=index [L]
+#RewriteRule ^(herblist)/(.*)$ index.php?onpage=front&url=$1&a=info&pages_id=$2 [L]
 
-#RewriteRule ^(course)$ index.php?onpage=front&url=$1&a=index [L]
-#RewriteRule ^(course)/(.*)$ index.php?onpage=front&url=$1&a=info&course_id=$2 [L]
 
 #RewriteRule ^(media)$ index.php?onpage=front&url=$1&a=index [L]
 #RewriteRule ^(media)/(.*)$ index.php?onpage=front&url=$1&a=$2 [L]
 
-#RewriteRule ^(english_tip)$ index.php?onpage=front&url=$1&a=index [L]
-#RewriteRule ^(english_tip)/(.*)$ index.php?onpage=front&url=$1&a=info&news_id=$2 [L]
+#RewriteRule ^(career)$ index.php?onpage=front&url=$1&a=index [L]
+#RewriteRule ^(career)/$ index.php?onpage=front&url=$1&a=index [L]
+
+
+#RewriteRule ^(contact)$ index.php?onpage=front&url=$1&a=index [L]
+#RewriteRule ^(contact)/$ index.php?onpage=front&url=$1&a=index [L]
 
 
 </IfModule>

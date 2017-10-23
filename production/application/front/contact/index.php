@@ -26,7 +26,7 @@
             <p style="color: #282828;">ติดต่อเรา</p>
             <!-- <a href="#" class="btn btn-large">อ่านเพิ่มเติม &nbsp;&nbsp; ></a> -->
             <ol class="breadcrumb">
-                <li><a href="<?php echo $baseUrl; ?>">Home</a></li>
+                <li><a href="<?php echo $baseUrl.'/'.$lang; ?>">Home</a></li>
                 <li class="active">Contact Us</li>
             </ol>
         </div>
@@ -47,7 +47,7 @@
 						<h3>Send us an Email</h3>
 
 					
-						<form class="nobottommargin" enctype="multipart/form-data" id="template-contactform" name="template-contactform" action="<?php echo $baseUrl.'/contact/sendmail/'; ?>" method="post">
+						<form class="nobottommargin" enctype="multipart/form-data" id="template-contactform" name="template-contactform" action="<?php echo $baseUrl.'/'.$lang.'/contact/sendmail/'; ?>" method="post">
 
 							<div class="form-process"></div>
 

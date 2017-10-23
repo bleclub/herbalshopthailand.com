@@ -8,6 +8,7 @@ $db = new database();
 $page_number = filter_var($_POST["page"], FILTER_SANITIZE_NUMBER_INT, FILTER_FLAG_STRIP_HIGH);
 $baseUrl = $_POST['baseUrl'];
 $title = $_POST['pagetitle'];
+$lang = $_POST['lang'];
 
 //throw HTTP error if page number is not valid
 if(!is_numeric($page_number)){
@@ -69,7 +70,7 @@ while($rs_pagesloop = $db->get($results)) {
 							<h5>'.mb_substr($rs_pagesloop['pages_subject_th'], 0,60, "UTF-8")."...".'</h5>
 							<p><b>กิจกรรม</b><br>'.ckdate($rs_pagesloop['pages_date']).'</p>
 							<p>'.mb_substr($rs_pagesloop['pages_title_th'], 0,100, "UTF-8")."...".'</p>
-							<p><a href="'.$baseUrl.'/article/'.permalink_create($rs_pagesloop['pages_link']).'">อ่านต่อ</a></p>							
+							<p><a href="'.$baseUrl.'/'.$lang.'/article/'.permalink_create($rs_pagesloop['pages_link']).'">อ่านต่อ</a></p>							
 						</div>
 					</div>';
 }

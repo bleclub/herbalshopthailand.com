@@ -25,8 +25,8 @@
             <p  style="color: #282828;">ยื่นใบสมัครงาน</p>
             <!-- <a href="#" class="btn btn-large">อ่านเพิ่มเติม &nbsp;&nbsp; ></a> -->
             <ol class="breadcrumb">
-                <li><a href="<?php echo $baseUrl; ?>">Home</a></li>
-                <li><a href="<?php echo $baseUrl; ?>/career">Career</a></li>
+                <li><a href="<?php echo $baseUrl.'/'.$lang; ?>">Home</a></li>
+                <li><a href="<?php echo $baseUrl.'/'.$lang; ?>/career">Career</a></li>
                 <li class="active">Apply job</li>
             </ol>
         </div>
@@ -45,7 +45,7 @@
 					<div class="col-sm-8 nobottommargin">
 
 
-						<form class="nobottommargin" enctype="multipart/form-data" id="template-contactform" name="template-contactform" action="<?php echo $baseUrl.'/career/sendmail/'; ?>" method="post">
+						<form class="nobottommargin" enctype="multipart/form-data" id="template-contactform" name="template-contactform" action="<?php echo $baseUrl.'/'.$lang.'/career/sendmail/'; ?>" method="post">
 
 							<div class="form-process"></div>
 
@@ -73,7 +73,7 @@
 									$career_num = 1;
 									while ($rs_pages = $db->get($query_pages)) {
 								?>
-									<option value="<?php echo $rs_pages['pages_subject_th']; ?>" <?php if($_GET['job_id'] == $rs_pages['pages_link']) { echo 'selected'; } ?>><?php echo $rs_pages['pages_subject_th']; ?></option>
+									<option value="<?php echo $rs_pages['pages_subject_'.$lang]; ?>" <?php if($_GET['job_id'] == $rs_pages['pages_link']) { echo 'selected'; } ?>><?php echo $rs_pages['pages_subject_'.$lang]; ?></option>
 								<?php } ?>
 								</select>
 							</div>

@@ -32,7 +32,7 @@
 					<p>วิจัยพัฒนา และการประกันคุณภาพ</p>
                     <!-- <a href="#" class="btn btn-large">อ่านเพิ่มเติม &nbsp;&nbsp; ></a> -->
                     <ol class="breadcrumb">
-                        <li><a href="<?php echo $baseUrl; ?>">Home</a></li>
+                        <li><a href="<?php echo $baseUrl.'/'.$lang; ?>">Home</a></li>
                         <li class="active">Research</li>
                     </ol>
                 </div>

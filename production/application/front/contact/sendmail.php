@@ -43,12 +43,12 @@ if( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
 
     // Additional headers
     // $headers .= 'To: Webmaster <webmaster@bigfans.io>, Kelly <kelly@example.com>' . "\r\n";
-    $headers .= 'From: Webmaster <webmaster@bigfans.io>' . "\r\n";
+    $headers .= 'From: Webmaster <webmaster@thaiherbinfo.com>' . "\r\n";
     // $headers .= 'Cc: birthdayarchive@example.com' . "\r\n";
     // $headers .= 'Bcc: birthdaycheck@example.com' . "\r\n";
 
     @mail($mailto, $subject, $body, $headers);
-    header('Location: '.$baseUrl.'/contact/thankyou/success');
+    header('Location: '.$baseUrl.'/'.$lang.'/contact/thankyou/success');
     // //SEND Mail
     // if ()) {
     //     echo "mail send ... OK"; // or use booleans here
