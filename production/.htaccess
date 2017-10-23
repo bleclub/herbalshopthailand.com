@@ -1,7 +1,7 @@
 <IfModule mod_rewrite.c>
 RewriteEngine on 
-RewriteBase /ProjectWeb/mktru/herbalshopthailand.com/production/
-#RewriteBase /vanlop/projcets/mktru/herbalshopthailand.com/main/production/
+#RewriteBase /ProjectWeb/mktru/herbalshopthailand.com/production/
+RewriteBase /vanlop/projcets/mktru/herbalshopthailand.com/main/production/
 #RewriteBase /
 RewriteRule ^(back)/(.*)/(.*)/(.*)/(.*)$ index.php?onpage=$1&url=$2&a=$3&status=$4&id=$5 [L,QSA]
 RewriteRule ^(front|back)/(.*)/(.*)/(.*)$ index.php?onpage=$1&url=$2&a=$3&id=$4 [L,QSA]
@@ -14,6 +14,11 @@ RewriteRule ^cms$ index.php?onpage=back&url=home&a=index [L,QSA]
 
 
 #front
+RewriteRule ^(th|en)/$ index.php?onpage=front&url=home&a=index&lang=$1 [L,QSA]
+RewriteRule ^(th|en)$ index.php?onpage=front&url=home&a=index&lang=$1 [L,QSA]
+RewriteRule ^/$ index.php?onpage=front&url=home&a=index&lang=th [L,QSA]
+RewriteRule ^$ index.php?onpage=front&url=home&a=index&lang=th [L,QSA]
+
 RewriteRule ^(about)$ index.php?onpage=front&url=$1&a=index [L]
 RewriteRule ^(about)/$ index.php?onpage=front&url=$1&a=index [L]
 

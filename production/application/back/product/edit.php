@@ -81,7 +81,7 @@ label.error {
               <div class="nav-tabs-custom">
                 <ul class="nav nav-tabs">
                   <li class="active"><a href="#tab_1" data-toggle="tab">Thai</a></li>
-                  <!-- <li><a href="#tab_2" data-toggle="tab">English</a></li> -->
+                  <li><a href="#tab_2" data-toggle="tab">English</a></li>
                   <li class="pull-right"><a href="#" class="text-muted"><i class="fa fa-gear"></i></a></li>
                 </ul>
                
@@ -94,7 +94,7 @@ label.error {
                               <input type="hidden" name="pages_categories" value="<?php echo $pages_type; ?>">
                             </div>
                             <!-- <div class="form-group">
-                              <input type="text" class="form-control"  placeholder="ลิงค์สินค้า" name="pages_link" value="<?php echo $rs_pw['pages_link']; ?>" required>                              
+                              <input type="text" class="form-control"  placeholder="ลิงค์สินค้า" name="pages_link" value="<?php //echo $rs_pw['pages_link']; ?>" required>                              
                             </div> -->
                             
                             <div class="form-group">
@@ -109,13 +109,13 @@ label.error {
                   <div class="row">
                   	<div class="col-md-10">
                         <div class="form-group">
-                           <input type="text" class="form-control"  placeholder="Subject" name="pages_subject_en" value="<?php echo $rs_pw['pages_subject_en'];?>" required>
+                           <input type="text" class="form-control"  placeholder="Product Name" name="pages_subject_en" value="<?php echo $rs_pw['pages_subject_en'];?>" required>
                         </div>
+                        <!-- <div class="form-group">
+                          	<textarea placeholder="Headline" rows="3" class="form-control" name="pages_title_en" required><?php //echo $rs_pw['pages_title_en']; ?></textarea>
+                        </div> -->
                         <div class="form-group">
-                          	<textarea placeholder="Headline" rows="3" class="form-control" name="pages_title_en" required><?php echo $rs_pw['pages_title_en']; ?></textarea>
-                        </div>
-                        <div class="form-group">
-                        	<p>Content</p>
+                        	<p>Product Detail</p>
                         	<textarea id="contentEN" name="pages_content_en" rows="15" cols="80"><?php echo $rs_pw['pages_content_en']; ?></textarea>
                         </div>
                     </div>

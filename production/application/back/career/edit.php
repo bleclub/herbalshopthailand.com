@@ -81,7 +81,7 @@ label.error {
               <div class="nav-tabs-custom">
                 <ul class="nav nav-tabs">
                   <li class="active"><a href="#tab_1" data-toggle="tab">Thai</a></li>
-                  <!-- <li><a href="#tab_2" data-toggle="tab">English</a></li> -->
+                  <li><a href="#tab_2" data-toggle="tab">English</a></li>
                   <li class="pull-right"><a href="#" class="text-muted"><i class="fa fa-gear"></i></a></li>
                 </ul>
                
@@ -108,11 +108,11 @@ label.error {
                         <div class="form-group">
                            <input type="text" class="form-control"  placeholder="Subject" name="pages_subject_en" value="<?php echo $rs_pw['pages_subject_en'];?>" required>
                         </div>
+                        <!-- <div class="form-group">
+                          	<textarea placeholder="Headline" rows="3" class="form-control" name="pages_title_en" required><?php //echo $rs_pw['pages_title_en']; ?></textarea>
+                        </div> -->
                         <div class="form-group">
-                          	<textarea placeholder="Headline" rows="3" class="form-control" name="pages_title_en" required><?php echo $rs_pw['pages_title_en']; ?></textarea>
-                        </div>
-                        <div class="form-group">
-                        	<p>Content</p>
+                        	<p>Job Detail</p>
                         	<textarea id="contentEN" name="pages_content_en" rows="15" cols="80"><?php echo $rs_pw['pages_content_en']; ?></textarea>
                         </div>
                     </div>

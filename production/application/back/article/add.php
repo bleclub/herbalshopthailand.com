@@ -70,7 +70,7 @@ label.error {
               <div class="nav-tabs-custom">
                 <ul class="nav nav-tabs">
                   <li class="active"><a href="#tab_1" data-toggle="tab">Thai</a></li>
-                  <!-- <li><a href="#tab_2" data-toggle="tab">English</a></li> -->
+                  <li><a href="#tab_2" data-toggle="tab">English</a></li>
                   <li class="pull-right"><a href="#" class="text-muted"><i class="fa fa-gear"></i></a></li>
                 </ul>
                

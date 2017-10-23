@@ -12,7 +12,7 @@
 $content_type = $_GET['id'];
 if($content_type == "about"){
 	$title_th = "ประวัติความเป็นมา";
-	$title_en = "ประวัติความเป็นมา";
+	$title_en = "Company Profile";
 	$title = $title_en;
 	$menu_about = "active";
 } 
@@ -102,7 +102,7 @@ label.error {
               <div class="nav-tabs-custom">
                 <ul class="nav nav-tabs">
                   <li class="active"><a href="#tab_1" data-toggle="tab">Thai</a></li>
-                  <!-- <li><a href="#tab_2" data-toggle="tab">English</a></li> -->
+                  <li><a href="#tab_2" data-toggle="tab">English</a></li>
                   <li class="pull-right"><a href="#" class="text-muted"><i class="fa fa-gear"></i></a></li>
                 </ul>
                 <div class="tab-content">

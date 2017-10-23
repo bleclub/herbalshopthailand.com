@@ -173,7 +173,7 @@
         <div class="col-md-4 col-sm-4 produect_cate">
             <img src="<?php echo $baseUrl; ?>/upload/product/<?php echo $rs_product_loop['pages_photoslide']; ?>" class="img-responsive" alt="">
             <p>
-                <?php echo $rs_product_loop['pages_subject_th']; ?> <span>ผลิตภัณฑ์สมุนไพรไทย</span><br>
+                <?php echo $rs_product_loop['pages_subject_'.$_GET['lang']]; ?> <span>ผลิตภัณฑ์สมุนไพรไทย</span><br>
                 <a href="<?php echo $baseUrl; ?>/product/<?php echo $rs_product_loop['pages_link']; ?>">ดูรายละเอียดผลิตภัณฑ์</a>
             </p>
             
@@ -228,9 +228,9 @@
             <div class="col-lg-3 col-md-6 col-sm-6">
                 <img src="<?php echo $baseUrl; ?>/upload/<?php echo $rs_news_loop['news_categories']; ?>/<?php echo $rs_news_loop['news_photoslide']; ?>" class="img-responsive" alt="">
                 <div class="content">
-                    <h5><?php echo $rs_news_loop['news_subject_th']; ?></h5>
+                    <h5><?php echo $rs_news_loop['news_subject_'.$_GET['lang']]; ?></h5>
                     <p><b><?php echo $rs_news_loop['news_categories']; ?></b><br><?php echo dateFormat($rs_news_loop['news_date']); ?></p>
-                    <p><?php echo mb_substr($rs_news_loop['news_title_th'], 0,100, "UTF-8")."..."; ?></p>
+                    <p><?php echo mb_substr($rs_news_loop['news_title_'.$_GET['lang']], 0,100, "UTF-8")."..."; ?></p>
                     <p><a href="<?php echo $baseUrl.'/news_event/'.$rs_news_loop['news_link']; ?>">อ่านต่อ</a></p>
                 </div>
             </div>
