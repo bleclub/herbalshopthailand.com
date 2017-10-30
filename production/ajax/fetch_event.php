@@ -63,13 +63,22 @@ $position = ($page_number * $item_per_page);
 	
 while($rs_newsloop = $db->get($results)) { 
 			
-			echo  '<div class="col-lg-3 col-md-6 col-sm-6 wow fadeInDown">
-						<img src="'.$baseUrl.'/upload/'.$title.'/'.$rs_newsloop['news_photoslide'].'" class="img-responsive" alt="">
+			echo '<div class="col-lg-3 col-md-6 col-sm-6 wow fadeInDown">
+						<div class="effect-layla">
+							<img src="'.$baseUrl.'/upload/'.$title.'/'.$rs_newsloop['news_photoslide'].'" class="img-responsive" alt="">
+							<figcaption>
+								<div>
+									<h2>'.$rs_newsloop['news_categories'].'</h2>
+									<p>Click here...</p>
+								</div>
+								<a href="'.$baseUrl.'/'.$lang.'/news_event/'.$rs_newsloop['news_link'].'">Click here</a>
+							</figcaption>	
+						</div>
 						<div class="content">
 							<h5>'.mb_substr($rs_newsloop['news_subject_th'], 0,60, "UTF-8")."...".'</h5>
-							<p><b>กิจกรรม</b><br>'.ckdate($rs_newsloop['news_date']).'</p>
+							<p><b>ข่าวสาร</b><br>'.ckdate($rs_newsloop['news_date']).'</p>
 							<p>'.mb_substr($rs_newsloop['news_title_th'], 0,100, "UTF-8")."...".'</p>
-							<p><a href="'.$baseUrl.'/'.$lang.'/news_event/'.permalink_create($rs_newsloop['news_link']).'">อ่านต่อ</a></p>							
+							<p><a href="'.$baseUrl.'/'.$lang.'/news_event/'.permalink_create($rs_newsloop['news_link']).'">อ่านต่อ</a></p>
 						</div>
 					</div>';
 

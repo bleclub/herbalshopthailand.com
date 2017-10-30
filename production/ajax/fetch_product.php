@@ -65,7 +65,18 @@ $position = ($page_number * $item_per_page);
 while($rs_pagesloop = $db->get($results)) { 
 			
 			echo  '<div class="col-lg-3 col-md-6 col-sm-6 wow fadeInDown">
-						<img src="'.$baseUrl.'/upload/'.$title.'/'.$rs_pagesloop['pages_photoslide'].'" class="img-responsive" alt="">
+
+						<div class="effect-layla">
+							<img src="'.$baseUrl.'/upload/'.$title.'/'.$rs_pagesloop['pages_photoslide'].'" class="img-responsive" alt="">
+							<figcaption>
+								<div>
+									<h2>'.$rs_pagesloop['pages_categories'].'</h2>
+									<p>Click here...</p>
+								</div>
+								<a href="'.$baseUrl.'/'.$lang.'/'.$title.'/'.permalink_create($rs_pagesloop['pages_link']).'">Click here</a>
+							</figcaption>	
+						</div>
+
 						<div class="content">
 							<h5>'.$rs_pagesloop['pages_subject_th']."...".'</h5>
 							<p><b>ผลิตภัณฑ์สมุนไพร</b><br>'.ckdate($rs_pagesloop['pages_date']).'</p>

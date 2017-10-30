@@ -12,6 +12,10 @@
 
     <META name="robots" content="index,follow">
 
+    <link rel="stylesheet" type="text/css" href="<?php echo $baseUrl; ?>/assets/front_end/css/normalize.css" />
+    <!-- <link rel="stylesheet" type="text/css" href="<?php //echo $baseUrl; ?>/assets/front_end/css/demo.css" /> -->
+    <link rel="stylesheet" type="text/css" href="<?php echo $baseUrl; ?>/assets/front_end/css/set1.css" />
+
     <!-- SLIDER REVOLUTION 4.x CSS SETTINGS -->
     <link rel="stylesheet" type="text/css" href="<?php echo $baseUrl; ?>/assets/front_end/include/rs-plugin/css/settings.css" media="screen" />
     <style>
@@ -226,7 +230,16 @@
             while($rs_news_loop = $db->get($results_news)) { 
         ?>
             <div class="col-lg-3 col-md-6 col-sm-6">
-                <img src="<?php echo $baseUrl; ?>/upload/<?php echo $rs_news_loop['news_categories']; ?>/<?php echo $rs_news_loop['news_photoslide']; ?>" class="img-responsive" alt="">
+                <div class="effect-layla">
+                    <img src="<?php echo $baseUrl; ?>/upload/<?php echo $rs_news_loop['news_categories']; ?>/<?php echo $rs_news_loop['news_photoslide']; ?>" class="img-responsive" alt="">
+                    <figcaption>
+                        <div>
+                            <h2><?php echo $rs_news_loop['news_categories']; ?></h2>
+                            <p>Click here...</p>
+                        </div>
+                        <a href="<?php echo $baseUrl.'/'.$lang; ?>/news_event/<?php echo $rs_news_loop['news_link']; ?>">Click here</a>
+                    </figcaption>	
+                </div>                
                 <div class="content">
                     <h5><?php echo $rs_news_loop['news_subject_'.$lang]; ?></h5>
                     <p><b><?php echo $rs_news_loop['news_categories']; ?></b><br><?php echo dateFormat($rs_news_loop['news_date']); ?></p>

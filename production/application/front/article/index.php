@@ -9,6 +9,9 @@
     require 'template/front/header.php';
 	// require 'controllers/front/home.php';
 ?>
+<link rel="stylesheet" type="text/css" href="<?php echo $baseUrl; ?>/assets/front_end/css/normalize.css" />
+<!-- <link rel="stylesheet" type="text/css" href="<?php //echo $baseUrl; ?>/assets/front_end/css/demo.css" /> -->
+<link rel="stylesheet" type="text/css" href="<?php echo $baseUrl; ?>/assets/front_end/css/set1.css" />
 
 <?php require 'template/front/menu.php'; ?>
 
