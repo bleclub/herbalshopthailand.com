@@ -55,7 +55,9 @@ label.error {
         <!-- Content Header (Page header) -->
         <?php if ($msg_result == "changepass") { ?>
             <div id="output" class="callout callout-info animated fadeInUp">Save successfully!</div>
-        <?php } ?>
+        <?php } else if($msg_result == "incorrect") {?>
+          <div id="output" class="callout callout-danger animated fadeInUp">The old password incorrect!!</div>            
+        <? } ?>
         <section class="content-header">
           <h1>
             Change password
@@ -92,12 +94,7 @@ label.error {
                           <input type="password" class="form-control" id="oldpassword" placeholder="Old Password" name="oldpass" required>
                           <span id="pass-result"></span>
                       </div>
-                      <div class="form-group">
-                          <input type="password" class="form-control" placeholder="New Password" name="newpassword" id="newpass">
-                      </div>
-                  	   <div class="form-group">
-                          <input type="password" class="form-control" placeholder="Confirm Password" name="confirmpasswod">
-                      </div>
+                      
                  
                 </div>
  
@@ -108,7 +105,7 @@ label.error {
                	<div class="row">
                	 <div class="col-md-6">
                		<button class="btn btn-default" type="reset">Reset</button>
-                    <button type="submit" class="btn btn-primary pull-right">Save</button>
+                  <button type="submit" id="button" class="btn btn-primary pull-right">Save</button>
                  </div>
                </div>
                </div>
@@ -131,7 +128,7 @@ label.error {
     
     <script src="<?php echo $baseUrl; ?>/assets/admin/js/jquery.validate.js"></script> 
      <!-- AdminLTE App -->
-	<script src="<?php echo $baseUrl; ?>/assets/admin/dist/js/app.min.js"></script>
+	  <script src="<?php echo $baseUrl; ?>/assets/admin/dist/js/app.min.js"></script>
     
     <script>
 		
@@ -145,31 +142,41 @@ label.error {
 				}, 1000);
 			});
 		
-		function check_pass_ajax(oldpassword){
-			var userid = $('#userid').val();
-			$("#pass-result").html('<img src="<?php echo $baseUrl; ?>/assets/admin/img/ajax-loader.gif" />');
-			$.post('<?php echo $baseUrl; ?>/ajax/check_pass.php', {'password':oldpassword, 'userid':userid}, function(data) {
-			  $("#pass-result").html(data);
-			});
-		}
+      function check_pass_ajax(oldpassword){
+        var userid = $('#userid').val();
+        $("#pass-result").html('<img src="<?php echo $baseUrl; ?>/assets/admin/img/ajax-loader.gif" />');
+        $.post('<?php echo $baseUrl; ?>/ajax/check_pass.php', {'password':oldpassword, 'userid':userid}, function(data) {
+          $("#pass-result").html(data);
+        });
+      }
 		});	
 		
 		
       $(function () {
-		$('#registration-form').validate({
-		 rules: {
-				newpassword: {
-					required: true,
-					minlength: 5
-				},
-				confirmpasswod: {
-					required: true,
-					minlength: 5,
-					equalTo: "#newpass"
-				}
-			}
-		});
+        $('#registration-form').validate({
+        rules: {
+            newpassword: {
+              required: true,
+              minlength: 5
+            },
+            confirmpasswod: {
+              required: true,
+              minlength: 5,
+              equalTo: "#newpass"
+            }
+          }
+        });
       });
+
+
+      window.onload=function(){
+        document.getElementById("button").style.display='none';
+
+      }
+      function showButton(){
+        document.getElementById("button").style.display='block';
+      }
+
     </script>
 
   </body>

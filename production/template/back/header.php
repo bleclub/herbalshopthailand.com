@@ -200,9 +200,21 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <li class="<?php echo @$menu_home; ?>"><a href="<?php echo $baseUrl; ?>/back/home">
               <i class="fa fa-link"></i> <span>หน้าหลัก</span></a>
             </li>
-             <li class="<?php echo @$menu_about; ?>"><a href="<?php echo $baseUrl; ?>/back/content/index/about">
-              <i class="fa fa-link"></i> <span>ประวัติความเป็นมา</span></a>
+            <li class="<?php echo @$menu_about; ?> treeview">
+                <a href="#"><i class="fa fa-bars"></i> <span>เกี่ยวกับเรา</span> <i class="fa fa-angle-left pull-right"></i></a>
+                <ul class="treeview-menu">
+                  <li class="<?php echo @$menu_profile; ?>"><a href="<?php echo $baseUrl; ?>/back/content/index/about"><i class="fa fa-circle-o"></i> ประวัติความเป็นมา</a></li>
+                  <li class="<?php echo @$menu_vision; ?>"><a href="<?php echo $baseUrl; ?>/back/content/index/vision"><i class="fa fa-circle-o"></i> วิสัยทัศน์</a></li>
+                  <li class="<?php echo @$menu_mission; ?>"><a href="<?php echo $baseUrl; ?>/back/content/index/mission"><i class="fa fa-circle-o"></i> บทบาทและภารกิจ</a></li>
+                  <li class="<?php echo @$menu_shareholders; ?>"><a href="<?php echo $baseUrl; ?>/back/content/index/shareholders"><i class="fa fa-circle-o"></i> ผู้ถือหุ้น</a></li>
+                  <li class="<?php echo @$menu_board; ?>"><a href="<?php echo $baseUrl; ?>/back/content/index/board"><i class="fa fa-circle-o"></i> รายชื่อคณะกรรมการ</a></li>
+                  <li class="<?php echo @$menu_production; ?>"><a href="<?php echo $baseUrl; ?>/back/content/index/production"><i class="fa fa-circle-o"></i> กระบวนการผลิต</a></li>
+                  <li class="<?php echo @$menu_quality;?>"><a href="<?php echo $baseUrl; ?>/back/content/index/quality"><i class="fa fa-circle-o"></i> วิจัยพัฒนา/การประกันคุณภาพ</a></li>
+                </ul>
             </li>
+             <!-- <li class="<?php //echo @$menu_about; ?>"><a href="<?php //echo $baseUrl; ?>/back/content/index/about">
+              <i class="fa fa-link"></i> <span>ประวัติความเป็นมา</span></a>
+            </li> -->
             <li class="<?php echo @$menu_product; ?>"><a href="<?php echo $baseUrl; ?>/back/product">
               <i class="fa fa-link"></i> <span>ผลิตภัณฑ์</span></a>
             </li>

@@ -15,13 +15,51 @@ if($content_type == "about"){
 	$title_en = "Company Profile";
 	$title = $title_en;
 	$menu_about = "active";
+	$menu_profile = "active";
 } 
-// else if($content_type == "supportus"){
-// 	$title_th = "สนับสนุนมูลนิธิได้โดย";
-// 	$title_en = "Support Us";
-// 	$title = $title_en;
-// 	$menu_support = "active";
-// }
+else if($content_type == "vision"){
+	$title_th = "วิสัยทัศน์";
+	$title_en = "Vission";
+	$title = $title_en;
+	$menu_about = "active";
+	$menu_vision = "active";
+}
+else if($content_type == "mission"){
+	$title_th = "บทบาทและภารกิจ";
+	$title_en = "Mission";
+	$title = $title_en;
+	$menu_about = "active";
+	$menu_mission = "active";
+}
+else if($content_type == "shareholders"){
+	$title_th = "ผู้ถือหุ้น";
+	$title_en = "Shareholders";
+	$title = $title_en;
+	$menu_about = "active";
+	$menu_shareholders = "active";
+}
+else if($content_type == "board"){
+	$title_th = "รายชื่อคณะกรรมการ ";
+	$title_en = "Board of Directors";
+	$title = $title_en;
+	$menu_about = "active";
+	$menu_board = "active";
+}
+else if($content_type == "production"){
+	$title_th = "กระบวนการผลิต ";
+	$title_en = "Production";
+	$title = $title_en;
+	$menu_about = "active";
+	$menu_production = "active";
+}
+else if($content_type == "quality"){
+	$title_th = "วิจัยพัฒนา/การประกันคุณภาพ ";
+	$title_en = "R&D/Quality Assurance";
+	$title = $title_en;
+	$menu_about = "active";
+	$menu_quality = "active";
+}
+
 
 
 $db = new database();
@@ -205,11 +243,23 @@ label.error {
 	
 		
       $(function () {
+        // $('#registration-form').validate();
+        // CKEDITOR.replace("contentTH");
+        // CKEDITOR.replace("contentEN");
+
         $('#registration-form').validate();
-        
-        CKEDITOR.replace("contentTH");
-        CKEDITOR.replace("contentEN");
+		
+          CKEDITOR.replace('contentTH', {
+            filebrowserBrowseUrl: '<?php echo $baseUrl;?>/assets/admin/plugins/ckfinder/ckfinder.html',
+            filebrowserUploadUrl: '<?php echo $baseUrl;?>/assets/admin/plugins/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Files'
+          });
+          CKEDITOR.replace('contentEN', {
+            filebrowserBrowseUrl: '<?php echo $baseUrl;?>/assets/admin/plugins/ckfinder/ckfinder.html',
+            filebrowserUploadUrl: '<?php echo $baseUrl;?>/assets/admin/plugins/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Files'
+          });
       });
+
+      
     </script>
 
   </body>
