@@ -1052,7 +1052,7 @@ button.load_more[disabled]:hover, button.load_more_event[disabled]:hover{
   background-size: contain;
   float: left;
   padding: 0 100px 100px;
-  margin-top: -315px;
+  margin-top: -405px;
   color: #333;
   position: relative;
   z-index: 1;
@@ -1095,8 +1095,9 @@ button.load_more[disabled]:hover, button.load_more_event[disabled]:hover{
   background-image: url('../images/bg_vision_more.jpg');
   background-position: top;
   background-repeat: no-repeat;
+  background-size: cover;
   padding:100px;
-  margin-top: -416px;
+  margin-top: -505px;
   color: #000;
   float: left;
   position: relative;
@@ -1140,8 +1141,9 @@ button.load_more[disabled]:hover, button.load_more_event[disabled]:hover{
   background-image: url('../images/bg_role_detail.jpg');
   background-position: bottom;
   background-repeat: no-repeat;
+  background-size: cover;
   padding:100px;
-  margin-top: -416px;
+  margin-top: -505px;
   color: #000;
   float: left;
   position: relative;
@@ -1153,8 +1155,9 @@ button.load_more[disabled]:hover, button.load_more_event[disabled]:hover{
   background-image: url('../images/bg_share_invester.jpg');
   background-position: center;
   background-repeat: no-repeat;
+  background-size: cover;
   padding:100px;
-  margin-top: -416px;
+  margin-top: -505px;
   color: #000;
   float: left;
   position: relative;
