@@ -29,6 +29,7 @@ function uploadfullimg($filename, $path) {
     }
 }
 
+
 function uploadimg($filename, $width, $get_height, $path) {
     if (trim($_FILES["image"]["tmp_name"]) != "") {
         $tmp_images = $_FILES["image"]["tmp_name"];

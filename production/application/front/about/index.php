@@ -51,6 +51,13 @@
                     <li>
                         <a href="#snav-content5" data-target="#snav-content5" data-toggle="tab">รายชื่อคณะกรรมการ<i class="fa fa-chevron-right"></i></a>
                     </li> 
+                    <li>
+                        <a href="#snav-content6" data-target="#snav-content6" data-toggle="tab">กระบวนการผลิต<i class="fa fa-chevron-right"></i></a>
+                    </li> 
+                    <li>
+                        <a href="#snav-content7" data-target="#snav-content7" data-toggle="tab">วิจัยพัฒนา/การประกันคุณภาพ<i class="fa fa-chevron-right"></i></a>
+                    </li> 
+
                 </ul>
             </div>
            
@@ -233,6 +240,52 @@
                 <section id="snav-content5" class="role_detail invester">
                     <div class="col-sm-8 col-sm-offset-4">
                         <h2>รายชื่อคณะกรรมการ</h2>
+                        <hr>
+                            <ol>
+                                <li>พลโทจาตุรนต์  จารุเสน</li>
+                                <li>นายปรากรม  วุฒิพงศ์</li>
+                                <li>นายสมมาต  ขุนเศษฐ</li>
+                                <li>นายนันทวัฒ  ไกรเสม</li>
+                                <li>นายบุญชัย  สมบูรณ์สุข </li>
+                                <li>นางมุกดาวรรณ  ประกอบไวทยกิจ</li>
+                                <li>นางอัจฉรา  มาศมหิศักดิ์</li>
+                                <li>นางมาลิน  อังสุรังษี</li>
+                                <li>นางมณีรัตน์  ผลิพัฒน์</li>
+                                <li>นายณัฐวุฒิ  ประเสริฐสิริพงศ์</li>
+                                <li>นางจุรีภรณ์  บุณยวงศ์วิโรจน์</li>
+                            </ol>
+
+                        <p>*ข้อมูลวันที่ 28 เมษายน 2560 *</p>
+                    </div>
+                </section>  
+
+
+                <section id="snav-content6" class="role_detail invester">
+                    <div class="col-sm-8 col-sm-offset-4">
+                        <h2>กระบวนการผลิต</h2>
+                        <hr>
+                            <ol>
+                                <li>พลโทจาตุรนต์  จารุเสน</li>
+                                <li>นายปรากรม  วุฒิพงศ์</li>
+                                <li>นายสมมาต  ขุนเศษฐ</li>
+                                <li>นายนันทวัฒ  ไกรเสม</li>
+                                <li>นายบุญชัย  สมบูรณ์สุข </li>
+                                <li>นางมุกดาวรรณ  ประกอบไวทยกิจ</li>
+                                <li>นางอัจฉรา  มาศมหิศักดิ์</li>
+                                <li>นางมาลิน  อังสุรังษี</li>
+                                <li>นางมณีรัตน์  ผลิพัฒน์</li>
+                                <li>นายณัฐวุฒิ  ประเสริฐสิริพงศ์</li>
+                                <li>นางจุรีภรณ์  บุณยวงศ์วิโรจน์</li>
+                            </ol>
+
+                        <p>*ข้อมูลวันที่ 28 เมษายน 2560 *</p>
+                    </div>
+                </section>  
+
+
+                <section id="snav-content7" class="role_detail invester">
+                    <div class="col-sm-8 col-sm-offset-4">
+                        <h2>วิจัยพัฒนา/การประกันคุณภาพ</h2>
                         <hr>
                             <ol>
                                 <li>พลโทจาตุรนต์  จารุเสน</li>

@@ -200,6 +200,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <li class="<?php echo @$menu_home; ?>"><a href="<?php echo $baseUrl; ?>/back/home">
               <i class="fa fa-link"></i> <span>หน้าหลัก</span></a>
             </li>
+            <li class="<?php echo @$menu_banner; ?>"><a href="<?php echo $baseUrl; ?>/back/banner">
+              <i class="fa fa-link"></i> <span>จัดการแบนเนอร์</span></a>
+            </li>
             <li class="<?php echo @$menu_about; ?> treeview">
                 <a href="#"><i class="fa fa-bars"></i> <span>เกี่ยวกับเรา</span> <i class="fa fa-angle-left pull-right"></i></a>
                 <ul class="treeview-menu">

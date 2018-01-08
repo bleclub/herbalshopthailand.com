@@ -60,11 +60,21 @@
 
             <div class="tp-banner">
                 <ul>
+                <?php 
+                        while($rs_banner = $db->get($results_banner)) { 
+                ?>
+                
                     <!-- SLIDE  -->
-                    <li class="dark" data-transition="fade" data-slotamount="1" data-masterspeed="1500" data-thumb="<?php echo $baseUrl; ?>/assets/front_end/images/slider/thumb/3.jpg"
-                        data-delay="8000" data-saveperformance="off" data-title="Page 1">
+                    <li class="dark" 
+                        data-transition="fade" 
+                        data-slotamount="1" 
+                        data-masterspeed="1500" 
+                        data-thumb="<?php echo $baseUrl; ?>/upload/banner/thumb/<?php echo $rs_banner['pages_photoslide']; ?>"
+                        data-delay="8000" 
+                        data-saveperformance="off" 
+                        data-title="<?php echo $rs_banner['pages_subject_'.$lang]; ?>">
                         <!-- MAIN IMAGE -->
-                        <img src="<?php echo $baseUrl; ?>/assets/front_end/images/slider/3.jpg" alt="kenburns1" data-bgposition="left center" data-kenburns="on" data-duration="12000" data-ease="Linear.easeNone"
+                        <img src="<?php echo $baseUrl; ?>/upload/banner/<?php echo $rs_banner['pages_photoslide']; ?>" alt="kenburns1" data-bgposition="left center" data-kenburns="on" data-duration="12000" data-ease="Linear.easeNone"
                             data-bgfit="130" data-bgfitend="100" data-bgpositionend="right center">
                         <!-- LAYERS -->
 
@@ -75,69 +85,18 @@
                             data-elementdelay="0.01" data-endelementdelay="0.1" data-endspeed="1000" data-endeasing="Power4.easeIn">
                             <div class="col-md-7 banner-caption">
                                 <div class="banner-text text-left">
-                                    <h1>นวัตกรรมสมุนไพรไทย ระดับมาตรฐานสากล</h1>
-                                    <p>โดยบริษัทร่วมทุนองค์การเภสัชกรรมซึ่งเป็นรัฐวิสาหกิจในการกำกับดูแลของกระทรวงสาธารณสุข
-                                        โดยทำการวิจัยและพัฒนาสมุนไพรเพื่อใช้เป็นยาและผลิตภัณฑ์เสริมอาหารอย่างต่อเนื่อง</p>
-                                    <div role="navigation"><a href="<?php echo $baseUrl; ?>/about" class="btn btn-large">อ่านเพิ่มเติม &nbsp;&nbsp; ></a></div>
-                                </div>
-                                <!-- banner text -->
-                            </div>
-                        </div>
-                        <div class="bg_overlay"></div>
-
-
-                    </li>
-
-
-                    <!-- SLIDE  -->
-                    <li data-transition="fade" data-slotamount="1" data-masterspeed="1500" data-thumb="<?php echo $baseUrl; ?>/assets/front_end/images/slider/thumb/1.jpg" data-delay="8000"
-                        data-saveperformance="off" data-title="Page 2">
-                        <!-- MAIN IMAGE -->
-                        <img src="<?php echo $baseUrl; ?>/assets/front_end/images/slider/1.jpg" alt="kenburns6" data-bgposition="center top" data-kenburns="on" data-duration="10000" data-ease="Linear.easeNone"
-                            data-bgfit="120" data-bgfitend="100" data-bgpositionend="center center">
-                        <!-- LAYERS -->
-
-                        <div class="tp-caption" data-x="0" data-y="0" data-customin="x:0;y:150;z:0;rotationZ:0;scaleX:1;scaleY:1;skewX:0;skewY:0;opacity:0;transformPerspective:200;transformOrigin:50% 0%;"
-                            data-speed="800" data-start="1200" data-easing="easeOutQuad" data-splitin="none" data-splitout="none"
-                            data-elementdelay="0.01" data-endelementdelay="0.1" data-endspeed="1000" data-endeasing="Power4.easeIn">
-                            <div class="col-md-7 banner-caption">
-                                <div class="banner-text text-left">
-                                    <h1>นวัตกรรมสมุนไพรไทย ระดับมาตรฐานสากล</h1>
-                                    <p>โดยบริษัทร่วมทุนองค์การเภสัชกรรมซึ่งเป็นรัฐวิสาหกิจในการกำกับดูแลของกระทรวงสาธารณสุข
-                                        โดยทำการวิจัยและพัฒนาสมุนไพรเพื่อใช้เป็นยาและผลิตภัณฑ์เสริมอาหารอย่างต่อเนื่อง</p>
-                                    <div role="navigation"><a href="<?php echo $baseUrl; ?>/about" class="btn btn-large">อ่านเพิ่มเติม &nbsp;&nbsp; ></a></div>
-                                </div>
-                                <!-- banner text -->
-                            </div>
-                        </div>
-                        <div class="bg_overlay"></div>
-
-                    </li>
-
-
-                    <!-- SLIDE  -->
-                    <li class="dark" data-transition="fade" data-slotamount="1" data-masterspeed="1500" data-thumb="<?php echo $baseUrl; ?>/assets/front_end/images/slider/thumb/2.jpg"
-                        data-delay="8000" data-saveperformance="off" data-title="Page 3">
-                        <!-- MAIN IMAGE -->
-                        <img src="<?php echo $baseUrl; ?>/assets/front_end/images/slider/2.jpg" alt="kenburns3" data-bgposition="left top" data-kenburns="on" data-duration="12000" data-ease="Linear.easeNone"
-                            data-bgfit="130" data-bgfitend="100" data-bgpositionend="right bottom">
-                        <!-- LAYERS -->
-
-                        <div class="tp-caption" data-x="0" data-y="0" data-customin="x:0;y:150;z:0;rotationZ:0;scaleX:1;scaleY:1;skewX:0;skewY:0;opacity:0;transformPerspective:200;transformOrigin:50% 0%;"
-                            data-speed="800" data-start="1200" data-easing="easeOutQuad" data-splitin="none" data-splitout="none"
-                            data-elementdelay="0.01" data-endelementdelay="0.1" data-endspeed="1000" data-endeasing="Power4.easeIn">
-                            <div class="col-md-7 banner-caption">
-                                <div class="banner-text text-left">
-                                    <h1>นวัตกรรมสมุนไพรไทย ระดับมาตรฐานสากล</h1>
-                                    <p>โดยบริษัทร่วมทุนองค์การเภสัชกรรมซึ่งเป็นรัฐวิสาหกิจในการกำกับดูแลของกระทรวงสาธารณสุข
-                                        โดยทำการวิจัยและพัฒนาสมุนไพรเพื่อใช้เป็นยาและผลิตภัณฑ์เสริมอาหารอย่างต่อเนื่อง</p>
-                                    <div role="navigation"><a href="<?php echo $baseUrl; ?>/about" class="btn btn-large">อ่านเพิ่มเติม &nbsp;&nbsp; ></a></div>
+                                    <h1><?php echo $rs_banner['pages_subject_'.$lang]; ?></h1>
+                                    <?php echo $rs_banner['pages_content_'.$lang]; ?>
+                                    <div role="navigation"><a href="<?php echo $rs_banner['pages_link']; ?>" class="btn btn-large">อ่านเพิ่มเติม &nbsp;&nbsp; ></a></div>
                                 </div>
                                 <!-- banner text -->
                             </div>
                         </div>
                         <div class="bg_overlay"></div>
                     </li>
+
+                <?php  } ?>
+                
                 </ul>
             </div>
         </div>
