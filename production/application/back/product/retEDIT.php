@@ -46,6 +46,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 		"pages_lastupdate" => date('Y-m-d H:i:s'),
 		"pages_link" => permalink_create($_POST['pages_subject_th']),
 		"pages_order" => '0',
+		"category_id" => trim($_POST['category']),
 		"officeID" => trim($_POST['officeID']),
 		"userID" => $_SESSION[_ss . 'id'],
 		

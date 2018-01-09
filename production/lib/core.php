@@ -34,6 +34,21 @@ function lang_path(){
 	return isset($_SESSION['lang'], $languages) ? $_SESSION['lang'] : 'th';
 }
 
+function translate($text){
+	$db = new database();
+	$option_translate = array(
+			"table" => "bt_translate",
+			"condition" => "translate_th='{$text}' or translate_en='{$text}'"
+			);
+	$query_translate = $db->select($option_translate);
+	$rs_ts = $db->get($query_translate);
+	if($rs_ts['translate_'.$_SESSION['lang']] == ""){ 
+		return $text;
+	} else {
+		return $rs_ts['translate_'.$_SESSION['lang']];
+	}
+}
+
 function switch_lg($text)
 {
 	

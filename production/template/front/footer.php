@@ -49,7 +49,7 @@
 <!-- footer top -->
 <div class="footer-bottom clearfix">
 	<div class="col-md-6 text-left copyright">
-		<p>Copyrights © 2017 All Right Reserved</p>
+		<p>Copyrights © <?php echo date('Y'); ?> All Right Reserved</p>
 	</div>
 	<div class="col-md-6 text-right menu">
 		<ul>

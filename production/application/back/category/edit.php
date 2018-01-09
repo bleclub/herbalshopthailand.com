@@ -4,22 +4,19 @@
  */
  
 $pages_type = $_GET['url'];
-$title = "Edit product - แก้ไขผลิตภัณฑ์";
-$menu_product = "active";
+$title = "Edit category - แก้ไขหมวดหมู่ผลิตภัณฑ์";
+$menu_category = "active";
 
 
 $db = new database();
 $option_pw = array(
-        "table" => "btview_pages",
-        "condition" => "pages_id='{$_GET['id']}' AND pages_categories='product'"
+        "table" => "btview_category",
+        "condition" => "category_id='{$_GET['id']}' AND category_type='product'"
  );
 $query_pw = $db->select($option_pw);
 $rows_pw = $db->rows($query_pw);
 $rs_pw = $db->get($query_pw);	
 
-
-$sql_cate = "select * from bt_category where category_type = 'product' order by category_datecreate desc";
-$query_cate = $db->query($sql_cate);
 
 
 /*
@@ -59,8 +56,8 @@ label.error {
           </h1>
           <ol class="breadcrumb">
             <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-            <li class="active">Product</li>
-            <li class="active">Edit product</li>
+            <li class="active">category</li>
+            <li class="active">Edit category</li>
           </ol>
         </section>
 
@@ -75,7 +72,7 @@ label.error {
               </div>
             </div><!-- /.box-header -->
             <!-- form start -->
-           <form role="form" id="registration-form" action="<?php echo $baseUrl; ?>/back/product/retEDIT" method="post" enctype="multipart/form-data">
+           <form role="form" id="registration-form" action="<?php echo $baseUrl; ?>/back/category/retEDIT" method="post" enctype="multipart/form-data">
             <div class="box-body">
               <div class="row">
                 <div class="col-md-12">
@@ -93,16 +90,8 @@ label.error {
                   <div class="row">
                   	<div class="col-md-10">
                             <div class="form-group">
-                              <input type="text" class="form-control"  placeholder="ชื่อสินค้า" name="pages_subject_th" value="<?php echo $rs_pw['pages_subject_th'];?>" required>
-                              <input type="hidden" name="pages_categories" value="<?php echo $pages_type; ?>">
-                            </div>
-                            <!-- <div class="form-group">
-                              <input type="text" class="form-control"  placeholder="ลิงค์สินค้า" name="pages_link" value="<?php //echo $rs_pw['pages_link']; ?>" required>                              
-                            </div> -->
-                            
-                            <div class="form-group">
-                                <p>รายละเอียดสินค้า</p>
-                                <textarea id="contentTH" name="pages_content_th" rows="15" cols="80"><?php echo $rs_pw['pages_content_th']; ?></textarea>
+                              <input type="text" class="form-control"  placeholder="ชื่อหมวดหมู่" name="category_name_th" value="<?php echo $rs_pw['category_name_th'];?>" required>
+                              <input type="hidden" name="category_type" value="product">
                             </div>
                      
                     </div>
@@ -112,52 +101,31 @@ label.error {
                   <div class="row">
                   	<div class="col-md-10">
                         <div class="form-group">
-                           <input type="text" class="form-control"  placeholder="Product Name" name="pages_subject_en" value="<?php echo $rs_pw['pages_subject_en'];?>" required>
+                           <input type="text" class="form-control"  placeholder="Category Name" name="category_name_en" value="<?php echo $rs_pw['category_name_en'];?>" required>
                         </div>
-                        <!-- <div class="form-group">
-                          	<textarea placeholder="Headline" rows="3" class="form-control" name="pages_title_en" required><?php //echo $rs_pw['pages_title_en']; ?></textarea>
-                        </div> -->
-                        <div class="form-group">
-                        	<p>Product Detail</p>
-                        	<textarea id="contentEN" name="pages_content_en" rows="15" cols="80"><?php echo $rs_pw['pages_content_en']; ?></textarea>
-                        </div>
+
                     </div>
                  </div>
                   </div><!-- /.tab-pane -->
                 </div><!-- /.tab-content --> 
-              </div><!-- nav-tabs-custom -->
-		
-            
-              		  <div class="form-group" style="float:left; border:1px solid #CACACA; padding:10px;">
-                              <img src="<?php echo $baseUrl; ?>/upload/product/<?php echo $rs_pw['pages_photoslide']; ?>" width="375"><br>
-                              <label for="exampleInputFile">Picture</label>
-                              <input type="file" name="image" id="exampleInputFile">
-                              <p class="help-block">Browse your photo and recommended sizing: 900 x 600px</p>
-                      </div> 
-                         <input type="hidden" name="pages_id" value="<?php echo $_GET['id']; ?>">
-                         <input type="hidden" name="officeID" value="<?php echo $_SESSION[_ss . 'officeID']; ?>" />
-                    </div>
-                    <div class="form-group col-md-3" style="flex:left" required="" aria-required="true"> 
-                          <div class="input-group">
-                            <div class="input-group-addon">
-                              <i class="fa fa-calendar"></i>
-                            </div>
-                            <input name="pages_date" placeholder="วันที่" value="<?php echo $rs_pw['pages_date'];?>" class="form-control pull-right" id="createdate" required="" aria-required="true" type="text">
-                          </div><!-- /.input group -->
-                    </div>
-                    <div class="col-md-3">
-                        <div class="form-group">
-                            <select class="form-control select2"  name="category" style="width: 100%;" required>
-                                    <option value="">- Select Category -</option>
-                                    <?php
-                                        while ($rs_cate = $db->get($query_cate)) {
-                                    ?>
-                                          <option value="<?php echo $rs_cate['category_id']; ?>" <?php  if($rs_pw['category_id'] == $rs_cate['category_id']): echo "selected"; endif;?>><?php echo $rs_cate['category_name_en']." / ".$rs_cate['category_name_th']; ?></option>
-
-                                    <?php } ?>
-                              </select>
-                        </div>
-                      </div>
+              </div><!-- nav-tabs-custom -->           
+           </div>
+              <div class="col-md-3">
+                  <div class="form-group">
+                      <select class="form-control select2"  name="category_status" style="width: 100%;" required>
+                              <option value="" selected="SELECTED">- Status -</option>
+                                <?php if($rs_pw['category_status']  == "publish"){ 
+                                                  echo '<option value="publish" selected>Publish</option>';
+                                                  echo '<option value="unpublish">Unpublish</option>';
+                                } else if($rs_pw['category_status'] == "unpublish") {
+                                  echo '<option value="publish" >Publish</option>';
+                                                  echo '<option value="unpublish" selected>Unpublish</option>';
+                                }
+                              ?>
+                        </select>
+                        <input type="hidden" name="category_id" value="<?php echo $_GET['id']; ?>">
+                  </div>
+                </div>
                      <!-- /.col -->
                  	<!-- <div class="form-group col-md-3">
                       	<a class="confirm btn bg-navy btn-flat" title="" href="#" data-toggle="modal" data-target="#addgallery">Add Gallery</a>	
@@ -177,27 +145,6 @@ label.error {
                </div>
               </form>
               
-            <div class="modal modal-Teal fade" id="addgallery" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                            <h4 class="modal-title" id="myModalLabel">Add Gallery</h4>
-                        </div>
-                        <div class="modal-body">
-                        <div id="upload-wrapper">
-                            <form action="<?php echo $baseUrl; ?>/assets/ajax/gallery_news.php" method="post" enctype="multipart/form-data" id="upload_form">
-                            <input name="image_file" type="file" required="true" />
-                            <input type="submit" value="Upload" id="submit-btn bt" class="btn bg-navy btn-flat" />
-                            <img src="<?php echo $baseUrl; ?>/assets/admin/img/ajax-loader.gif" id="loading-img" style="display:none;" alt="Please Wait"/>
-                        </form>
-                        </div>
-                        </div>
-                        <div class="modal-footer">
-                        </div>
-                    </div>
-                </div>
-            </div>
             
             <div class="box-footer"></div>
           </div><!-- /.box -->

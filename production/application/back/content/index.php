@@ -59,7 +59,21 @@ else if($content_type == "quality"){
 	$menu_about = "active";
 	$menu_quality = "active";
 }
-
+else if($content_type == "distribution"){
+	$title_th = "สถานที่จัดจำหน่าย ";
+	$title_en = "Distribution";
+	$title = $title_en;
+	$menu_distribution = "active";
+}
+else if($content_type == "footer"){
+	$title_th = "จัดการข้อมูลส่วนท้ายเว็บ ";
+	$title_en = "Footer Managment";
+	$title = $title_en;
+	$menu_footer = "active";
+}
+else {
+  header("Location: ".$baseUrl."/cms");
+}
 
 
 $db = new database();

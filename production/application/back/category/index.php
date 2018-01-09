@@ -11,9 +11,9 @@
  */
 
 $pages_type = $_GET['url'];
-if($pages_type == "product"){
-	$title = 'Product List - สินค้า';
-	$menu_product = "active";
+if($pages_type == "category"){
+	$title = 'Category - หมวดหมู่ผลิตภัณฑ์';
+	$menu_category = "active";
 } else { 
 	header("Location: ".$baseUrl."/cms");
 }
@@ -21,7 +21,7 @@ if($pages_type == "product"){
 
 $db = new database();
 
-$sql_pages = "select * from btview_pages where pages_categories = '$pages_type' order by pages_createdate desc";
+$sql_pages = "select * from btview_category where category_type = 'product' order by category_datecreate desc";
 
 
 
@@ -54,11 +54,11 @@ require 'template/back/header.php';
         <section class="content-header">
           <h1>
 			<?php echo $title; ?>
-            <small>Product</small>
+            <small>Category</small>
           </h1>
           <ol class="breadcrumb">
             <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-            <li class="active">Pages</li>
+            <li class="active">Category</li>
             <li class="active">Main</li>
           </ol>
         </section>
@@ -71,7 +71,7 @@ require 'template/back/header.php';
                 <div class="box-header">
                   <!-- <h3 class="box-title">Data Table With Full Features</h3> -->
                   <div class="box-tools pull-right">
-                	<a href="<?php echo $baseUrl;?>/back/product/add" class="btn btn-box-tool"><i class="fa fa-plus"></i> เพิ่มสินค้า</a>
+                	<a href="<?php echo $baseUrl;?>/back/category/add" class="btn btn-box-tool"><i class="fa fa-plus"></i> เพิ่มหมวดหมู่</a>
                 	<!--<button class="btn btn-box-tool" data-widget="remove"><i class="fa fa-remove"></i></button>-->
               	</div>
                 </div><!-- /.box-header -->
@@ -81,9 +81,10 @@ require 'template/back/header.php';
                     <thead>
                       <tr>
                         <th>Date</th>
-                        <th>Product Name</th>
-                        <th>Product Category</th>
-                        <th>User</th>
+                        <th>Category Name</th>
+                        <th>Category Type</th>
+                        <th>Category Status</th>
+                        <th>User</th>                        
                         <th>Managment</th>
                       </tr>
                     </thead>
@@ -92,17 +93,18 @@ require 'template/back/header.php';
                         while ($rs_pages = $db->get($query_pages)) {
                     ?>
                       <tr>
-                        <td><?php echo dateFormat($rs_pages['pages_date']); ?></td>
-                        <td><?php echo $rs_pages['pages_subject_th']; ?></td>
-                        <td><?php echo $rs_pages['category_name_en']." / ".$rs_pages['category_name_th']; ?></td>                        
+                        <td><?php echo dateFormat($rs_pages['category_datecreate']); ?></td>
+                        <td><?php echo $rs_pages['category_name_en']." / ".$rs_pages['category_name_th']; ?></td>
+                        <td><?php echo $rs_pages['category_type']; ?></td>    
+                        <td><?php echo $rs_pages['category_status']; ?></td>                           
                         <td><?php echo $rs_pages['title_nameTH'].' '.$rs_pages['firstnameTH'].' '.$rs_pages['lastnameTH']; ?></td>
                         <td>
-                        	<a href="<?php echo $baseUrl; ?>/back/product/edit/<?php echo $rs_pages['pages_id']; ?>"><i class="fa fa-edit fa-1x"></i></a>
-                            <a class="confirm" title="" href="#" data-toggle="modal" data-target="#deleteModal<?php echo $rs_pages['pages_id'];?>"><i class="fa fa-trash fa-1x"></i></a>
+                        	<a href="<?php echo $baseUrl; ?>/back/category/edit/<?php echo $rs_pages['category_id']; ?>"><i class="fa fa-edit fa-1x"></i></a>
+                            <a class="confirm" title="" href="#" data-toggle="modal" data-target="#deleteModal<?php echo $rs_pages['category_id'];?>"><i class="fa fa-trash fa-1x"></i></a>
                             
                             
                        			 <!-- Modal -->
-                                    <div class="modal modal-warning fade" id="deleteModal<?php echo $rs_pages['pages_id'];?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                                    <div class="modal modal-warning fade" id="deleteModal<?php echo $rs_pages['category_id'];?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                                         <div class="modal-dialog">
                                             <div class="modal-content">
                                                 <div class="modal-header">
@@ -114,7 +116,7 @@ require 'template/back/header.php';
                                                 </div>
                                                 <div class="modal-footer">
                                                     <button type="button" class="btn btn-outline" data-dismiss="modal">Cancel</button>
-                                                    <a role="button" class="btn btn-outline" href="<?php echo $baseUrl."/back/product/delete/".$rs_pages['pages_id']; ?>">Confirm</a>
+                                                    <a role="button" class="btn btn-outline" href="<?php echo $baseUrl."/back/category/delete/".$rs_pages['category_id']; ?>">Confirm</a>
                                                 </div>
                                             </div>
                                         </div>
@@ -126,9 +128,10 @@ require 'template/back/header.php';
                     <tfoot>
                       <tr>
                         <th>Date</th>
-                        <th>Product Name</th>
-                        <th>Product Category</th>                        
-                        <th>User</th>
+                        <th>Category Name</th>
+                        <th>Category Type</th>
+                        <th>Category Status</th>
+                        <th>User</th>                        
                         <th>Managment</th>
                       </tr>
                     </tfoot>
