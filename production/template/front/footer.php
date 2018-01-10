@@ -1,3 +1,8 @@
+<?php
+    require 'controllers/front/footer.php';
+?>
+
+
 <!--Footer Section  -->
 
 <footer class="footer">
@@ -6,12 +11,13 @@
 		<div class="footer-col col-md-4 col-sm-6 text-left">
 			<img src="<?php echo $baseUrl; ?>/assets/front_end/images/ThaiHerbal-logo-white.png" width="80" alt="">
 			<p>&nbsp</p>
-			<p>บริษัท ผลิตภัณฑ์สมุนไพรไทย จำกัด</p>
+			<!-- <p>บริษัท ผลิตภัณฑ์สมุนไพรไทย จำกัด</p>
 			<p>องค์การเภสัชกรรม ซึ่งเป็นรัฐวิสาหกิจในการกำกับดูแล ของกระทรวงสาธารณสุขหลังจากที่ได้ประสบความสำเร็จในการผลิตยาแผนปัจจุบันมาแล้ว
 				ได้ทำการวิจัยและพัฒนาสมุนไพรเพื่อใช้เป็นยาและผลิตภัณฑ์เสริมอาหาร อย่างต่อเนื่อง และขยายผลการวิจัย</p>
 			<p>เลขที่ 130/149 หมู่ 3 ต.วังจุฬา อ.วังน้อย จ.พระนครศรีอยุธยา 13170</p>
 			<p>เบอร์โทรศัพท์: 035-721445-7, 063-2049077-8 <br>โทรสาร: 035-721743</p>
-			<p>อีเมล์: <a href="mailto:sale@thpnetwork.com">sale@thpnetwork.com</a></p>
+			<p>อีเมล์: <a href="mailto:sale@thpnetwork.com">sale@thpnetwork.com</a></p> -->
+			<?php echo $rs_footer['content_detail_'.$lang]; ?>
 		</div>
 		<div class="footer-col col-md-4 col-sm-6">
 			<h5>Send Message</h5>
