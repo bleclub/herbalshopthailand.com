@@ -1,3 +1,8 @@
+<?php
+    require 'controllers/front/menu.php';
+?>
+
+    
     </head>
 <body>
 <header id="header">
@@ -23,15 +28,22 @@
                 <li class="sub_menu <?php echo @$product_selected; ?>" style="cursor: pointer;">
                     <a  style="cursor: pointer;">Products</a>
                     <ul>
-                        <li><a href="<?php echo $baseUrl.'/'.$lang; ?>/product"><i class="icon-list"></i>&nbsp;&nbsp;Product list</a></li>
-                        <li><a href="<?php echo $baseUrl.'/'.$lang; ?>/production"><i class="icon-list"></i>&nbsp;&nbsp;Production</a></li>
-                        <li><a href="<?php echo $baseUrl.'/'.$lang; ?>/research"><i class="icon-list"></i>&nbsp;&nbsp;Research</a></li>
+                    <?php
+                        while($rs_category = $db->get($results_product)) { 
+                    ?>
+                        <li><a href="<?php echo $baseUrl.'/'.$lang.'/product/index/'.$rs_category['category_name_en'] ?>"><i class="icon-list"></i>&nbsp;&nbsp;<?php echo $rs_category['category_name_en']; ?></a></li>
+                    <?php } ?>
+                        
+                        <!-- <li><a href="<?php //echo $baseUrl.'/'.$lang; ?>/production"><i class="icon-list"></i>&nbsp;&nbsp;Production</a></li>
+                        <li><a href="<?php //echo $baseUrl.'/'.$lang; ?>/research"><i class="icon-list"></i>&nbsp;&nbsp;Research</a></li> -->
                     </ul>
                 </li>
                 <li <?php echo @$herblist_selected; ?>><a href="<?php echo $baseUrl.'/'.$lang; ?>/herblist">Herbal list</a></li>
                 <li <?php echo @$news_selected; ?>><a href="<?php echo $baseUrl.'/'.$lang; ?>/news_event">News & Event</a></li>
                 <li <?php echo @$article_selected; ?>><a href="<?php echo $baseUrl.'/'.$lang; ?>/article">Article</a></li>
                 <li <?php echo @$contact_selected; ?>><a href="<?php echo $baseUrl.'/'.$lang; ?>/contact">Contact</a></li>
+                <li <?php echo @$career_selected; ?>><a href="<?php echo $baseUrl.'/'.$lang; ?>/career">Career</a></li>
+                <li <?php echo @$distribution_selected; ?>><a href="<?php echo $baseUrl.'/'.$lang; ?>/distribution">Distribution</a></li>
             </ul>
         </nav>
         <a href="#" class="nav-toggle">Menu<span></span></a>
