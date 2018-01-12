@@ -22,7 +22,7 @@
 <section id="title_page" class="title_page parallax-container">
     <div class="parallax"><img src="<?php echo $baseUrl; ?>/assets/front_end/images/bg_product_title.jpg"></div>
     <div class="col-md-12 text-left">
-        <h1>Products</h1>
+        <h1>Products: <?php echo $_GET['status']; ?></h1>
         <p>ผลิตภัณฑ์สมุนไพรไทย</p>
         <!-- <a href="#" class="btn btn-large">อ่านเพิ่มเติม &nbsp;&nbsp; ></a> -->
         <ol class="breadcrumb">
@@ -90,8 +90,9 @@
                 var pagetitle = 'product';
                 var baseUrl = '<?php echo $baseUrl; ?>';
                 var lang = '<?php echo $lang; ?>';
+                var category = '<?php echo $_GET['status']; ?>';
                 var total_pages = 8;
-                $('#result_news').load("<?php echo $baseUrl; ?>/ajax/fetch_product.php", {'page':track_click, 'pagetitle':pagetitle, 'baseUrl':baseUrl, 'lang':lang},  function() {track_click++;}); //initial data to load
+                $('#result_news').load("<?php echo $baseUrl; ?>/ajax/fetch_product_cate.php", {'page':track_click, 'pagetitle':pagetitle, 'baseUrl':baseUrl, 'lang':lang, 'category':category},  function() {track_click++;}); //initial data to load
 
                 $(".load_more").click(function (e) { //user clicks on button
                 
@@ -101,7 +102,7 @@
                     if(track_click <= total_pages) //make sure user clicks are still less than total pages
                     {
                         //post page number and load returned data into result element
-                        $.post('<?php echo $baseUrl; ?>/ajax/fetch_product.php',{'page':track_click, 'pagetitle':pagetitle, 'baseUrl':baseUrl, 'lang':lang}, function(data) {
+                        $.post('<?php echo $baseUrl; ?>/ajax/fetch_product_cate.php',{'page':track_click, 'pagetitle':pagetitle, 'baseUrl':baseUrl, 'lang':lang, 'category':category}, function(data) {
                         
                             $(".load_more").show(); //bring back load more button
                             

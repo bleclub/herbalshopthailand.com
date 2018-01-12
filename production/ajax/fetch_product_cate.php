@@ -9,6 +9,7 @@ $page_number = filter_var($_POST["page"], FILTER_SANITIZE_NUMBER_INT, FILTER_FLA
 $baseUrl = $_POST['baseUrl'];
 $title = $_POST['pagetitle'];
 $lang = $_POST['lang'];
+$category = $_POST['category'];
 
 //throw HTTP error if page number is not valid
 if(!is_numeric($page_number)){
@@ -59,7 +60,7 @@ $position = ($page_number * $item_per_page);
 // if($dpmcode == "1200"){
 // 	$results = $db->query("select * from btview_pages where pages_categories='{$title}' order by pages_createdate desc LIMIT $position, $item_per_page");
 // } else { 
-	$results = $db->query("select * from btview_pages where pages_categories='{$title}' order by pages_date desc LIMIT $position, $item_per_page");
+	$results = $db->query("select * from btview_pages where pages_categories='{$title}' and category_name_en='{$category}' order by pages_date desc LIMIT $position, $item_per_page");
 // }
 	
 while($rs_pagesloop = $db->get($results)) { 

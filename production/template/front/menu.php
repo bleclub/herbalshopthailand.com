@@ -31,7 +31,7 @@
                     <?php
                         while($rs_category = $db->get($results_product)) { 
                     ?>
-                        <li><a href="<?php echo $baseUrl.'/'.$lang.'/product/index/'.$rs_category['category_name_en'] ?>"><i class="icon-list"></i>&nbsp;&nbsp;<?php echo $rs_category['category_name_en']; ?></a></li>
+                        <li><a href="<?php echo $baseUrl.'/'.$lang.'/product/category/'.$rs_category['category_name_en'] ?>"><i class="icon-list"></i>&nbsp;&nbsp;<?php echo $rs_category['category_name_en']; ?></a></li>
                     <?php } ?>
                         
                         <!-- <li><a href="<?php //echo $baseUrl.'/'.$lang; ?>/production"><i class="icon-list"></i>&nbsp;&nbsp;Production</a></li>
