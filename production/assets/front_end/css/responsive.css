@@ -6,6 +6,10 @@
       font-size: 1.8rem;
       line-height: 1.5;
   }
+
+  .navigation a{
+    margin-left: 25px;
+  }
 }
 
 @media screen and (max-width: 1024px) {

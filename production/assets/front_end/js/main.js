@@ -8,6 +8,17 @@ $(document).ready(function() {
 		} else {
 			$('#header').removeClass('fixed');
 		}
+
+		if(scroll >= 700){
+			$('.home_navigation').addClass('fixing');
+		}
+		if(scroll >= 800){
+			$('.home_navigation').addClass('fixed');
+		}
+		else {	
+			$('.home_navigation').removeClass('fixed');	
+			$('.home_navigation').removeClass('fixing');	
+		}
 	});
 
 
