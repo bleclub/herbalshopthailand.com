@@ -82,6 +82,7 @@ require 'template/back/header.php';
                       <tr>
                         <th>Date</th>
                         <th>Product Name</th>
+                        <th>Product Category</th>
                         <th>User</th>
                         <th>Managment</th>
                       </tr>
@@ -93,6 +94,7 @@ require 'template/back/header.php';
                       <tr>
                         <td><?php echo dateFormat($rs_pages['pages_date']); ?></td>
                         <td><?php echo $rs_pages['pages_subject_th']; ?></td>
+                        <td><?php echo $rs_pages['category_name_en']." / ".$rs_pages['category_name_th']; ?></td>                        
                         <td><?php echo $rs_pages['title_nameTH'].' '.$rs_pages['firstnameTH'].' '.$rs_pages['lastnameTH']; ?></td>
                         <td>
                         	<a href="<?php echo $baseUrl; ?>/back/product/edit/<?php echo $rs_pages['pages_id']; ?>"><i class="fa fa-edit fa-1x"></i></a>
@@ -125,6 +127,7 @@ require 'template/back/header.php';
                       <tr>
                         <th>Date</th>
                         <th>Product Name</th>
+                        <th>Product Category</th>                        
                         <th>User</th>
                         <th>Managment</th>
                       </tr>

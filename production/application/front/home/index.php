@@ -45,7 +45,7 @@
         }
     </style>
 
-<?php require 'template/front/menu.php'; ?>
+<?php require 'template/front/menu_home.php'; ?>
 
 <!-- Content -->
 

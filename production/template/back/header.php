@@ -218,6 +218,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
              <!-- <li class="<?php //echo @$menu_about; ?>"><a href="<?php //echo $baseUrl; ?>/back/content/index/about">
               <i class="fa fa-link"></i> <span>ประวัติความเป็นมา</span></a>
             </li> -->
+            <li class="<?php echo @$menu_category; ?>"><a href="<?php echo $baseUrl; ?>/back/category">
+              <i class="fa fa-link"></i> <span>หมวดหมู่ผลิตภัณฑ์</span></a>
+            </li>
             <li class="<?php echo @$menu_product; ?>"><a href="<?php echo $baseUrl; ?>/back/product">
               <i class="fa fa-link"></i> <span>ผลิตภัณฑ์</span></a>
             </li>
@@ -233,14 +236,20 @@ scratch. This page gets rid of all links and provides the needed markup only.
              <li class="<?php echo @$menu_article; ?>"><a href="<?php echo $baseUrl; ?>/back/article">
               <i class="fa fa-link"></i> <span>บทความ</span></a>
             </li>
+            <li class="<?php echo @$menu_distribution; ?>"><a href="<?php echo $baseUrl; ?>/back/content/index/distribution">
+              <i class="fa fa-link"></i> <span>สถานที่จัดจำหน่าย</span></a>
+            </li>
             <?php /* <li class="<?php echo @$menu_event; ?>"><a href="<?php echo $baseUrl; ?>/back/event">
               <i class="fa fa-link"></i> <span>Event</span></a>
             </li>  */ ?>
             <li class="<?php echo @$menu_career; ?>"><a href="<?php echo $baseUrl; ?>/back/career">
               <i class="fa fa-link"></i> <span>ตำแหน่งงาน</span></a>
             </li>
-            <li class="<?php echo @$menu_media; ?>"><a href="<?php echo $baseUrl; ?>/back/media">
-              <i class="fa fa-link"></i> <span>จัดการรูปภาพ</span></a>
+            <li class="<?php echo @$menu_footer; ?>"><a href="<?php echo $baseUrl; ?>/back/content/index/footer">
+              <i class="fa fa-link"></i> <span>Footer Managment</span></a>
+            </li>
+            <li class="<?php echo @$menu_media; ?>"><a href="<?php echo $baseUrl; ?>/back/media/managment" target="_blank">
+              <i class="fa fa-link"></i> <span>Library Managment</span></a>
             </li>
             
             <!-- <li class="<?php //echo @$menu_contact; ?>"><a href="<?php echo $baseUrl; ?>/back/enquiry">

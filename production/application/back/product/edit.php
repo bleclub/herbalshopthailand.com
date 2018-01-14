@@ -18,6 +18,9 @@ $rows_pw = $db->rows($query_pw);
 $rs_pw = $db->get($query_pw);	
 
 
+$sql_cate = "select * from bt_category where category_type = 'product' order by category_datecreate desc";
+$query_cate = $db->query($sql_cate);
+
 
 /*
  * php code///////////**********************************************************
@@ -142,6 +145,19 @@ label.error {
                             <input name="pages_date" placeholder="วันที่" value="<?php echo $rs_pw['pages_date'];?>" class="form-control pull-right" id="createdate" required="" aria-required="true" type="text">
                           </div><!-- /.input group -->
                     </div>
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <select class="form-control select2"  name="category" style="width: 100%;" required>
+                                    <option value="">- Select Category -</option>
+                                    <?php
+                                        while ($rs_cate = $db->get($query_cate)) {
+                                    ?>
+                                          <option value="<?php echo $rs_cate['category_id']; ?>" <?php  if($rs_pw['category_id'] == $rs_cate['category_id']): echo "selected"; endif;?>><?php echo $rs_cate['category_name_en']." / ".$rs_cate['category_name_th']; ?></option>
+
+                                    <?php } ?>
+                              </select>
+                        </div>
+                      </div>
                      <!-- /.col -->
                  	<!-- <div class="form-group col-md-3">
                       	<a class="confirm btn bg-navy btn-flat" title="" href="#" data-toggle="modal" data-target="#addgallery">Add Gallery</a>	

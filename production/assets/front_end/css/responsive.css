@@ -6,6 +6,10 @@
       font-size: 1.8rem;
       line-height: 1.5;
   }
+
+  .navigation a{
+    margin-left: 25px;
+  }
 }
 
 @media screen and (max-width: 1024px) {
@@ -175,8 +179,16 @@
 }
 .vision_detail, .role_detail{
   padding: 50px 40px 100px 100px;
-  margin-top: -366px;
+  margin-top: -455px;
 }
+
+
+.role_detail.invester {
+  margin-top: -455px;
+  padding: 60px 40px 100px 100px;
+}
+
+
 .about_detail p, .vision_detail p{
   font-size: 14px;
 }
@@ -347,9 +359,14 @@
     }
 
     .vision_detail, .role_detail {
-      margin-top: -366px;
-      padding: 300px 10px 50px;
+      margin-top: -455px;
+      padding: 400px 10px 50px;
   }
+
+  .role_detail.invester {
+    margin-top: -455px;
+    padding: 400px 10px 50px;
+}
 
   .vision_block p {
       margin: 10px 0 30px;

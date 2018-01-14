@@ -34,6 +34,21 @@ function lang_path(){
 	return isset($_SESSION['lang'], $languages) ? $_SESSION['lang'] : 'th';
 }
 
+function translate($text){
+	$db = new database();
+	$option_translate = array(
+			"table" => "bt_translate",
+			"condition" => "translate_th='{$text}' or translate_en='{$text}'"
+			);
+	$query_translate = $db->select($option_translate);
+	$rs_ts = $db->get($query_translate);
+	if($rs_ts['translate_'.$_SESSION['lang']] == ""){ 
+		return $text;
+	} else {
+		return $rs_ts['translate_'.$_SESSION['lang']];
+	}
+}
+
 function switch_lg($text)
 {
 	
@@ -49,10 +64,13 @@ function switch_lg($text)
 
 	$dpm = isset($_GET['dpm']) ? "/".$_GET['dpm'] : "";
 	$id = isset($_GET['id']) ? "/".$_GET['id'] : "";
+	$status = isset($_GET['status']) ? "/".$_GET['status'] : "";
 	if($_GET['url'] == "home"){
 		return base_url().$dpm."/".$text;
+	} else if($_GET['url'] <> "home" && $_GET['status'] <> ""){
+		return base_url().$dpm."/".$text.$url.$a.$page.$status.$id; 
 	} else {
-		return base_url().$dpm."/".$text.$url.$index.$page.$id;
+		return base_url().$dpm."/".$text.$url.$index.$page.$status.$id;
 	}
 	
 }
