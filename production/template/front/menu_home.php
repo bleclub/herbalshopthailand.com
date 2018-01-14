@@ -56,8 +56,40 @@
       letter-spacing: 1px;
     }
 
+    .home_navigation.fixed ul.home-primary-nav li {
+    margin: 30px 0 30px 30px;
+}
+
     ul.home-primary-nav li a {
       color: #fff;
+    }
+
+    .home_navigation.fixed ul.home-primary-nav{
+        float:right;
+    }
+
+    .home_navigation.fixed ul.home-primary-nav li .open li {
+        margin: 20px 0 20px 0;
+    }
+
+
+    .home_navigation a {
+        color: #fff;
+        font-size: 13px;
+        font-weight: 300;
+        margin-left: 0px;
+        padding: 10px 0;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
+    }
+
+    .home_navigation a:hover, .navigation a.active {
+      color: #47c9af; 
+    }
+
+    .home_navigation .selected > a {
+      color: #47c9af;
     }
 
     
@@ -72,6 +104,85 @@
         display:block;
     }
 
+    .home-primary-nav ul {
+    background: rgba(0, 0, 0, 0.6) none repeat scroll 0 0;
+    border-top: 2px solid #fff;
+    color: #fff;
+    float: none;
+    font-family: kanit;
+    font-size: 13px;
+    font-weight: 300;
+    line-height: 1.8;
+    margin-left: 0;
+    position: absolute;
+    text-transform: uppercase;
+    top: 100%;
+    width: 200px;
+    opacity: 0;
+    -webkit-transition: opacity 0.5s;
+    -moz-transition: opacity 0.5s;
+    transition: opacity 0.5s;
+}
+
+    .home-primary-nav ul.open{
+      opacity: 1;
+    }
+    .home-primary-nav ul li {
+        display: block;
+        margin: 20px 30px;
+        padding: 0;
+    }
+    .home-primary-nav ul li a {
+        margin-left: -20px;
+        padding: 0;
+    }
+
+    @media screen and (max-width: 1024px) {
+
+        .home_navigation{
+            display: none;
+        }
+
+        .navigation {
+            display: block;
+        }
+
+        #header{
+            position:fixed;
+        }
+
+        #header.fixed{
+            background: rgba(0,0,0,0.6);
+        }
+        
+        #header.fixed .nav-toggle {
+            top: 25px;
+        }
+
+        #header .logo.logo_full{
+            width:350px;
+        }
+
+    }
+    @media screen and (max-width: 600px) {
+        #header .logo.logo_full{
+            display:none;
+        }
+
+        #header .logo{
+            display:block;
+            width:80px;
+        }
+
+        #header.fixed .logo{
+            width:70px;
+        }
+
+        #header.fixed .nav-toggle {
+            top: 18px;
+        }
+    }
+
 
 </style>
 
@@ -79,7 +190,7 @@
 
 <header id="header">
     <div class="header-content clearfix">
-        <a class="logo" href="<?php echo $baseUrl.'/'.$lang; ?>"><img src="<?php echo $baseUrl; ?>/assets/front_end/images/ThaiHerbal-logo-full.png" alt="Thai Herbal Logo" class="img-responsive"></a>
+        <a class="logo" href="<?php echo $baseUrl.'/'.$lang; ?>"><img src="<?php echo $baseUrl; ?>/assets/front_end/images/ThaiHerbal-logo-white.png" alt="Thai Herbal Logo" class="img-responsive"></a>
         <a class="logo logo_full" href="<?php echo $baseUrl.'/'.$lang; ?>"><img src="<?php echo $baseUrl; ?>/assets/front_end/images/ThaiHerbal-logo-full.png" alt="Thai Herbal Logo" class="img-responsive"></a>        
         <?php 
             if($lang == 'th'){ 
@@ -90,11 +201,7 @@
             }
         ?>
         <nav class="navigation" role="navigation">
-            <ul class="lang">
-                <!-- <li>Langauge:</li> -->
-                <li <?php echo $lang_active_th; ?>><a href="<?php echo switch_lg('th'); ?>" >TH</a></li>
-                <li <?php echo $lang_active_en; ?>><a href="<?php echo switch_lg('en'); ?>">EN</a></li>
-            </ul>
+            
             <ul class="primary-nav">
                 <li <?php echo @$home_selected; ?>><a href="<?php echo $baseUrl.'/'.$lang; ?>">Home</a></li>
                 <li <?php echo @$about_selected; ?>><a href="<?php echo $baseUrl.'/'.$lang; ?>/about">About</a></li>
@@ -129,16 +236,21 @@
     <nav class="home_navigation" role="navigation">
         <div class="container">
              <a class="logo" href="<?php echo $baseUrl.'/'.$lang; ?>"><img src="<?php echo $baseUrl; ?>/assets/front_end/images/ThaiHerbal-logo-white.png" alt="Thai Herbal Logo" class="img-responsive"></a>
+             <ul class="lang">
+                <!-- <li>Langauge:</li> -->
+                <li <?php echo $lang_active_th; ?>><a href="<?php echo switch_lg('th'); ?>" >TH</a></li>
+                <li <?php echo $lang_active_en; ?>><a href="<?php echo switch_lg('en'); ?>">EN</a></li>
+            </ul>
             <ul class="home-primary-nav">
                 <li <?php echo @$home_selected; ?>><a href="<?php echo $baseUrl.'/'.$lang; ?>">Home</a></li>
                 <li <?php echo @$about_selected; ?>><a href="<?php echo $baseUrl.'/'.$lang; ?>/about">About</a></li>
-                <li class="sub_menu <?php echo @$product_selected; ?>" style="cursor: pointer;">
+                <li class="sub_menu_home <?php echo @$product_selected; ?>" style="cursor: pointer;">
                     <a  style="cursor: pointer;">Products</a>
                     <ul>
                     <?php
-                        while($rs_category = $db->get($results_product)) { 
+                        while($rs_category2 = $db->get($results_product2)) { 
                     ?>
-                        <li><a href="<?php echo $baseUrl.'/'.$lang.'/product/category/'.$rs_category['category_name_en'] ?>"><i class="icon-list"></i>&nbsp;&nbsp;<?php echo $rs_category['category_name_en']; ?></a></li>
+                        <li><a href="<?php echo $baseUrl.'/'.$lang.'/product/category/'.$rs_category2['category_name_en'] ?>"><i class="icon-list"></i>&nbsp;&nbsp;<?php echo $rs_category2['category_name_en']; ?></a></li>
                     <?php } ?>
                         
                         <!-- <li><a href="<?php //echo $baseUrl.'/'.$lang; ?>/production"><i class="icon-list"></i>&nbsp;&nbsp;Production</a></li>

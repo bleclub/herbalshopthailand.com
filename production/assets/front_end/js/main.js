@@ -38,6 +38,12 @@ $(document).ready(function() {
 		$(".primary-nav li.sub_menu ul").removeClass('open');
 	});
 
+	$("li.sub_menu_home").mouseover(function(){
+        $(".home-primary-nav li.sub_menu_home ul").addClass('open');
+    }).mouseleave(function() {
+		$(".home-primary-nav li.sub_menu_home ul").removeClass('open');
+	});
+
 
 	$('.parallax').parallax();
 
