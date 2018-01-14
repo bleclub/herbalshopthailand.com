@@ -144,6 +144,15 @@
       padding: 0;
      }
 
+     ul.lang{
+       text-align: center;
+     }
+
+     .navigation ul.lang li {
+      display: inline-block;
+      margin-bottom: 20px;
+  }
+
   .person {
     margin: 0 auto 50px; }
     .person-content {
@@ -380,6 +389,15 @@
   #contact .bottommargin{
     padding: 0;
   }
+
+  .footer-bottom ul {
+    display: block;
+}
+
+  .footer-bottom ul li {
+    font-size: 13px;
+    margin: 8px 8px;
+  }
     
     
 }
@@ -435,10 +453,7 @@
     background-color: #282828;
     padding: 20px 10px;
 }
-  .footer-bottom ul li {
-      font-size: 13px;
-      margin: 0 8px;
-  }
+  
   .footer-bottom .copyright p{
     font-size: 13px;
   }

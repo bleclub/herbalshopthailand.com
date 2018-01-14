@@ -1,7 +1,6 @@
 <?php
     require 'controllers/front/menu.php';
 ?>
-
     
     </head>
 <body>
@@ -45,9 +44,13 @@
                 <li <?php echo @$career_selected; ?>><a href="<?php echo $baseUrl.'/'.$lang; ?>/career">Career</a></li>
                 <li <?php echo @$distribution_selected; ?>><a href="<?php echo $baseUrl.'/'.$lang; ?>/distribution">Distribution</a></li>
             </ul>
+            
         </nav>
         <a href="#" class="nav-toggle">Menu<span></span></a>
     </div>
     <!-- header content -->
 </header>
 <!-- header -->
+
+
+

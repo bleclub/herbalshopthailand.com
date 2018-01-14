@@ -2,7 +2,42 @@
     require 'controllers/front/footer.php';
 ?>
 
+<style>
+    
+	.footer-col .block-social {
+		position: relative;
+		top: 0;
+		text-align: left;
+		z-index: 99;
+		width: 100%;
+		padding: 0;
+		left: 0;
+		margin-bottom: 20px;
+	}
+   .footer-col .block-social ul {
+    list-style: none;
+    }
+   .footer-col .block-social ul li {
+        display: inline-block;
+        margin: 0 0 0 10px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        font-weight: 300;
+        font-size: 16px;
+    }
 
+   .footer-col .block-social ul li.text {
+		font-size: 18px;
+		color: #fff;
+	}
+  .footer-col  .block-social ul li a {
+    color: #fff;
+    }
+   .footer-col .block-social ul li a:hover {
+    color: #47c9af;
+    }
+
+</style>
 <!--Footer Section  -->
 
 <footer class="footer">
@@ -40,6 +75,16 @@
 			</form>
 		</div>
 		<div class="footer-col col-md-4">
+			<div class="block-social">
+					<ul>
+							<li class="text">Follow Us: </li>
+							<li class=""><a href="#"><i class="fa fa-facebook fa-1x"></i></a></li>
+							<li class=""><a href="#"><i class="fa fa-twitter fa-1x"></i></a></li>
+							<li class=""><a href="#"><i class="fa fa-instagram fa-1x"></i></a></li>
+							<li class=""><a href="#"><i class="fa fa-youtube fa-1x"></i></a></li>
+							<li class=""><a href="#"><i class="fa fa-envelope fa-x"></i></a></li>
+					</ul>
+			</div>
 			<div class="hidden-lg">
 				<iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FThaiHerbalProductsOfficial%2F&tabs=timeline&width=300&height=400&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=false&appId=1349441945090988"
 					width="300" height="400" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe>

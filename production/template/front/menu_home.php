@@ -137,6 +137,37 @@
         padding: 0;
     }
 
+
+    .block-social{
+        position:absolute;
+        bottom:20px;
+        text-align:right;
+        z-index: 98;
+        width:100%;
+    }
+    .block-social ul {
+    list-style: none;
+    }
+    .block-social ul li {
+        display: inline-block;
+        margin: 0 0 0 20px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        font-weight: 300;
+        font-size: 16px;
+    }
+
+    .block-social ul li.text{
+        font-size: 12px;
+        color: #ffffff;
+    }
+    .block-social ul li a {
+    color: #fff;
+    }
+    .block-social ul li a:hover {
+    color: #47c9af;
+    }
+
     @media screen and (max-width: 1024px) {
 
         .home_navigation{
@@ -163,6 +194,8 @@
             width:350px;
         }
 
+        
+
     }
     @media screen and (max-width: 600px) {
         #header .logo.logo_full{
@@ -181,6 +214,15 @@
         #header.fixed .nav-toggle {
             top: 18px;
         }
+
+        .block-social{
+            text-align:left;
+        }
+
+        .block-social ul li {
+            margin-left:10px;
+        }
+        
     }
 
 
@@ -271,3 +313,16 @@
             </ul>
         </div>
     </nav>
+
+    <div class="block-social">
+        <div class="container">    
+            <ul>
+                    <li class="text">Follow Us: </li>
+                    <li class=""><a href="#"><i class="fa fa-facebook fa-1x"></i></a></li>
+                    <li class=""><a href="#"><i class="fa fa-twitter fa-1x"></i></a></li>
+                    <li class=""><a href="#"><i class="fa fa-instagram fa-1x"></i></a></li>
+                    <li class=""><a href="#"><i class="fa fa-youtube fa-1x"></i></a></li>
+                    <li class=""><a href="#"><i class="fa fa-envelope fa-x"></i></a></li>
+            </ul>
+        </div>
+    </div>
