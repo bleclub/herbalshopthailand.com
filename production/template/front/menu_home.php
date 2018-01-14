@@ -201,6 +201,11 @@
             }
         ?>
         <nav class="navigation" role="navigation">
+            <ul class="lang">
+                <!-- <li>Langauge:</li> -->
+                <li <?php echo $lang_active_th; ?>><a href="<?php echo switch_lg('th'); ?>" >TH</a></li>
+                <li <?php echo $lang_active_en; ?>><a href="<?php echo switch_lg('en'); ?>">EN</a></li>
+            </ul>
             
             <ul class="primary-nav">
                 <li <?php echo @$home_selected; ?>><a href="<?php echo $baseUrl.'/'.$lang; ?>">Home</a></li>
