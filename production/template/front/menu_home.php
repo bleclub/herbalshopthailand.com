@@ -68,6 +68,11 @@
         float:right;
     }
 
+
+    .home_navigation.fixed ul.home-primary-nav li.sub_menu_home li {
+        margin: 20px 0 20px 0;
+    }
+
     .home_navigation.fixed ul.home-primary-nav li .open li {
         margin: 20px 0 20px 0;
     }
