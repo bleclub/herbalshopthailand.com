@@ -31,8 +31,8 @@ $config['authentication'] = function () {
 /*============================ License Key ============================================*/
 // http://docs.cksource.com/ckfinder3-php/configuration.html#configuration_options_licenseKey
 
-$config['LicenseName']	= 'thaiherbinfo.com';
-$config['LicenseKey']	= 'W8T8-N4U5-26ZH-43S3-R1HS-ZZEM-TR4J';
+$config['LicenseName']	= '';
+$config['LicenseKey']	= '';
 
 /*============================ CKFinder Internal Directory ============================*/
 // http://docs.cksource.com/ckfinder3-php/configuration.html#configuration_options_privateDir
