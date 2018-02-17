@@ -57,8 +57,8 @@
     }
 
     .home_navigation.fixed ul.home-primary-nav li {
-    margin: 30px 0 30px 30px;
-}
+        margin: 30px 0 30px 30px;
+    }
 
     ul.home-primary-nav li a {
       color: #fff;
@@ -68,8 +68,12 @@
         float:right;
     }
 
-    .home_navigation.fixed ul.home-primary-nav li .open li {
-        margin: 20px 0 20px 0;
+    .home_navigation.fixed ul.home-primary-nav li.sub_menu_home ul.sub_none li{
+        margin: 20px 0 20px 30px;        
+    }
+
+    .home_navigation.fixed ul.home-primary-nav li.sub_menu_home ul.open li {
+        margin: 20px 0 20px 30px;
     }
 
 
@@ -104,7 +108,7 @@
         display:block;
     }
 
-    .home-primary-nav ul {
+   .home-primary-nav ul {
     background: rgba(0, 0, 0, 0.6) none repeat scroll 0 0;
     border-top: 2px solid #fff;
     color: #fff;
@@ -116,12 +120,21 @@
     margin-left: 0;
     position: absolute;
     text-transform: uppercase;
-    top: 100%;
-    width: 200px;
+    width: 250px;
     opacity: 0;
     -webkit-transition: opacity 0.5s;
     -moz-transition: opacity 0.5s;
     transition: opacity 0.5s;
+    text-align: left;
+    bottom: 100px;
+    padding: 0 10px;
+}
+
+.home_navigation.fixed .home-primary-nav ul {
+    bottom: auto;
+    top: 98px;
+    /* padding: 0px 0px 0 50px; */
+    text-align: left;
 }
 
     .home-primary-nav ul.open{
@@ -251,7 +264,7 @@
                 <li <?php echo @$about_selected; ?>><a href="<?php echo $baseUrl.'/'.$lang; ?>/about">About</a></li>
                 <li class="sub_menu_home <?php echo @$product_selected; ?>" style="cursor: pointer;">
                     <a  style="cursor: pointer;">Products</a>
-                    <ul>
+                    <ul class="sub_none">
                     <?php
                         while($rs_category2 = $db->get($results_product2)) { 
                     ?>

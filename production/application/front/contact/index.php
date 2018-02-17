@@ -110,12 +110,12 @@
 					<div class="col-sm-4 nobottommargin">
 
 						<address>
-							<strong>สำนักงาน:</strong><br>
+							<strong><?php echo translate('สำนักงาน'); ?>:</strong><br>
 							เลขที่ 130/149 หมู่ 3 ต.วังจุฬา อ.วังน้อย จ.พระนครศรีอยุธยา 13170
 						</address>
-						<abbr title="Phone Number"><strong>เบอร์โทรศัพท์:</strong></abbr> 035-721445-7, 063-2049077-8<br>
-						<abbr title="Fax"><strong>โทรสาร:</strong></abbr> 035-721743<br>
-						<abbr title="Email Address"><strong>อีเมล์:</strong></abbr> sale@thpnetwork.com <br><br>
+						<abbr title="Phone Number"><strong><?php echo translate('เบอร์โทรศัพท์'); ?>:</strong></abbr> 035-721445-7, 063-2049077-8<br>
+						<abbr title="Fax"><strong><?php echo translate('โทรสาร'); ?>:</strong></abbr> 035-721743<br>
+						<abbr title="Email Address"><strong><?php echo translate('อีเมล์'); ?>:</strong></abbr> sale@thpnetwork.com <br><br>
 
 						<section id="google-map" class="gmap" style="height: 350px;"></section>
 

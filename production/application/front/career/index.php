@@ -5,7 +5,7 @@
     $description = 'Herbalshop Thailand';
     $keywords = 'Herbalshop Thailand';
     
-    // $contact_selected = "class='selected'"; // Menu selected
+    $career_selected = "class='selected'"; // Menu selected
     
     require 'template/front/header.php';
     require 'controllers/front/career_page.php';
@@ -37,7 +37,7 @@
 
 <section id="career">
     <div class="container">
-        <h3>Career Position</h3>
+        <h3><?php echo translate('Career Position'); ?></h3>
         <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
             <?php
                 $career_num = 1;
@@ -55,7 +55,7 @@
                     <div id="collapse0<?php echo $career_num; ?>" class="panel-collapse collapse <?php if($career_num == 1) { echo 'in'; } ?> " role="tabpanel" aria-labelledby="heading0<?php echo $career_num; ?>">
                     <div class="panel-body">
                         <?php echo $rs_pages['pages_content_'.$lang]; ?>
-                        <a class=" btn btn-lg btn-default" href="<?php echo $baseUrl."/career/apply/".$rs_pages['pages_link']; ?>">Apply Job</a>
+                        <a class=" btn btn-lg btn-default" href="<?php echo $baseUrl."/".$lang."/career/apply/".$rs_pages['pages_link']; ?>">Apply Job</a>
                     </div>
                     </div>
                 </div>

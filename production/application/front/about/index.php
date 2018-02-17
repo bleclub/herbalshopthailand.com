@@ -37,25 +37,25 @@
             <div class="col-sm-4 col-md-4 col-lg-3 side_block">
                 <ul class="sidenav">
                     <li>
-                        <a href="#snav-content1" data-target="#snav-content1" data-toggle="tab">ประวัติและความเป็นมา<i class="fa fa-chevron-right"></i></a>
+                        <a href="#snav-content1" data-target="#snav-content1" data-toggle="tab"><?php echo translate('ประวัติและความเป็นมา'); ?><i class="fa fa-chevron-right"></i></a>
                     </li>
                     <li>
-                        <a href="#snav-content2" data-target="#snav-content2" data-toggle="tab">วิสัยทัศน์<i class="fa fa-chevron-right"></i></a>
+                        <a href="#snav-content2" data-target="#snav-content2" data-toggle="tab"><?php echo translate('วิสัยทัศน์'); ?><i class="fa fa-chevron-right"></i></a>
                     </li>
                      <li>
-                        <a href="#snav-content3" data-target="#snav-content3" data-toggle="tab">บทบาทและภารกิจ<i class="fa fa-chevron-right"></i></a>
+                        <a href="#snav-content3" data-target="#snav-content3" data-toggle="tab"><?php echo translate('บทบาทและภารกิจ');?><i class="fa fa-chevron-right"></i></a>
                     </li>
                     <li>
-                        <a href="#snav-content4" data-target="#snav-content4" data-toggle="tab">ผู้ถือหุ้น<i class="fa fa-chevron-right"></i></a>
+                        <a href="#snav-content4" data-target="#snav-content4" data-toggle="tab"><?php echo translate('ผู้ถือหุ้น');?><i class="fa fa-chevron-right"></i></a>
                     </li>
                     <li>
-                        <a href="#snav-content5" data-target="#snav-content5" data-toggle="tab">รายชื่อคณะกรรมการ<i class="fa fa-chevron-right"></i></a>
+                        <a href="#snav-content5" data-target="#snav-content5" data-toggle="tab"><?php echo translate('รายชื่อคณะกรรมการ');?><i class="fa fa-chevron-right"></i></a>
                     </li> 
                     <li>
-                        <a href="#snav-content6" data-target="#snav-content6" data-toggle="tab">กระบวนการผลิต<i class="fa fa-chevron-right"></i></a>
+                        <a href="#snav-content6" data-target="#snav-content6" data-toggle="tab"><?php echo translate('กระบวนการผลิต');?><i class="fa fa-chevron-right"></i></a>
                     </li> 
                     <li>
-                        <a href="#snav-content7" data-target="#snav-content7" data-toggle="tab">วิจัยพัฒนา/การประกันคุณภาพ<i class="fa fa-chevron-right"></i></a>
+                        <a href="#snav-content7" data-target="#snav-content7" data-toggle="tab"><?php echo translate('วิจัยพัฒนา/การประกันคุณภาพ');?><i class="fa fa-chevron-right"></i></a>
                     </li> 
 
                 </ul>
@@ -64,7 +64,7 @@
             <!-- About Us section -->
                 <section id="snav-content1" class="about_detail">
                     <div class="col-sm-8 col-sm-offset-4">
-                        <h2>ประวัติและความเป็นมา</h2>
+                        <h2><?php echo $rs_about['content_subject_'.$lang]; ?></h2>
                         <hr>
                         <?php echo $rs_about['content_detail_'.$lang]; ?>
                             <!-- <p>องค์การเภสัชกรรม ซึ่งเป็นรัฐวิสาหกิจในการกำกับดูแลของกระทรวงสาธารณสุขหลังจากที่ได้ประสบความ สำเร็จในการผลิตยาแผนปัจจุบันมาแล้ว ได้ทำการวิจัยและพัฒนาสมุนไพรเพื่อใช้เป็นยาและผลิตภัณฑ์เสริมอาหาร อย่างต่อเนื่อง และขยายผลการวิจัยและพัฒนาไปสู่การผลิตผลิตภัณฑ์สมุนไพรเชิงอุตสาหกรรม โดยใช้แทคโนโลยี และกรรมวิธีผลิตที่ดี (GMP) และระบบคุณภาพ ISO 9002 รวมทั้งมาตรฐานการควบคุมคุณภาพ อย่างไรก็ดี ปริมาณการผลิตยังไม่เพียงพอกับความต้องการของประชาชน<br><br>
@@ -80,7 +80,7 @@
             <!-- Vision section -->
                 <section id="snav-content2" class="vision_detail">
                     <div class="col-sm-8 col-sm-offset-4">
-                        <h2>วิสัยทัศน์</h2>
+                        <h2><?php echo $rs_vision['content_subject_'.$lang]; ?></h2>
                         <hr>
                         <?php echo $rs_vision['content_detail_'.$lang]; ?> 
                         <!-- <p>เป็นผู้นำด้านการผลิตยาสมุนไพร ภายใต้เทคโนโลยีการผลิตที่ดี (GMP) และได้รับการรับรอง มาตรฐานสากล มุ่งเน้นการพัฒนาด้านการผลิตยาสมุนไพรที่มีคุณภาพสูงสุด
@@ -143,7 +143,7 @@
                         }
                     </style>
                     <div class="col-sm-8 col-sm-offset-4">
-                        <h2>บทบาทและธุรกิจ</h2>
+                        <h2><?php echo $rs_mission['content_subject_'.$lang]; ?></h2>
                         <hr>
                         <?php echo $rs_mission['content_detail_'.$lang]; ?>                         
                         <!-- <ol>
@@ -209,7 +209,7 @@
                  <!-- Shareholder -->
                 <section id="snav-content4" class="role_detail invester">
                     <div class="col-sm-8 col-sm-offset-4">
-                        <h2>ผู้ถือหุ้น</h2>
+                        <h2><?php echo $rs_shareholders['content_subject_'.$lang]; ?></h2>
                         <hr>
                         <?php echo $rs_shareholders['content_detail_'.$lang]; ?>                                                 
                     </div>
@@ -217,7 +217,7 @@
                 
                 <section id="snav-content5" class="role_detail invester">
                     <div class="col-sm-8 col-sm-offset-4">
-                        <h2>รายชื่อคณะกรรมการ</h2>
+                        <h2><?php echo $rs_board['content_subject_'.$lang]; ?></h2>
                         <hr>
                         <?php echo $rs_board['content_detail_'.$lang]; ?>                                                                            
                     </div>
@@ -226,7 +226,7 @@
 
                 <section id="snav-content6" class="role_detail invester">
                     <div class="col-sm-8 col-sm-offset-4">
-                        <h2>กระบวนการผลิต</h2>
+                        <h2><?php echo $rs_production['content_subject_'.$lang]; ?></h2>
                         <hr>
                         <?php echo $rs_production['content_detail_'.$lang]; ?>                                                                                                        
                     </div>
@@ -235,7 +235,7 @@
 
                 <section id="snav-content7" class="role_detail invester">
                     <div class="col-sm-8 col-sm-offset-4">
-                        <h2>วิจัยพัฒนา/การประกันคุณภาพ</h2>
+                        <h2><?php echo $rs_quality['content_subject_'.$lang]; ?></h2>
                         <hr>
                         <?php echo $rs_quality['content_detail_'.$lang]; ?>                                                                                                                                
                     </div>

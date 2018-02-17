@@ -87,7 +87,7 @@
                                 <div class="banner-text text-left">
                                     <h1><?php echo $rs_banner['pages_subject_'.$lang]; ?></h1>
                                     <?php echo $rs_banner['pages_content_'.$lang]; ?>
-                                    <div role="navigation"><a href="<?php echo $rs_banner['pages_link']; ?>" class="btn btn-large">อ่านเพิ่มเติม &nbsp;&nbsp; ></a></div>
+                                    <div role="navigation"><a href="<?php echo $rs_banner['pages_link']; ?>" class="btn btn-large"><?php echo translate('อ่านเพิ่มเติม'); ?> &nbsp;&nbsp; ></a></div>
                                 </div>
                                 <!-- banner text -->
                             </div>
@@ -110,7 +110,7 @@
     <section id="about" class="about clearfix parallax-container">
         <div class="parallax"><img src="<?php echo $baseUrl; ?>/assets/front_end/images/bg_about.jpg"></div>
         <div class="col-md-6">
-            <h2>ผลิตภัณฑ์ สมุนไพรไทย</h2>
+            <h2><?php echo translate('ผลิตภัณฑ์สมุนไพรไทย'); ?></h2>
             <hr>
             <p>องค์การเภสัชกรรม ซึ่งเป็นรัฐวิสาหกิจในการกำกับดูแลของกระทรวงสาธารณสุขหลังจากที่ได้ ประสบความสำเร็จในการผลิตยาแผนปัจจุบันมาแล้ว
                 ได้ทำการวิจัยและพัฒนาสมุนไพรเพื่อใช้ เป็นยาและผลิตภัณฑ์เสริมอาหาร อย่างต่อเนื่อง และขยายผลการวิจัย</p>
@@ -134,17 +134,29 @@
         ?>
 
         <div class="col-md-4 col-sm-4 produect_cate">
-            <img src="<?php echo $baseUrl; ?>/upload/product/<?php echo $rs_product_loop['pages_photoslide']; ?>" class="img-responsive" alt="">
+        
+            <div class="effect-layla">
+                <img src="<?php echo $baseUrl; ?>/upload/product/<?php echo $rs_product_loop['pages_photoslide']; ?>" class="img-responsive" alt="">
+                <figcaption>
+                    <div>
+                        <h2>&nbsp;<?php //echo $rs_product_loop['pages_categories']; ?></h2>
+                        <p>Click here...</p>
+                    </div>
+                    <a href="<?php echo $baseUrl.'/'.$lang; ?>/product/<?php echo $rs_product_loop['pages_link']; ?>">Click here</a>
+                </figcaption>	
+            </div>
+
+            
             <p>
-                <?php echo $rs_product_loop['pages_subject_'.$lang]; ?> <span>ผลิตภัณฑ์สมุนไพรไทย</span><br>
-                <a href="<?php echo $baseUrl.'/'.$lang; ?>/product/<?php echo $rs_product_loop['pages_link']; ?>">ดูรายละเอียดผลิตภัณฑ์</a>
+                <?php echo $rs_product_loop['pages_subject_'.$lang]; ?> <span><?php echo translate('ผลิตภัณฑ์สมุนไพรไทย'); ?></span><br>
+                <a href="<?php echo $baseUrl.'/'.$lang; ?>/product/<?php echo $rs_product_loop['pages_link']; ?>"><?php echo translate('ดูรายละเอียดผลิตภัณฑ์'); ?></a>
             </p>
             
         </div>
 
         <?php } ?>
         <div class="col-md-12 text-center">
-            <a href="<?php echo $baseUrl.'/'.$lang; ?>/product" class="btn btn-large">ดูผลิตภัณฑ์ทั้งหมด &nbsp;&nbsp; ></a>
+            <a href="<?php echo $baseUrl.'/'.$lang; ?>/product" class="btn btn-large"><?php echo translate('ดูผลิตภัณฑ์ทั้งหมด'); ?> &nbsp;&nbsp; ></a>
         </div> 
 
         <!-- <div class="col-md-4 col-sm-4 produect_cate">
@@ -163,11 +175,11 @@
         <!-- <div class="parallax"><img src="./images/bg_vision.jpg"></div> -->
         <div class="container">
             <div class="col-md-8 col-md-offset-2 text-center">
-                <h3>วิสัยทัศน์</h3>
+                <h3><?php echo translate('วิสัยทัศน์'); ?></h3>
                 <p>บริษัท ผลิตภัณฑ์ สมุนไพรไทย จำกัด ตระหนักถึงหน้าที่การเป็นองค์กรที่ดี ผลิตและจำหน่ายยาสมุนไพรที่ดี มีคุณภาพ
                     พร้อมสร้างประโยชน์ต่อสังคม จึงดำเนินงานโดยยึดหลักธรรมาภิบาล ได้รับรางวัลการรันตีคุณภาพและมาตราฐานต่างๆมากมาย
                     เพื่อก้าวสู่การเป็นองค์กรระดับมาตราฐานสากล</p>
-                <a href="<?php echo $baseUrl.'/'.$lang; ?>/about" class="btn btn-large">อ่านเพิ่มเติม &nbsp;&nbsp; ></a>
+                <a href="<?php echo $baseUrl.'/'.$lang; ?>/about" class="btn btn-large"><?php echo translate('อ่านเพิ่มเติม'); ?> &nbsp;&nbsp; ></a>
             </div>
         </div>
 
@@ -182,7 +194,7 @@
 
     <!-- News Section  -->
     <section id="news" class="news section clearfix">
-        <h4 class="text-center">ข่าวสารและกิจกรรม</h4>
+        <h4 class="text-center"><?php echo translate('ข่าวสารและกิจกรรม'); ?></h4>
         <hr>
 
         <?php 
@@ -203,11 +215,11 @@
                     <h5><?php echo $rs_news_loop['news_subject_'.$lang]; ?></h5>
                     <p><b><?php echo $rs_news_loop['news_categories']; ?></b><br><?php echo dateFormat($rs_news_loop['news_date']); ?></p>
                     <p><?php echo mb_substr($rs_news_loop['news_title_'.$lang], 0,100, "UTF-8")."..."; ?></p>
-                    <p><a href="<?php echo $baseUrl.'/'.$lang; ?>/news_event/<?php echo $rs_news_loop['news_link']; ?>">อ่านต่อ</a></p>
+                    <p><a href="<?php echo $baseUrl.'/'.$lang; ?>/news_event/<?php echo $rs_news_loop['news_link']; ?>"><?php echo translate('อ่านต่อ'); ?></a></p>
                 </div>
             </div>
         <?php } ?>
-        <div class="text-center"><a href="<?php echo $baseUrl.'/'.$lang; ?>/news_event" class="btn btn-large">อ่านข่าวทั้งหมด &nbsp;&nbsp; ></a></div>        
+        <div class="text-center"><a href="<?php echo $baseUrl.'/'.$lang; ?>/news_event" class="btn btn-large"><?php echo translate('อ่านข่าวทั้งหมด');?> &nbsp;&nbsp; ></a></div>        
         <!-- <div class="col-lg-3 col-md-6 col-sm-6">
             <img src="<?php //echo $baseUrl; ?>/assets/front_end/images/news/news_img02.jpg" class="img-responsive" alt="">
             <div class="content">

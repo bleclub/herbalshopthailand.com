@@ -20,21 +20,21 @@
 			<?php echo $rs_footer['content_detail_'.$lang]; ?>
 		</div>
 		<div class="footer-col col-md-4 col-sm-6">
-			<h5>Send Message</h5>
+			<h5><?php echo translate('Send Message'); ?></h5>
 			<form action="#" method="POST">
 				<div class="input-group">
 					<span class="input-group-addon" id="basic-addon1"><i class="glyphicon glyphicon-user"></i></span>
-					<input type="text" class="form-control" placeholder="Fullname" name="fullname" aria-describedby="basic-addon1">
+					<input type="text" class="form-control" placeholder="<?php echo translate('Fullname'); ?>" name="fullname" aria-describedby="basic-addon1">
 				</div>
 				<div class="input-group">
 					<span class="input-group-addon" id="basic-addon1"><i class="glyphicon glyphicon-send"></i></span>
-					<input type="text" class="form-control" placeholder="Email Address" name="email" aria-describedby="basic-addon1">
+					<input type="text" class="form-control" placeholder="<?php echo translate('Email Address'); ?>" name="email" aria-describedby="basic-addon1">
 				</div>
 				<div class="input-group">
-					<textarea class="form-control" id="exampleTextarea" rows="3" name="message" placeholder="Message"></textarea>
+					<textarea class="form-control" id="exampleTextarea" rows="3" name="message" placeholder="<?php echo translate('Message'); ?>"></textarea>
 				</div>
 				<div class="input-group text-left">
-					<a href="#" class="btn btn-large">ส่งข้อความ &nbsp;&nbsp; ></a>
+					<a href="#" class="btn btn-large"><?php echo translate('ส่งข้อความ'); ?> &nbsp;&nbsp; ></a>
 				</div>
 
 			</form>

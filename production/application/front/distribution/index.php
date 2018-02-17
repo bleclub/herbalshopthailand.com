@@ -5,7 +5,8 @@
     $description = 'Herbalshop Thailand';
     $keywords = 'Herbalshop Thailand';
 
-	$product_selected = "selected"; // Menu selected
+    $distribution_selected = "class='selected'"; // Menu selected
+
 	require 'template/front/header.php';
 	require 'controllers/front/distribution_page.php';
 

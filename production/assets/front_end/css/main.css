@@ -315,7 +315,7 @@ ul li {
         position: absolute;
         text-transform: uppercase;
         top: 100%;
-        width: 200px;
+        width: 250px;
         opacity: 0;
         /* display: none; */
         -webkit-transition: opacity 0.5s;
@@ -418,7 +418,7 @@ ul li {
     color: #fff;
     font-family: "Kanit", sans-serif;
     font-size: 1.8rem;
-    font-weight: 100;
+    font-weight: 400;
     line-height: 1.5;
     margin-bottom: 50px;
 }
@@ -506,7 +506,7 @@ ul li {
 }
 
 .product .produect_cate img {
-    border-radius: 5px 5px 0 0;
+    border-radius: 0;
 }
 
 .product .btn{
@@ -1172,12 +1172,12 @@ button.load_more[disabled]:hover, button.load_more_event[disabled]:hover{
   font-size: 5rem;
   font-weight: 300;
   margin: 0;
-  color: #fff;
+  color: #000;
 }
 
 
 .role_detail h3{
-  color: #fff;
+  color: #000;
   font-size: 34px;
   font-weight: 100;
   line-height: 38px;
@@ -1186,11 +1186,11 @@ button.load_more[disabled]:hover, button.load_more_event[disabled]:hover{
 }
 
 .role_detail h4{
-  color: #fff;
+  color: #000;
   font-size: 30px;
   font-weight: 100;
   line-height: 38px;
-  text-align: left;
+  text-align: center;
   margin: 20px 0;
 }
 
@@ -1207,12 +1207,12 @@ button.load_more[disabled]:hover, button.load_more_event[disabled]:hover{
     font-size: 16px;
     font-weight: normal;
     line-height: 1.5;
-    color: #fff;
+    color: #000;
     text-align: left;
 }
 
 .role_detail ol {
-    color: #fff;
+  color: #000;
     font-family: Tahoma;
     font-size: 16px;
     line-height: 30px;

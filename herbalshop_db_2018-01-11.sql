@@ -923,7 +923,7 @@ CREATE TABLE `btview_user` (
 
 DROP TABLE `btview_news`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `btview_news`
+CREATE ALGORITHM=UNDEFINED DEFINER=`thaiherbin_info`@`localhost` SQL SECURITY DEFINER VIEW `btview_news`
 AS SELECT
    `bt_user`.`firstnameTH` AS `firstnameTH`,
    `bt_user`.`lastnameTH` AS `lastnameTH`,
@@ -958,7 +958,7 @@ FROM (((`bt_news` join `bt_office` on((`bt_news`.`officeID` = `bt_office`.`offic
 
 DROP TABLE `btview_content`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `btview_content`
+CREATE ALGORITHM=UNDEFINED DEFINER=`thaiherbin_info`@`localhost` SQL SECURITY DEFINER VIEW `btview_content`
 AS SELECT
    `bt_content`.`content_id` AS `content_id`,
    `bt_content`.`content_categories` AS `content_categories`,
@@ -993,7 +993,7 @@ FROM (((`bt_content` join `bt_office` on((`bt_content`.`officeID` = `bt_office`.
 
 DROP TABLE `btview_category`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `btview_category`
+CREATE ALGORITHM=UNDEFINED DEFINER=`thaiherbin_info`@`localhost` SQL SECURITY DEFINER VIEW `btview_category`
 AS SELECT
    `bt_category`.`category_id` AS `category_id`,
    `bt_category`.`category_name_th` AS `category_name_th`,
@@ -1012,7 +1012,7 @@ FROM ((`bt_category` join `bt_user` on((`bt_category`.`userID` = `bt_user`.`id`)
 
 DROP TABLE `btview_pages`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `btview_pages`
+CREATE ALGORITHM=UNDEFINED DEFINER=`thaiherbin_info`@`localhost` SQL SECURITY DEFINER VIEW `btview_pages`
 AS SELECT
    `bt_user`.`firstnameTH` AS `firstnameTH`,
    `bt_user`.`lastnameTH` AS `lastnameTH`,
@@ -1050,7 +1050,7 @@ FROM ((((`bt_pages` join `bt_office` on((`bt_pages`.`officeID` = `bt_office`.`of
 
 DROP TABLE `btview_user`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `btview_user`
+CREATE ALGORITHM=UNDEFINED DEFINER=`thaiherbin_info`@`localhost` SQL SECURITY DEFINER VIEW `btview_user`
 AS SELECT
    `bt_user`.`id` AS `id`,
    `bt_user`.`userID` AS `userID`,

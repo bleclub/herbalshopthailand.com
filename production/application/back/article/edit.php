@@ -311,8 +311,14 @@ label.error {
 		$('#registration-form').validate();
 		
         $('#createdate').datepicker({format: 'yyyy-mm-dd'});
-        CKEDITOR.replace('contentTH');
-		CKEDITOR.replace('contentEN');
+        CKEDITOR.replace('contentTH', {
+            filebrowserBrowseUrl: '<?php echo $baseUrl;?>/assets/admin/plugins/ckfinder/ckfinder.html',
+            filebrowserUploadUrl: '<?php echo $baseUrl;?>/assets/admin/plugins/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Files'
+          });
+        CKEDITOR.replace('contentEN', {
+            filebrowserBrowseUrl: '<?php echo $baseUrl;?>/assets/admin/plugins/ckfinder/ckfinder.html',
+            filebrowserUploadUrl: '<?php echo $baseUrl;?>/assets/admin/plugins/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Files'
+          });
       });
     </script>
 

@@ -31,8 +31,8 @@ $config['authentication'] = function () {
 /*============================ License Key ============================================*/
 // http://docs.cksource.com/ckfinder3-php/configuration.html#configuration_options_licenseKey
 
-$config['licenseName'] = '';
-$config['licenseKey']  = '';
+$config['LicenseName']	= 'thaiherbinfo.com';
+$config['LicenseKey']	= 'W8T8-N4U5-26ZH-43S3-R1HS-ZZEM-TR4J';
 
 /*============================ CKFinder Internal Directory ============================*/
 // http://docs.cksource.com/ckfinder3-php/configuration.html#configuration_options_privateDir
@@ -65,7 +65,8 @@ $config['images'] = array(
 $config['backends'][] = array(
     'name'         => 'default',
     'adapter'      => 'local',
-    'baseUrl'      => 'http://'.$_SERVER['SERVER_NAME'].'/ProjectWeb/mktru/herbalshopthailand.com/production/upload/ckfinder',
+    'baseUrl'      => 'http://'.$_SERVER['SERVER_NAME'].'/upload/ckfinder',
+    // 'baseUrl'      => 'http://'.$_SERVER['SERVER_NAME'].'/ProjectWeb/mktru/herbalshopthailand.com/production/upload/ckfinder',
     // 'root'         => '', // Can be used to explicitly set the CKFinder user files directory.
     'chmodFiles'   => 0777,
     'chmodFolders' => 0755,
