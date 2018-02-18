@@ -4,7 +4,19 @@
 
 
 <!--Footer Section  -->
+<style>
 
+.footer_contact label.error {
+    color: red;
+    font-weight: 100;
+    float: right;
+    position: absolute;
+    top: 13px;
+    right: 20px;
+    z-index: 9;
+}
+
+</style>
 <footer class="footer">
 <div class="footer-top">
 	<div class="row">
@@ -21,20 +33,20 @@
 		</div>
 		<div class="footer-col col-md-4 col-sm-6">
 			<h5><?php echo translate('Send Message'); ?></h5>
-			<form action="#" method="POST">
+			<form action="<?php echo $baseUrl.'/'.$lang.'/contact/sendmail/'; ?>" method="post" enctype="multipart/form-data"  class="footer_contact" id="template-contactform-footer" name="template-contactform">
 				<div class="input-group">
 					<span class="input-group-addon" id="basic-addon1"><i class="glyphicon glyphicon-user"></i></span>
-					<input type="text" class="form-control" placeholder="<?php echo translate('Fullname'); ?>" name="fullname" aria-describedby="basic-addon1">
+					<input type="text" class="form-control required" placeholder="<?php echo translate('Fullname'); ?>" name="template-contactform-name" aria-describedby="basic-addon1">
 				</div>
 				<div class="input-group">
 					<span class="input-group-addon" id="basic-addon1"><i class="glyphicon glyphicon-send"></i></span>
-					<input type="text" class="form-control" placeholder="<?php echo translate('Email Address'); ?>" name="email" aria-describedby="basic-addon1">
+					<input type="email" class="form-control required email" placeholder="<?php echo translate('Email Address'); ?>" name="template-contactform-email" aria-describedby="basic-addon1">
 				</div>
 				<div class="input-group">
-					<textarea class="form-control" id="exampleTextarea" rows="3" name="message" placeholder="<?php echo translate('Message'); ?>"></textarea>
+					<textarea class="form-control required" id="exampleTextarea" rows="3" name="template-contactform-subject" placeholder="<?php echo translate('Message'); ?>"></textarea>
 				</div>
 				<div class="input-group text-left">
-					<a href="#" class="btn btn-large"><?php echo translate('ส่งข้อความ'); ?> &nbsp;&nbsp; ></a>
+					<button class="btn btn-large"><?php echo translate('ส่งข้อความ'); ?> &nbsp;&nbsp; ></button>
 				</div>
 
 			</form>

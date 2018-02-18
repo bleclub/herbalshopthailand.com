@@ -187,6 +187,7 @@
     <script type="text/javascript" src="<?php echo $baseUrl; ?>/assets/front_end/js/plugins.js"></script>
 	<script type="text/javascript">
 		$("#template-contactform").validate();
+		$("#template-contactform-footer").validate();
 	</script>
     </body>
 </html>

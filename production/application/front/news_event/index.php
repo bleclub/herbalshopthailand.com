@@ -235,8 +235,12 @@
     <script src="<?php echo $baseUrl; ?>/assets/front_end/js/modernizr.js"></script>
     <script src="<?php echo $baseUrl; ?>/assets/front_end/js/materialize.js"></script>
     <script src="<?php echo $baseUrl; ?>/assets/front_end/js/main.js"></script>
+    <script src="<?php echo $baseUrl; ?>/assets/front_end/js/jquery.validate.min.js"></script>
 
-    <script type="text/javascript" src="<?php echo $baseUrl; ?>/assets/front_end/js/plugins.js"></script> 
+    <script src="<?php echo $baseUrl; ?>/assets/front_end/js/plugins.js"></script>
+    <script type="text/javascript">
+        $("#template-contactform-footer").validate();
+    </script>
     <script>
           $(function() {
               $( "#side-navigation" ).tabs({ show: { effect: "fade", duration: 400 } });

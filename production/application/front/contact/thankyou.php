@@ -65,6 +65,7 @@ if($_GET['status'] <> 'success'){
     
 	<script type="text/javascript">
 		$("#template-contactform").validate();
+        $("#template-contactform-footer").validate();
 	</script>
 
     </body>
